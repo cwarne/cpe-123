@@ -29,7 +29,7 @@ public class Ground extends Actor
      */
     public void spawnLightGround()
     {
-        if(lightGroundCounter >= (Greenfoot.getRandomNumber(70)+90)) //check counter to see if appropriate time to spawn ground
+        if(lightGroundCounter >= (Greenfoot.getRandomNumber(70)+20)) //check counter to see if appropriate time to spawn ground
         {
             lightGroundCounter = 0; //reset counter
             
