@@ -16,9 +16,10 @@ public class Professor extends Characters
     private int acceleration = 1;
     private int frame = 1;
     private int animationCounter = 0;
-    
-    private GreenfootImage profframe1 = new GreenfootImage("Professor Pos1.png");
-    private GreenfootImage profframe2 = new GreenfootImage("Professor Pos2.png");
+    //Picture changed 
+    //Stephanie Lascola
+    private GreenfootImage profframe1 = new GreenfootImage("Professor.png");
+    private GreenfootImage profframe2 = new GreenfootImage("Professor2.png");
     
     /**
      * Act - do whatever the Professor wants to do. This method is called whenever
@@ -32,6 +33,7 @@ public class Professor extends Characters
         }
         checkIfFalling();
         animation();
+        remove();
     }    
     public void jump()
     {
@@ -96,4 +98,22 @@ public class Professor extends Characters
         }
         frame ++;
     }
+     /**
+     * This is being used so when the professor touches the currency, he collects it.
+     * In other words, it is being removed from the screen as if he is actually collecting it.
+     * -Stephanie Lascola
+     */
+    public void remove()
+    {
+    Actor Currency;
+    Currency = getOneObjectAtOffset (0, 0, Currency.class);
+    if (Currency!=null)
+    {
+      World world;
+      world = getWorld();
+      world.removeObject(Currency);
+      
+    }  
+    }
+
 }

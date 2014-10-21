@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Currency2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=
+comment1.target=void\ move()
+comment1.text=\r\n\ This\ will\ move\ the\ currency\ across\ the\ screen\ for\ pickup.\ As\ of\ right\ now,\ there\ are\ placeholders\ being\ used\ \r\n\ but\ eventually\ it\ will\ be\ things\ like\ horns\ and\ scales\ that\ can\ be\ collected\ and\ put\ in\ the\ store.\r\n\ -Stephanie\ Lascola\r\n
+comment2.params=
+comment2.target=void\ disappear()
+comment2.text=\r\n\ This\ allows\ the\ object\ to\ disappear\ once\ it\ is\ out\ of\ the\ frame\ on\ the\ screen.\ \r\n\ -Stephanie\ Lascola\r\n
+numComments=3

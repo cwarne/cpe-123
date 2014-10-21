@@ -33,6 +33,7 @@ public class GameWorld extends World
         count++; //Increase counter for global synchronization
         spawnObstacles();//adds obstacles
         changeTimer();//counts down timer for spawning obstacles
+        spawnCurrency();//adds the currency
     }
 
     /**
@@ -141,6 +142,27 @@ public class GameWorld extends World
         if (spawnTimer > 0)
         {
             spawnTimer = spawnTimer - 1;
+        }
+    }
+     /**
+    * Using the timer that Sarah made, the currency appears every ten out of 2000 and the timer is there so the objects do not overlap
+    * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
+    * values depending on what kind of currency is picked up (rare vs not rare).
+    * -Stephanie Lascola
+    */
+    public void spawnCurrency()
+    {
+        if ((Greenfoot.getRandomNumber (2000) < 7) && (spawnTimer == 0))
+        {
+            Currency1 c1 = new Currency1();
+            addObject(c1, getWidth(), getHeight()-100);
+            spawnTimer = 60;
+        }
+        else if ((Greenfoot.getRandomNumber (2000) < 5) && (spawnTimer == 0))
+        {
+            Currency2 c2 = new Currency2();
+            addObject(c2, getWidth(), getHeight()-100);
+            spawnTimer = 60;
         }
     }
 }
