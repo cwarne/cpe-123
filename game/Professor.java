@@ -12,7 +12,7 @@ public class Professor extends Characters
     //Code contributed by Michael Tornatta
     private boolean isJumping;
     private int vSpeed = 0;
-    private int jumpingStrength = 16;
+    private int jumpingStrength = 20;
     private int acceleration = 1;
     private int frame = 1;
     private int animationCounter = 0;

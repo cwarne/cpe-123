@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.params=
 comment0.target=GameWorld()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ GameWorld.\n\ \n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameWorld.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=int\ getCount()
-comment2.text=\n\ Returns\ world\ synchronization\ count\ for\ actors\ to\ refer\ too.\n
+comment2.text=\r\n\ Returns\ world\ synchronization\ count\ for\ actors\ to\ refer\ too.\r\n
 comment3.params=
 comment3.target=void\ prepare()
-comment3.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
+comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
 comment4.params=
 comment4.target=void\ spawnObstacles()
-comment4.text=\n\ Spawns\ random\ obstacles\ (stump\ placeholder\ and\ static\ dinosaur\ placeholders?)\ \n\ Sets\ timer\ to\ ensure\ that\ spawned\ objects\ won't\ overlap\n\ @SarahStephens\n
+comment4.text=\r\n\ Spawns\ random\ obstacles\ (stump\ placeholder\ and\ static\ dinosaur\ placeholders?)\ \r\n\ Sets\ timer\ to\ ensure\ that\ spawned\ objects\ won't\ overlap\r\n\ @SarahStephens\r\n
 comment5.params=
 comment5.target=void\ changeTimer()
-comment5.text=\n\ Counts\ down\ the\ enemy\ spawn\ timer\ one\ time.\ Is\ used\ to\ \n\ set\ a\ cooldown\ for\ the\ spawn\ of\ obstacles\ so\ that\ they\ \n\ will\ not\ overlap\ on\ the\ game\ screen.\n\ @SarahStephens\n
+comment5.text=\r\n\ Counts\ down\ the\ enemy\ spawn\ timer\ one\ time.\ Is\ used\ to\ \r\n\ set\ a\ cooldown\ for\ the\ spawn\ of\ obstacles\ so\ that\ they\ \r\n\ will\ not\ overlap\ on\ the\ game\ screen.\r\n\ @SarahStephens\r\n
 numComments=6
