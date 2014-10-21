@@ -6,6 +6,5 @@ comment1.params=
 comment1.target=void\ move()
 comment1.text=\r\n\ Moves\ the\ obstacle\ across\ the\ game\ screen.\ \r\n\ @SarahStephens\r\n
 comment2.params=
-comment2.target=void\ remove()
-comment2.text=\r\n\ Removes\ the\ obstacle\ when\ it\ reaches\ the\ end\ of\ the\ world\r\n\ @Sarah\ Stephens\r\n
+comment2.target=void\ collide()
 numComments=3

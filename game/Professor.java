@@ -107,15 +107,15 @@ public class Professor extends Characters
      */
     public void remove()
     {
-    Actor Currency;
-    Currency = getOneObjectAtOffset (0, 0, Currency.class);
-    if (Currency!=null)
-    {
-      World world;
-      world = getWorld();
-      world.removeObject(Currency);
+        Actor Currency;
+        Currency = getOneObjectAtOffset (0, 0, Currency.class);
+        if (Currency!=null)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(Currency);
       
-    }  
+        }  
     }
 
 }

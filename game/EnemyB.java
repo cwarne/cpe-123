@@ -15,7 +15,7 @@ public class EnemyB extends Obstacles
     public void act() 
     {
         move();
-        remove();
+        collide();
     }    
     /**
      * Moves the obstacle across the game screen. 
@@ -25,15 +25,15 @@ public class EnemyB extends Obstacles
     {
         setLocation(getX() - 5, getY());
     }
-    /**
-     * Removes the obstacle when it reaches the end of the world
-     * @Sarah Stephens
-     */
-    public void remove()
+           
+    public void collide()
     {
-        if (getX() == 0)
+        Actor professor;
+        professor = getOneIntersectingObject(Professor.class);
+        if (professor != null)
         {
-            getWorld().removeObject(this);
+            GameOverScreen go = new GameOverScreen();
+            Greenfoot.setWorld(go);
         }
     }
 }
