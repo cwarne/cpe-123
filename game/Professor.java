@@ -90,7 +90,9 @@ public class Professor extends Characters
         {
             setImage(profframe1);
         }
-        else if(frame == 2)
+        //Changed so that last frame change when frame > 2. Fixed a glitch where the frame
+        //would not progress to the next one (Michael Tornatta)
+        else if(frame > 2)
         {
             setImage(profframe2);
             frame = 1;
