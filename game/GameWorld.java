@@ -11,6 +11,9 @@ public class GameWorld extends World
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
     public GreenfootSound music;
+    private int platform1Timer = 0; //prevents platforms from spawning on top of each other
+    private int platform2Timer = 0;
+    private int platformNumber;
 
     /**
      * Constructor for objects of class GameWorld.
@@ -34,6 +37,9 @@ public class GameWorld extends World
         spawnObstacles();//adds obstacles
         changeTimer();//counts down timer for spawning obstacles
         spawnCurrency();//adds the currency
+        createPlatform1();//creates random platforms at the first height
+        createPlatform2();//creates random platforms at the second height
+        changePlatformTimers();//counts down platform spawn timers
     }
 
     /**
@@ -144,6 +150,7 @@ public class GameWorld extends World
             spawnTimer = spawnTimer - 1;
         }
     }
+    
      /**
     * Using the timer that Sarah made, the currency appears every ten out of 2000 and the timer is there so the objects do not overlap
     * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
@@ -167,4 +174,78 @@ public class GameWorld extends World
     }
     
     
+    public void createPlatform1()
+    {
+        if(platform1Timer == 0)
+        {
+            platformNumber = Greenfoot.getRandomNumber(6);
+            
+            if (platformNumber == 0)
+            {
+               P10 p = new P10();
+               addObject(p, getWidth() + 150 , 600);
+               platform1Timer = 450;
+            }
+            else if (platformNumber == 1)
+            {
+                P2 p = new P2();
+                addObject(p, getWidth() + 20, 600);
+                platform1Timer = 200;
+            }
+            else if (platformNumber == 2)
+            {
+                P3 p = new P3();
+                addObject(p, getWidth() + 40, 600);
+                platform1Timer = 300;
+            }
+            else if (platformNumber == 3)
+            {
+                P4 p = new P4();
+                addObject(p, getWidth() + 50, 600);
+                platform1Timer = 350;
+            }
+        }
+    }
+    
+    public void createPlatform2()
+    {
+        if(platform2Timer == 0)
+        {
+            platformNumber = Greenfoot.getRandomNumber(6);
+            
+            if (platformNumber == 0)
+            {
+               P10 p = new P10();
+               addObject(p, getWidth() + 150 , 100);
+               platform2Timer = 450;
+            }
+            else if (platformNumber == 1)
+            {
+                P2 p = new P2();
+                addObject(p, getWidth() + 20, 100);
+                platform2Timer = 200;
+            }
+            else if (platformNumber == 2)
+            {
+                P3 p = new P3();
+                addObject(p, getWidth() + 40, 100);
+                platform2Timer = 300;
+            }
+        }
+    }
+        
+    /** 
+     * Counts down the platform timers once each act method
+     */
+    public void changePlatformTimers()
+    {
+         if (platform2Timer > 0)
+        {
+            platform2Timer = platform2Timer - 1;
+        }
+         if (platform1Timer > 0)
+        {
+            platform1Timer = platform1Timer - 1;
+        }
+    }
 }

@@ -14,6 +14,6 @@ public class P2 extends Platforms
      */
     public void act() 
     {
-        // Add your action code here.
+        move(-5);
     }    
 }
