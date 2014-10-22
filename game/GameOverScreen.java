@@ -11,7 +11,7 @@ public class GameOverScreen extends World
 
     /**
      * Constructor for objects of class GameOverScreen.
-     * 
+     * @Nick Jones
      */
     public GameOverScreen(int score)
     {    
@@ -22,10 +22,11 @@ public class GameOverScreen extends World
     /**
      * resets the game if the mouse is clicked on the game over screen
      * @SarahStephens
+     * edited by @Nick Jones
      */
     public void act()
     {
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space"))
         {
             GameWorld g = new GameWorld();
             Greenfoot.setWorld(g);
