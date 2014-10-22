@@ -18,6 +18,7 @@ public class GameWorld extends World
     private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
+    private ScoreBoard scoreboard;
 
     /**
      * Constructor for objects of class GameWorld.
@@ -44,6 +45,7 @@ public class GameWorld extends World
         spawnCurrency();//adds the currency
         createPlatform1();//creates random platforms at the first height
         createPlatform2();//creates random platforms at the second height
+        scoreboard.addScore(1);
     }
 
     /**
@@ -119,6 +121,8 @@ public class GameWorld extends World
         cloud2.setLocation(684, 176);
         cloud5.setLocation(266, 97);
         cloud2.setLocation(508, 125);
+        scoreboard = new ScoreBoard();
+        addObject(scoreboard, 80, 20);
     }
     /**
      * Spawns random obstacles (stump placeholder and static dinosaur placeholders?) 
@@ -380,5 +384,10 @@ public class GameWorld extends World
     {
         return platform1Timer;
     }
-}
-    
+    public int getScore()
+    {
+         return scoreboard.getScore();
+    }
+    }
+
+   
