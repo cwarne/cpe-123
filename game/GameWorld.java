@@ -10,14 +10,14 @@ public class GameWorld extends World
 {
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
-    private int spawnTimer1 = 0;//for obstacles and powerups on level 1
-    private int spawnTimer2 = 0;//for obstacles and powerups on level 2
+   
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
     private int platformNumber;
     private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
     private int bSpawnRate = 40; //spawn rate for enemyB
+    private int cSpawnRate = 30; //spawn rate for enemyC
 
     /**
      * Constructor for objects of class GameWorld.
@@ -39,6 +39,7 @@ public class GameWorld extends World
     {
         count++; //Increase counter for global synchronization
         spawnObstacles();//adds obstacles
+        spawnObstacles3();//spawns pterodactyls
         changeTimers();//counts down timer for spawning obstacles & platforms
         spawnCurrency();//adds the currency
         createPlatform1();//creates random platforms at the first height
@@ -102,7 +103,7 @@ public class GameWorld extends World
         Professor prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class);
+        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -149,11 +150,13 @@ public class GameWorld extends World
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
+            spawnTimer = 30;
         }        
         else if (spawnTimer == 0)
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 415);  
+            spawnTimer = 40;
         }    
     }
      /**
@@ -162,7 +165,7 @@ public class GameWorld extends World
      */
     public void spawnObstacles2()
     {
-         if (Greenfoot.getRandomNumber(100) < aSpawnRate)
+         if (Greenfoot.getRandomNumber(100) < aSpawnRate) 
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
@@ -174,6 +177,18 @@ public class GameWorld extends World
         }    
     }
     /**
+     * spawns pterodactyls in the sky
+     * @AlexCarpenter
+     */
+    public void spawnObstacles3()
+    {
+        if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0))
+        {
+            EnemyC enemyC = new EnemyC();
+            addObject(enemyC, getWidth() + Greenfoot.getRandomNumber(60), 40);
+        }
+    }
+    /**
      * Counts down the enemy & platform spawn timers once. Is used to 
      * set a cooldown for the spawn of obstacles and platforms so
      * that they will not overlap on the game screen.
@@ -181,23 +196,15 @@ public class GameWorld extends World
      */
     public void changeTimers()
     {
-        if (spawnTimer > 0)//for enemy & powerup spawning on the bottom level
+        if (spawnTimer > 0)//for enemy & powerup spawning
         {
             spawnTimer = spawnTimer - 1;
         }
-         if (spawnTimer1 > 0)//for enemy & powerup spawning on level 1
-        {
-            spawnTimer1 = spawnTimer1 - 1;
-        }
-         if (spawnTimer2 > 0)//for enemy & powerup spawning on level 2
-        {
-            spawnTimer2 = spawnTimer2 - 1;
-        }
-         if (platform1Timer > 0)//for spawning level 1 platforms
+        if (platform1Timer > 0)//for spawning level 1 platforms
         {
             platform1Timer = platform1Timer - 1;
         }
-         if (platform2Timer > 0)//for spawning level 2 platforms
+        if (platform2Timer > 0)//for spawning level 2 platforms
         {
             platform2Timer = platform2Timer - 1;
         }        
