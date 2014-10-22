@@ -34,8 +34,8 @@ public class EnemyB extends Obstacles
         professor = getOneIntersectingObject(Professor.class);
         if (professor != null)
         {
-            GameOverScreen go = new GameOverScreen();
-            Greenfoot.setWorld(go);
+            GameWorld world = (GameWorld) getWorld();
+            world.endGame();
         }
     }
 }

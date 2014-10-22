@@ -384,10 +384,22 @@ public class GameWorld extends World
     {
         return platform1Timer;
     }
-    public int getScore()
+     /**
+     * @Nick Jones
+     * method for the end of the game
+     */
+    public void endGame()
+    {
+        GameOverScreen go = new GameOverScreen(getScore());
+        Greenfoot.setWorld(go);
+        music.stop();
+    }
+        public int getScore()
     {
          return scoreboard.getScore();
     }
     }
+
+    
 
    

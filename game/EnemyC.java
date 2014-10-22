@@ -36,6 +36,7 @@ public class EnemyC extends Obstacles
     /**
      * checks for collision with player and changes to game over screen
      * @AlexCarpenter
+     * edited by @NickJones
      */
     public void collide()
     {
@@ -43,8 +44,8 @@ public class EnemyC extends Obstacles
         professor = getOneIntersectingObject(Professor.class);
         if (professor != null)
         {
-            GameOverScreen go = new GameOverScreen();
-            Greenfoot.setWorld(go);
+            GameWorld world = (GameWorld) getWorld();
+            world.endGame();
         }
     }
 }

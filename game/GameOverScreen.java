@@ -13,10 +13,11 @@ public class GameOverScreen extends World
      * Constructor for objects of class GameOverScreen.
      * 
      */
-    public GameOverScreen()
+    public GameOverScreen(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1);
+        showText("final score   "+score, 90, 30);
     }
     /**
      * resets the game if the mouse is clicked on the game over screen

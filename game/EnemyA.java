@@ -39,6 +39,7 @@ public class EnemyA extends Obstacles
      * check for collision with the professor and set to game over screen 
      * same code in enemyB
      * @SarahStephens
+     * edited by @NickJones
      */
     public void collide()
     {
@@ -46,9 +47,8 @@ public class EnemyA extends Obstacles
         professor = getOneIntersectingObject(Professor.class);
         if (professor != null)
         {
-            GameOverScreen go = new GameOverScreen();
-            Greenfoot.setWorld(go);
+            GameWorld world = (GameWorld) getWorld();
+            world.endGame();
         }
     }
-    
 }
