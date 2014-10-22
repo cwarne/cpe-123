@@ -25,7 +25,9 @@ public class EnemyB extends Obstacles
     {
         setLocation(getX() - 5, getY());
     }
-           
+    /**
+     * explanation in EnemyA
+     */       
     public void collide()
     {
         Actor professor;

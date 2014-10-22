@@ -18,20 +18,28 @@ public class EnemyA extends Obstacles
         collide(); //check for collision with professor and go to game over screen
     }
     /**
-     * Moves the obstacle across the game screen. It would most likely 
-     * be beneficial to use a variable such as gameSpeed instead of saying current
-     * location minus 5 in case we want to be able to change the speed at which the
-     * ground and obstacles move. This would make it easy for the game to progessively
-     * become harder as the score increases. This variable would also be used in the 
-     * movement of the ground and grass to keep everything moving at the right speed.
+     * Moves the obstacle across the game screen. If the enemy is on the ground then
+     * it will run forward slightly faster than the ground is moving. It would be great
+     * if it had an animation but it doesn't 
      * @SarahStephens
      */
     public void move()
     {
-        setLocation(getX() - 5, getY());
+        if (getY() > 500) 
+        {
+            setLocation(getX() - 6, getY());
+        }
+        else 
+        {
+            setLocation(getX() - 5, getY());
+        }
     }
     
-   
+    /**
+     * check for collision with the professor and set to game over screen 
+     * same code in enemyB
+     * @SarahStephens
+     */
     public void collide()
     {
         Actor professor;

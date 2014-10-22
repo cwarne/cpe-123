@@ -7,4 +7,5 @@ comment1.target=void\ move()
 comment1.text=\r\n\ Moves\ the\ obstacle\ across\ the\ game\ screen.\ \r\n\ @SarahStephens\r\n
 comment2.params=
 comment2.target=void\ collide()
+comment2.text=\r\n\ explanation\ in\ EnemyA\r\n
 numComments=3

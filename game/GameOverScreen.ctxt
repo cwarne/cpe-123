@@ -4,4 +4,5 @@ comment0.target=GameOverScreen()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOverScreen.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ resets\ the\ game\ if\ the\ mouse\ is\ clicked\ on\ the\ game\ over\ screen\r\n\ @SarahStephens\r\n
 numComments=2

@@ -10,10 +10,14 @@ public class GameWorld extends World
 {
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
+    private int spawnTimer1 = 0;//for obstacles and powerups on level 1
+    private int spawnTimer2 = 0;//for obstacles and powerups on level 2
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
     private int platformNumber;
+    private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
+    private int bSpawnRate = 40; //spawn rate for enemyB
 
     /**
      * Constructor for objects of class GameWorld.
@@ -35,11 +39,10 @@ public class GameWorld extends World
     {
         count++; //Increase counter for global synchronization
         spawnObstacles();//adds obstacles
-        changeTimer();//counts down timer for spawning obstacles
+        changeTimers();//counts down timer for spawning obstacles & platforms
         spawnCurrency();//adds the currency
         createPlatform1();//creates random platforms at the first height
         createPlatform2();//creates random platforms at the second height
-        changePlatformTimers();//counts down platform spawn timers
     }
 
     /**
@@ -123,32 +126,81 @@ public class GameWorld extends World
      */
     public void spawnObstacles()
     {
-        if ((Greenfoot.getRandomNumber(2000) < 5) && (spawnTimer == 0))
+        if ((Greenfoot.getRandomNumber(2000) < 10) && (spawnTimer == 0))
         {
             EnemyA enemyA = new EnemyA();
-            addObject(enemyA, getWidth(), getHeight()-70);
+            addObject(enemyA, getWidth(), getHeight()-95);
             spawnTimer = 50;
         }        
-        else if ((Greenfoot.getRandomNumber(2000) < 3) && (spawnTimer == 0))
+        else if ((Greenfoot.getRandomNumber(2000) < 6) && (spawnTimer == 0))
         {
             EnemyB enemyB = new EnemyB();
-            addObject(enemyB, getWidth(), getHeight()-70);
-            spawnTimer = 50;
+            addObject(enemyB, getWidth(), getHeight()-85);
+            spawnTimer = 70;
         }    
     }
-        
     /**
-     * Counts down the enemy spawn timer one time. Is used to 
-     * set a cooldown for the spawn of obstacles so that they 
-     * will not overlap on the game screen.
+     * spawn random enemies on the first platform level
      * @SarahStephens
      */
-    public void changeTimer()
+    public void spawnObstacles1()
     {
-        if (spawnTimer > 0)
+         if ((Greenfoot.getRandomNumber(100) < aSpawnRate) && (spawnTimer == 0))
+        {
+            EnemyA enemyA = new EnemyA();
+            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
+        }        
+        else if (spawnTimer == 0)
+        {
+            EnemyB enemyB = new EnemyB();
+            addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 415);  
+        }    
+    }
+     /**
+     * spawn random enemies on the second platform level
+     * @SarahStephens
+     */
+    public void spawnObstacles2()
+    {
+         if (Greenfoot.getRandomNumber(100) < aSpawnRate)
+        {
+            EnemyA enemyA = new EnemyA();
+            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
+        }        
+        else 
+        {
+            EnemyB enemyB = new EnemyB();
+            addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 215); 
+        }    
+    }
+    /**
+     * Counts down the enemy & platform spawn timers once. Is used to 
+     * set a cooldown for the spawn of obstacles and platforms so
+     * that they will not overlap on the game screen.
+     * @SarahStephens
+     */
+    public void changeTimers()
+    {
+        if (spawnTimer > 0)//for enemy & powerup spawning on the bottom level
         {
             spawnTimer = spawnTimer - 1;
         }
+         if (spawnTimer1 > 0)//for enemy & powerup spawning on level 1
+        {
+            spawnTimer1 = spawnTimer1 - 1;
+        }
+         if (spawnTimer2 > 0)//for enemy & powerup spawning on level 2
+        {
+            spawnTimer2 = spawnTimer2 - 1;
+        }
+         if (platform1Timer > 0)//for spawning level 1 platforms
+        {
+            platform1Timer = platform1Timer - 1;
+        }
+         if (platform2Timer > 0)//for spawning level 2 platforms
+        {
+            platform2Timer = platform2Timer - 1;
+        }        
     }
     
      /**
@@ -173,40 +225,82 @@ public class GameWorld extends World
         }
     }
     
-    
+    /**
+     * Spawn random platforms at the first height level of different lengths. Also calls the method to spawn random obstacles at that height
+     * @SarahStephens
+     */
     public void createPlatform1()
     {
-        if(platform1Timer == 0)
+        if(platform1Timer == 0) //prevents platforms from spawning on top of each other
         {
             platformNumber = Greenfoot.getRandomNumber(6);
             
             if (platformNumber == 0)
             {
                P10 p = new P10();
-               addObject(p, getWidth() + 150 , 600);
-               platform1Timer = 450;
+               addObject(p, getWidth() + 150 , 450); // X is world width + some to make sure the whole platform starts off screen
+               platform1Timer = 150; // platform timer = P# * 15
+               if (Greenfoot.getRandomNumber(2)== 1)
+               {
+                   spawnObstacles1();
+               }
             }
             else if (platformNumber == 1)
             {
                 P2 p = new P2();
-                addObject(p, getWidth() + 20, 600);
-                platform1Timer = 200;
+                addObject(p, getWidth() + 20, 450);
+                platform1Timer = 60;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles1();
+                }
             }
             else if (platformNumber == 2)
             {
                 P3 p = new P3();
-                addObject(p, getWidth() + 40, 600);
-                platform1Timer = 300;
+                addObject(p, getWidth() + 40, 450);
+                platform1Timer = 45;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles1();
+                }
             }
             else if (platformNumber == 3)
             {
                 P4 p = new P4();
-                addObject(p, getWidth() + 50, 600);
-                platform1Timer = 350;
+                addObject(p, getWidth() + 50, 450);
+                platform1Timer = 60;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles1();
+                }
             }
-        }
+            else if (platformNumber == 4)
+            {
+                P8 p = new P8();
+                addObject(p, getWidth() + 100, 450);
+                platform1Timer = 120;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles1();
+                }
+            }
+            else if (platformNumber == 5)
+            {
+                P12 p = new P12();
+                addObject(p, getWidth() + 170, 450);
+                platform1Timer = 180;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles1();
+                }
+            }
+        }        
     }
-    
+    /**
+     * Spawn random platforms at the second height level of different lengths
+     * @SarahStephens
+     */
     public void createPlatform2()
     {
         if(platform2Timer == 0)
@@ -216,36 +310,68 @@ public class GameWorld extends World
             if (platformNumber == 0)
             {
                P10 p = new P10();
-               addObject(p, getWidth() + 150 , 100);
-               platform2Timer = 450;
+               addObject(p, getWidth() + 150, 250);
+               platform2Timer = 150;
+               if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
             }
             else if (platformNumber == 1)
             {
                 P2 p = new P2();
-                addObject(p, getWidth() + 20, 100);
-                platform2Timer = 200;
+                addObject(p, getWidth() + 20, 250);
+                platform2Timer = 60;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
             }
             else if (platformNumber == 2)
             {
                 P3 p = new P3();
-                addObject(p, getWidth() + 40, 100);
-                platform2Timer = 300;
+                addObject(p, getWidth() + 40, 250);
+                platform2Timer = 45;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
+            }
+            else if (platformNumber == 3)
+            {
+                P8 p = new P8();
+                addObject(p, getWidth() + 100, 250);
+                platform2Timer = 120;        
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
+            }
+            else if (platformNumber == 4)
+            {
+                P4 p = new P4();
+                addObject(p, getWidth() + 50, 250);
+                platform2Timer = 60;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
+            }
+            else if (platformNumber == 5)
+            {
+                P12 p = new P12();
+                addObject(p, getWidth() + 170, 250);
+                platform2Timer = 150;
+                if (Greenfoot.getRandomNumber(2)== 1)
+                {
+                    spawnObstacles2();
+                }
             }
         }
     }
-        
-    /** 
-     * Counts down the platform timers once each act method
-     */
-    public void changePlatformTimers()
+    public int getTimer()
     {
-         if (platform2Timer > 0)
-        {
-            platform2Timer = platform2Timer - 1;
-        }
-         if (platform1Timer > 0)
-        {
-            platform1Timer = platform1Timer - 1;
-        }
+        return platform1Timer;
     }
 }
+    
