@@ -10,7 +10,8 @@ public class GameWorld extends World
 {
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
-   
+    private int spawnTimer1 = 0;//for obstacles and powerups on level 1
+    private int spawnTimer2 = 0;//for obstacles and powerups on level 2
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
@@ -148,13 +149,11 @@ public class GameWorld extends World
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
-            spawnTimer = 30;
         }        
         else if (spawnTimer == 0)
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 415);  
-            spawnTimer = 40;
         }    
     }
      /**
@@ -182,15 +181,23 @@ public class GameWorld extends World
      */
     public void changeTimers()
     {
-        if (spawnTimer > 0)//for enemy & powerup spawning
+        if (spawnTimer > 0)//for enemy & powerup spawning on the bottom level
         {
             spawnTimer = spawnTimer - 1;
         }
-        if (platform1Timer > 0)//for spawning level 1 platforms
+         if (spawnTimer1 > 0)//for enemy & powerup spawning on level 1
+        {
+            spawnTimer1 = spawnTimer1 - 1;
+        }
+         if (spawnTimer2 > 0)//for enemy & powerup spawning on level 2
+        {
+            spawnTimer2 = spawnTimer2 - 1;
+        }
+         if (platform1Timer > 0)//for spawning level 1 platforms
         {
             platform1Timer = platform1Timer - 1;
         }
-        if (platform2Timer > 0)//for spawning level 2 platforms
+         if (platform2Timer > 0)//for spawning level 2 platforms
         {
             platform2Timer = platform2Timer - 1;
         }        
