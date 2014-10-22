@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Professor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ Professor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ jump()
 comment2.params=
@@ -16,5 +16,5 @@ comment6.params=
 comment6.target=void\ animation()
 comment7.params=
 comment7.target=void\ remove()
-comment7.text=\r\n\ This\ is\ being\ used\ so\ when\ the\ professor\ touches\ the\ currency,\ he\ collects\ it.\r\n\ In\ other\ words,\ it\ is\ being\ removed\ from\ the\ screen\ as\ if\ he\ is\ actually\ collecting\ it.\r\n\ -Stephanie\ Lascola\r\n
+comment7.text=\n\ This\ is\ being\ used\ so\ when\ the\ professor\ touches\ the\ currency,\ he\ collects\ it.\n\ In\ other\ words,\ it\ is\ being\ removed\ from\ the\ screen\ as\ if\ he\ is\ actually\ collecting\ it.\n\ -Stephanie\ Lascola\n
 numComments=8

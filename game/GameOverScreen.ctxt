@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=GameOverScreen()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameOverScreen.\r\n\ \r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ GameOverScreen.\n\ \n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ resets\ the\ game\ if\ the\ mouse\ is\ clicked\ on\ the\ game\ over\ screen\r\n\ @SarahStephens\r\n
+comment1.text=\n\ resets\ the\ game\ if\ the\ mouse\ is\ clicked\ on\ the\ game\ over\ screen\n\ @SarahStephens\n
 numComments=2

@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ EnemyA\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ EnemyA\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ move()
-comment1.text=\r\n\ Moves\ the\ obstacle\ across\ the\ game\ screen.\ If\ the\ enemy\ is\ on\ the\ ground\ then\r\n\ it\ will\ run\ forward\ slightly\ faster\ than\ the\ ground\ is\ moving.\ It\ would\ be\ great\r\n\ if\ it\ had\ an\ animation\ but\ it\ doesn't\ \r\n\ @SarahStephens\r\n
+comment1.text=\n\ Moves\ the\ obstacle\ across\ the\ game\ screen.\ If\ the\ enemy\ is\ on\ the\ ground\ then\n\ it\ will\ run\ forward\ slightly\ faster\ than\ the\ ground\ is\ moving.\ It\ would\ be\ great\n\ if\ it\ had\ an\ animation\ but\ it\ doesn't\ \n\ @SarahStephens\n
 comment2.params=
 comment2.target=void\ collide()
-comment2.text=\r\n\ check\ for\ collision\ with\ the\ professor\ and\ set\ to\ game\ over\ screen\ \r\n\ same\ code\ in\ enemyB\r\n\ @SarahStephens\r\n
+comment2.text=\n\ check\ for\ collision\ with\ the\ professor\ and\ set\ to\ game\ over\ screen\ \n\ same\ code\ in\ enemyB\n\ @SarahStephens\n
 numComments=3
