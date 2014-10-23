@@ -10,6 +10,7 @@ public class GameWorld extends World
 {
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
+    private int airTimer = 0; //Time since last obstacles in the air
    
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
@@ -125,7 +126,7 @@ public class GameWorld extends World
         addObject(scoreboard, 80, 20);
     }
     /**
-     * Spawns random obstacles (stump placeholder and static dinosaur placeholders?) 
+     * Spawns random obstacles
      * Sets timer to ensure that spawned objects won't overlap
      * @SarahStephens
      */
@@ -173,11 +174,13 @@ public class GameWorld extends World
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
+            spawnTimer = 50;
         }        
         else 
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 215); 
+            spawnTimer = 70;
         }    
     }
     /**
@@ -190,6 +193,7 @@ public class GameWorld extends World
         {
             EnemyC enemyC = new EnemyC();
             addObject(enemyC, getWidth() + Greenfoot.getRandomNumber(60), 40);
+            spawnTimer = 20;
         }
     }
     /**
@@ -212,6 +216,10 @@ public class GameWorld extends World
         {
             platform2Timer = platform2Timer - 1;
         }        
+        if (airTimer > 0) //for spawning pterodactyls
+        {
+            airTimer = airTimer - 1;
+        }
     }
     
      /**
