@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Oct 23 09:35:52 PDT 2014
+#Thu Oct 23 10:32:02 PDT 2014
 target16.name=P4
 dependency35.to=GameWorld
 class.Sky.superclass=greenfoot.Actor
@@ -337,7 +337,7 @@ target16.width=80
 dependency32.from=GameWorld
 dependency35.type=UsesDependency
 dependency39.from=EnemyC
-class.EnemyC.image=butterfly.png
+class.EnemyC.image=Pterodactyl.png
 target10.typeParameters=
 target18.editor.width=900
 dependency12.to=GrassSmall
@@ -385,7 +385,7 @@ target20.editor.y=0
 target20.editor.x=0
 dependency23.to=EnemyA
 target23.height=50
-class.EnemyB.image=teddybear.png
+class.EnemyB.image=Dino1.png
 dependency20.type=UsesDependency
 target24.editor.width=900
 target16.type=ClassTarget
