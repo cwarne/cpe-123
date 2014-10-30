@@ -16,6 +16,7 @@ public class Professor extends Characters
     private int acceleration = 3;
     private int frame = 1;
     private int animationCounter = 0;
+    private int jumpTimer = 0;
     //Picture changed 
     //Stephanie Lascola
     private GreenfootImage profframe1 = new GreenfootImage("Professor.png");
@@ -27,19 +28,32 @@ public class Professor extends Characters
      */
     public void act() 
     {
-        if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && isJumping == false)
+        if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && isJumping == false && jumpTimer == 0)
         {
             jump();
         }
         checkIfFalling();
         animation();
         remove();
+        changeJumpTimer();
     }    
     public void jump()
     {
         vSpeed = vSpeed - jumpingStrength;
         isJumping = true;
         fall();
+        jumpTimer = 28;
+    }
+    /**
+     * counts down the jump timer to prevent double jumps. Can only jump if timer is at zero
+     * @SarahStephens
+     */
+    public void changeJumpTimer()
+    {
+        if (jumpTimer > 0)
+        {
+            jumpTimer = jumpTimer - 1;
+        }
     }
     public void checkIfFalling()
     {
