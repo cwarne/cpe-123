@@ -102,6 +102,9 @@ public class GameWorld extends World
 
         Platforms p = new Platforms();
         addObject(p, 0, 590);
+        
+        Platforms p2 = new Platforms();
+        addObject(p2, 400, 590);
 
         Professor prof = new Professor();
         addObject(prof, 268, 480);

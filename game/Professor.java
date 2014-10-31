@@ -36,6 +36,7 @@ public class Professor extends Characters
         animation();
         remove();
         changeJumpTimer();
+        move();
     }    
     public void jump()
     {
@@ -130,6 +131,21 @@ public class Professor extends Characters
             world.removeObject(Currency);
       
         }  
+    }
+    /**
+     * Allows the professor to move back and forth
+     * @Nick Jones
+     */
+    public void move()
+    {
+        if (Greenfoot.isKeyDown("right") && getX() < 700)
+        {
+            move(2);
+        }
+        if (Greenfoot.isKeyDown("left") && getX() > 40)
+        {
+            move(-2);
+        }
     }
 
 }
