@@ -10,6 +10,10 @@ public class Professor extends Characters
 {
     /** Professor Controls
        ~ Michael Tornatta **/
+       
+    /** If you make changes to the jump values, put your name in here: 
+     * 
+     **/
     
     /** Jumping technical values **/
     //Timer to keep track of how long the professor has been in the air
