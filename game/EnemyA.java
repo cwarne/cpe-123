@@ -14,9 +14,12 @@ public class EnemyA extends Obstacles
      */
     public void act() 
     {
-        move();
-        collide(); //check for collision with professor and go to game over screen
-        changeImage();
+        if(GameWorld.gamePaused == false)
+        {
+            move();
+            collide(); //check for collision with professor and go to game over screen
+            changeImage();
+        }
     }
     
     /**

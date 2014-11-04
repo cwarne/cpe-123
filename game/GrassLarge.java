@@ -14,8 +14,11 @@ public class GrassLarge extends Ground
      */
     public void act() 
     {
-        move(-5);
-        destroy();
+        if(GameWorld.gamePaused == false)
+        {
+            move(-5);
+            destroy();
+        }
     }    
     
     /**

@@ -14,6 +14,9 @@ public class P10 extends Platforms
      */
     public void act() 
     {
-        move(-5);
+        if(GameWorld.gamePaused == false)
+        {
+            move(-5);
+        }
     }    
 }

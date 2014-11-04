@@ -20,6 +20,9 @@ public class GameWorld extends World
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
+    
+    public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
+    private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
 
     /**
      * Constructor for objects of class GameWorld.
@@ -39,14 +42,18 @@ public class GameWorld extends World
 
     public void act()
     {
-        count++; //Increase counter for global synchronization
-        spawnObstacles();//adds obstacles
-        spawnObstacles3();//spawns pterodactyls
-        changeTimers();//counts down timer for spawning obstacles & platforms
-        spawnCurrency();//adds the currency
-        createPlatform1();//creates random platforms at the first height
-        createPlatform2();//creates random platforms at the second height
-        scoreboard.addScore(1);
+        if(gamePaused == false)
+        {
+            count++; //Increase counter for global synchronization
+            spawnObstacles();//adds obstacles
+            spawnObstacles3();//spawns pterodactyls
+            changeTimers();//counts down timer for spawning obstacles & platforms
+            spawnCurrency();//adds the currency
+            createPlatform1();//creates random platforms at the first height
+            createPlatform2();//creates random platforms at the second height
+            scoreboard.addScore(1);
+        }
+        checkForPause();
     }
 
     /**
@@ -391,6 +398,39 @@ public class GameWorld extends World
                 }
             }
         }
+    }
+    /** Check for a user requested pause in the game 
+       All pause related code added ~ Michael Tornatta **/
+    public void checkForPause()
+    {
+        if((Greenfoot.isKeyDown("p")) && (gamePaused == false) && (pauseTimer == 0))
+        {
+            pauseTheGame();
+            pauseTimer++;
+        }
+        if((Greenfoot.isKeyDown("p")) && (gamePaused == true) && (pauseTimer == 0))
+        {
+            unpauseTheGame();
+            pauseTimer++;
+        }
+        if((pauseTimer > 0) && (pauseTimer <= 10))
+        {
+            pauseTimer++;
+        }
+        if(pauseTimer >= 10)
+        {
+            pauseTimer = 0;
+        }
+    }
+    public void pauseTheGame()
+    {
+        gamePaused = true;
+        //System.out.println("Paused");
+    }
+    public void unpauseTheGame()
+    {
+        gamePaused = false;
+        //System.out.println("UnPaused");
     }
     public int getTimer()
     {

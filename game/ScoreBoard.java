@@ -45,8 +45,11 @@ public class ScoreBoard extends Actor
     }
     public void addScore(int pts)
     {
-        score += pts;
-        update();
+        if(GameWorld.gamePaused == false)
+        {
+            score += pts;
+            update();
+        }
     }
     
     private void update()

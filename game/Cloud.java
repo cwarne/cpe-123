@@ -37,7 +37,10 @@ public class Cloud extends Sky
      */
     public void act() 
     {
-        moveCloud(); //moves clouds across screen
+        if(GameWorld.gamePaused == false)
+        {
+            moveCloud(); //moves clouds across screen
+        }
     }   
     
     private void moveCloud()

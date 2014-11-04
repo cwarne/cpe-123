@@ -14,8 +14,11 @@ public class EnemyC extends Obstacles
      */
     public void act() 
     {
-        move();
-        collide();
+        if(GameWorld.gamePaused == false)
+        {
+            move();
+            collide();
+        }
     }    
     /**
      * Mves the enemy acorss the top of the screen and swoops it down.

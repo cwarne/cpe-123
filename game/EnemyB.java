@@ -14,8 +14,11 @@ public class EnemyB extends Obstacles
      */
     public void act() 
     {
-        move();
-        collide();
+        if(GameWorld.gamePaused == false)
+        {
+            move();
+            collide();
+        }
     }    
     /**
      * Moves the obstacle across the game screen. 

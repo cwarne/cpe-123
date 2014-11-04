@@ -14,8 +14,11 @@ public class Currency1 extends Currency
      */
     public void act() 
     {
-        move();
-        disappear();// Add your action code here.
+        if(GameWorld.gamePaused == false)
+        {
+            move();
+            disappear();// Add your action code here.
+        }
     }    
     /**
      * This will move the currency across the screen for pickup. As of right now, there are placeholders being used 

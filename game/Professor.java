@@ -44,26 +44,29 @@ public class Professor extends Characters
      */
     public void act() 
     {
-        //Checks if the jump timer is running or not. Makes sure professor is in the correct state
-        if(jumpTimer == 0)
+        if(GameWorld.gamePaused == false)
         {
-            //Checks if professor is on ground or not and chnages his state accordingly
-            if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && (checkIfOnGround()))
+            //Checks if the jump timer is running or not. Makes sure professor is in the correct state
+            if(jumpTimer == 0)
+            {
+                //Checks if professor is on ground or not and chnages his state accordingly
+                if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && (checkIfOnGround()))
+                {
+                    jump();
+                }
+                if((!checkIfOnGround()) && (isJumping == false))
+                {
+                    fall();
+                }
+            }
+            else
             {
                 jump();
             }
-            if((!checkIfOnGround()) && (isJumping == false))
-            {
-                fall();
-            }
+            animation();
+            move();
+            remove();
         }
-        else
-        {
-            jump();
-        }
-        animation();
-        move();
-        remove();
     }
     public void jump()
     {
