@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyA extends Obstacles
 {
+    private int currentImage = 1;
     /**
      * Act - do whatever the EnemyA wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -63,7 +64,24 @@ public class EnemyA extends Obstacles
      */
     public void changeImage()
     {
-        //Do Nothing
-
+        GameWorld world = (GameWorld) getWorld();
+        if(world.getCount() % 6 == 0)
+        {
+            if(currentImage == 3)
+            {
+                setImage("Dino1.png");
+                currentImage = 1;
+            } 
+            else if(currentImage == 1)
+            {
+                setImage("Dino2.png");
+                currentImage = 2;
+            }
+            else
+            {
+                setImage("Dino3.png");
+                currentImage = 3;
+            }
+        }
     }
 }
