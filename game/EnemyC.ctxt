@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ EnemyC\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ EnemyC\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=
 comment1.target=void\ move()
-comment1.text=\n\ Mves\ the\ enemy\ acorss\ the\ top\ of\ the\ screen\ and\ swoops\ it\ down.\n\ @AlexCarpenter\n
+comment1.text=\r\n\ Mves\ the\ enemy\ acorss\ the\ top\ of\ the\ screen\ and\ swoops\ it\ down.\r\n\ @AlexCarpenter\r\n
 comment2.params=
 comment2.target=void\ collide()
-comment2.text=\n\ checks\ for\ collision\ with\ player\ and\ changes\ to\ game\ over\ screen\n\ @AlexCarpenter\n\ edited\ by\ @NickJones\n
+comment2.text=\r\n\ checks\ for\ collision\ with\ player\ and\ changes\ to\ game\ over\ screen\r\n\ @AlexCarpenter\r\n\ edited\ by\ @NickJones\r\n
 numComments=3
