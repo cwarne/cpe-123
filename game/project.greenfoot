@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Nov 04 09:52:45 PST 2014
+#Tue Nov 04 10:06:59 PST 2014
 target16.name=GrassLarge
 dependency35.to=GameWorld
 class.Sky.superclass=greenfoot.Actor
@@ -74,7 +74,7 @@ target26.editor.y=42
 target26.editor.x=40
 target8.name=Professor
 dependency36.to=Professor
-class.EnemyA.image=BabyDinosaur.png
+class.EnemyA.image=Dino1.png
 target22.name=LightGroundOne
 dependency10.type=UsesDependency
 target21.editor.height=700
@@ -385,7 +385,7 @@ target20.editor.y=23
 target20.editor.x=0
 dependency23.to=EnemyA
 target23.height=50
-class.EnemyB.image=Dino1.png
+class.EnemyB.image=BabyDinosaur.png
 dependency20.type=UsesDependency
 target24.editor.width=900
 target16.type=ClassTarget

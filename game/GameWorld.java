@@ -138,7 +138,7 @@ public class GameWorld extends World
         if ((Greenfoot.getRandomNumber(2000) < 10) && (spawnTimer == 0))
         {
             EnemyA enemyA = new EnemyA();
-            addObject(enemyA, getWidth(), getHeight()-95);
+            addObject(enemyA, getWidth(), getHeight()-70);
             spawnTimer = 50;
         }        
         else if ((Greenfoot.getRandomNumber(2000) < 6) && (spawnTimer == 0))
@@ -157,7 +157,7 @@ public class GameWorld extends World
          if ((Greenfoot.getRandomNumber(100) < aSpawnRate) && (spawnTimer == 0))
         {
             EnemyA enemyA = new EnemyA();
-            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
+            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 410);
             spawnTimer = 30;
         }        
         else if (spawnTimer == 0)
@@ -176,7 +176,7 @@ public class GameWorld extends World
          if (Greenfoot.getRandomNumber(100) < aSpawnRate) 
         {
             EnemyA enemyA = new EnemyA();
-            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
+            addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 210);
             spawnTimer = 50;
         }        
         else 
