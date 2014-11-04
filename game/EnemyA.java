@@ -16,6 +16,7 @@ public class EnemyA extends Obstacles
     {
         move();
         collide(); //check for collision with professor and go to game over screen
+        changeImage();
     }
     /**
      * Moves the obstacle across the game screen. If the enemy is on the ground then
@@ -51,4 +52,12 @@ public class EnemyA extends Obstacles
             world.endGame();
         }
     }
-}
+    
+    /**
+     * animates the dinosour
+     * @Chandler Warne
+     */
+    public void changeImage()
+    {
+        
+    }
