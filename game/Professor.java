@@ -148,11 +148,11 @@ public class Professor extends Characters
     {
         if (Greenfoot.isKeyDown("right") && getX() < 700)
         {
-            move(4);
+            move(3);
         }
         if (Greenfoot.isKeyDown("left") && getX() > 40)
         {
-            move(-10);
+            move(-8);
         }
     }
 
