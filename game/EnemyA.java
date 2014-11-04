@@ -18,6 +18,7 @@ public class EnemyA extends Obstacles
         collide(); //check for collision with professor and go to game over screen
         changeImage();
     }
+    
     /**
      * Moves the obstacle across the game screen. If the enemy is on the ground then
      * it will run forward slightly faster than the ground is moving. It would be great
@@ -59,5 +60,7 @@ public class EnemyA extends Obstacles
      */
     public void changeImage()
     {
-        
+        //Do Nothing
+
     }
+}
