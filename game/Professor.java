@@ -8,15 +8,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Professor extends Characters
 {
-    // Professor Controls
-    //Code contributed by Michael Tornatta
-    private boolean isJumping;
-    private int vSpeed = 0;
-    private int jumpingStrength = 35;
-    private int acceleration = 3;
+    /** Professor Controls
+       ~ Michael Tornatta **/
+    
+    /** Jumping technical values **/
+    //Timer to keep track of how long the professor has been in the air
+    private int jumpTimer = 0;
+    //Checks if the professor is currently jumping
+    private boolean isJumping = false;
+    
+    /** Adjustable Jumping Mechanics Values **/
+    //Sets the amount of time the professor's jump lasts.
+    private int jumpTime = 10; //Change this if you want the jump to last longer
+    //Adjusts the force at which the professor falls
+    private int fallStrength = 10; //Change this if you want the professor to fall faster/slower
+    //Adjusts the force at wchich the professor jumps
+    private int jumpStrength = 20; //Change this if you want the professor to jump faster/slower
+    
+    /** Animation variables **/
     private int frame = 1;
     private int animationCounter = 0;
-    private int jumpTimer = 0;
+    
     //Picture changed 
     //Stephanie Lascola
     private GreenfootImage profframe1 = new GreenfootImage("Professor.png");
@@ -28,76 +40,67 @@ public class Professor extends Characters
      */
     public void act() 
     {
-        if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && isJumping == false && jumpTimer == 0)
+        //Checks if the jump timer is running or not. Makes sure professor is in the correct state
+        if(jumpTimer == 0)
         {
-            jump();
-        }
-        checkIfFalling();
-        animation();
-        remove();
-        changeJumpTimer();
-        move();
-    }    
-    public void jump()
-    {
-        vSpeed = vSpeed - jumpingStrength;
-        isJumping = true;
-        fall();
-        jumpTimer = 28;
-    }
-    /**
-     * counts down the jump timer to prevent double jumps. Can only jump if timer is at zero
-     * @SarahStephens
-     */
-    public void changeJumpTimer()
-    {
-        if (jumpTimer > 0)
-        {
-            jumpTimer = jumpTimer - 1;
-        }
-    }
-    public void checkIfFalling()
-    {
-        if(onGround())
-        {
-            vSpeed = 0;
+            //Checks if professor is on ground or not and chnages his state accordingly
+            if((Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("space")) && (checkIfOnGround()))
+            {
+                jump();
+            }
+            if((!checkIfOnGround()) && (isJumping == false))
+            {
+                fall();
+            }
         }
         else
         {
-            fall();
+            jump();
+        }
+        animation();
+        move();
+        remove();
+    }
+    public void jump()
+    {
+        //Keeps professor in jump state for as long as jumpTimer value
+        if(jumpTimer > jumpTime)
+        {
+            isJumping = false;
+            jumpTimer = 0;
+            return;
+        }
+        if(jumpTimer < jumpTime)
+        {
+            isJumping = true;
+            setLocation(getX(), getY() - jumpStrength);
+        }
+        increaseJumpTimer();
+    }
+    public void increaseJumpTimer()
+    {
+        jumpTimer = jumpTimer + 1;
+    }
+    public boolean checkIfOnGround()
+    {
+        //Checks if the professor has collided with the top of the platform
+        Actor collideWithGround = getOneObjectAtOffset(0, getImage().getHeight()/2, Platforms.class);
+        if(collideWithGround != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     public void fall()
     {
-        setLocation(getX(), getY() + vSpeed);
-        if(vSpeed <=9)
+        //Checks if the professor is on the ground or not and adjusts state accordingly.
+        if(checkIfOnGround() == false)
         {
-            vSpeed = vSpeed + acceleration;
+            setLocation(getX(), getY() + fallStrength);
         }
-        isJumping = true;
-    }
-    public boolean onGround()
-    {
-        int spriteHeight = getImage().getHeight();
-        int yDistance = (int)(spriteHeight/2) + 5;
-        Actor ground = getOneObjectAtOffset(0, getImage().getHeight()/2, Platforms.class);
-        if(ground == null)
-        {
-            isJumping = true;
-            return false;
-        }
-        else
-        {
-            moveToGround(ground);
-            return true;
-        }
-    }
-    public void moveToGround(Actor ground)
-    {
-        int groundHeight = ground.getImage().getHeight();
-        int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
-        setLocation(getX(), newY);
-        isJumping = false;
     }
     public void animation()
     {
@@ -135,16 +138,17 @@ public class Professor extends Characters
     /**
      * Allows the professor to move back and forth
      * @Nick Jones
+     * Adjusted a bit ~ Michael Tornatta
      */
     public void move()
     {
         if (Greenfoot.isKeyDown("right") && getX() < 700)
         {
-            move(2);
+            move(4);
         }
         if (Greenfoot.isKeyDown("left") && getX() > 40)
         {
-            move(-2);
+            move(-10);
         }
     }
 
