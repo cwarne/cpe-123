@@ -18,6 +18,7 @@ public class EnemyC extends Obstacles
         {
             move();
             collide();
+            collideLazer();
         }
     }    
     /**
@@ -33,22 +34,6 @@ public class EnemyC extends Obstacles
         else
         {
             setLocation(getX() - 7, getY() + 2);
-        }
-    }
-    
-    /**
-     * checks for collision with player and changes to game over screen
-     * @AlexCarpenter
-     * edited by @NickJones
-     */
-    public void collide()
-    {
-        Actor professor;
-        professor = getOneIntersectingObject(Professor.class);
-        if (professor != null)
-        {
-            GameWorld world = (GameWorld) getWorld();
-            world.endGame();
         }
     }
 }

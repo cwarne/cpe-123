@@ -11,7 +11,8 @@ public class GameWorld extends World
     private int count = 0; //Holds values for
     private int spawnTimer = 0; //Holds value of time since last obstacle spawned
     private int airTimer = 0; //Time since last obstacles in the air
-   
+    private int lazerTimer = 0;
+    private Professor prof;
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
@@ -21,6 +22,7 @@ public class GameWorld extends World
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
     
+    private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
 
@@ -52,6 +54,7 @@ public class GameWorld extends World
             createPlatform1();//creates random platforms at the first height
             createPlatform2();//creates random platforms at the second height
             scoreboard.addScore(1);
+            shootLazer();
         }
         checkForPause();
     }
@@ -113,7 +116,7 @@ public class GameWorld extends World
         Platforms p2 = new Platforms();
         addObject(p2, 400, 590);
 
-        Professor prof = new Professor();
+        prof = new Professor();
         addObject(prof, 268, 480);
 
         setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
@@ -132,8 +135,18 @@ public class GameWorld extends World
         cloud2.setLocation(684, 176);
         cloud5.setLocation(266, 97);
         cloud2.setLocation(508, 125);
+        
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
+        
+        PowerUps powerups = new PowerUps();
+        addObject(powerups, 1, 640);
+        PowerUps1 powerups1 = new PowerUps1();
+        addObject(powerups1, 1, 640);
+        PowerUps2 powerups2 = new PowerUps2();
+        addObject(powerups2, 1, 640);
+        PowerUps3 powerups3 = new PowerUps3();
+        addObject(powerups3, 1, 640);
     }
     /**
      * Spawns random obstacles
@@ -230,6 +243,10 @@ public class GameWorld extends World
         if (airTimer > 0) //for spawning pterodactyls
         {
             airTimer = airTimer - 1;
+        }        
+        if (lazerTimer > 0) //for shooting lazers
+        {
+            lazerTimer = lazerTimer -1;
         }
     }
     
@@ -450,7 +467,31 @@ public class GameWorld extends World
     {
          return scoreboard.getScore();
     }
+    
+   /**
+    * @Sarah Stephens
+    * @Stephanie Lascola
+    */
+    public Professor getProfessor()
+    {
+        return prof;
     }
+   /**
+    * Shoots lazers with ammo, currently there is no way to get ammo, but will be fixed soon! :)
+    * @Sarah Stephens
+    * @Stephanie Lascola
+    */
+    public void shootLazer()
+    {
+        if ((Greenfoot.isKeyDown("f")) && lazerTimer == 0 && ammoCount > 0)
+        {
+            Lazer l = new Lazer();
+            addObject(l, 100, 230);
+            lazerTimer = 30;
+            ammoCount = ammoCount - 1;
+        }
+    }
+}
 
     
 

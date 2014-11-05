@@ -18,6 +18,7 @@ public class EnemyB extends Obstacles
         {
             move();
             collide();
+            collideLazer();
         }
     }    
     /**
@@ -28,17 +29,5 @@ public class EnemyB extends Obstacles
     {
         setLocation(getX() - 5, getY());
     }
-    /**
-     * explanation in EnemyA
-     */       
-    public void collide()
-    {
-        Actor professor;
-        professor = getOneIntersectingObject(Professor.class);
-        if (professor != null)
-        {
-            GameWorld world = (GameWorld) getWorld();
-            world.endGame();
-        }
-    }
+   
 }

@@ -20,13 +20,13 @@ public class EnemyA extends Obstacles
             move();
             collide(); //check for collision with professor and go to game over screen
             changeImage();
+            collideLazer();
         }
     }
     
     /**
      * Moves the obstacle across the game screen. If the enemy is on the ground then
-     * it will run forward slightly faster than the ground is moving. It would be great
-     * if it had an animation but it doesn't 
+     * it will run forward slightly faster than the ground is moving. 
      * @SarahStephens
      */
     public void move()
@@ -40,24 +40,7 @@ public class EnemyA extends Obstacles
             setLocation(getX() - 5, getY());
         }
     }
-    
-    /**
-     * check for collision with the professor and set to game over screen 
-     * same code in enemyB
-     * @SarahStephens
-     * edited by @NickJones
-     */
-    public void collide()
-    {
-        Actor professor;
-        professor = getOneIntersectingObject(Professor.class);
-        if (professor != null)
-        {
-            GameWorld world = (GameWorld) getWorld();
-            world.endGame();
-        }
-    }
-    
+        
     /**
      * animates the dinosour
      * @Chandler Warne

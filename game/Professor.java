@@ -32,7 +32,7 @@ public class Professor extends Characters
     /** Animation variables **/
     private int frame = 1;
     private int animationCounter = 0;
-    
+    private boolean isShieldUp = false;
     //Picture changed 
     //Stephanie Lascola
     private GreenfootImage profframe1 = new GreenfootImage("Professor.png");
@@ -158,5 +158,24 @@ public class Professor extends Characters
             move(-8);
         }
     }
-
+    
+    /**
+     * Temporary defense activated when potion2 is used
+     * @Stephanie Lascola 
+     * @Sarah Stephens
+     */
+    public void activateShield()
+    {
+        setImage("apple1.png");
+        isShieldUp = true;
+    }
+    public void deactivateShield()
+    {
+        setImage("Professor.png");
+        isShieldUp = false;
+    }
+    public boolean getShieldStatus()
+    {
+        return isShieldUp;
+    }
 }
