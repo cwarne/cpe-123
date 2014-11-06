@@ -51,7 +51,7 @@ public class Selection1 extends PauseMenu
     {
         if((sel1Selected == true) && (Greenfoot.mouseClicked(this)))
         {
-            
+            BackerGS.storeVisible = true;
         }
     }
     public void isVisible()

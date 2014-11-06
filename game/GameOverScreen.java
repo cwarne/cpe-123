@@ -13,6 +13,13 @@ public class GameOverScreen extends World
      * Constructor for objects of class GameOverScreen.
      * @Nick Jones
      */
+    
+    /** Little timer that keeps the player for immediately leaving the game over screen upon entering
+     * ~ Michael Tornatta
+     */
+    public int coolDownTimer = 1;
+    public int coolDownLimit = 50;
+    
     public GameOverScreen(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,12 +33,22 @@ public class GameOverScreen extends World
      */
     public void act()
     {
-        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space"))
+        if(coolDownTimer == 0)
         {
-            GameWorld g = new GameWorld();
-            Greenfoot.setWorld(g);
+            if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space"))
+            {
+                GameWorld g = new GameWorld();
+                Greenfoot.setWorld(g);
+            }
         }
-        
+        if((coolDownTimer < coolDownLimit) && (coolDownTimer >0))
+        {
+            coolDownTimer++;
+        }
+        if(coolDownTimer >= coolDownLimit)
+        {
+            coolDownTimer = 0;
+        }
         /** Resets end game request and game paused flags ~ Michael Tornatta **/
         GameWorld.gameAskedToEnd = false;
         GameWorld.gamePaused = false;

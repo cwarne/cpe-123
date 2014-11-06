@@ -23,10 +23,24 @@ public class BackerPM extends PauseMenu
     
     public void act() 
     {
-        setVisibility();
+        visibilityOptions();
         changeSelection();
         makeChoice();
     }    
+    public void visibilityOptions()
+    {
+        if(BackerGS.storeVisible == false)
+        {
+            setVisibility();
+        }
+        if(BackerGS.storeVisible == true)
+        {
+            getImage().setTransparency(0);
+            Selection1.sel1Selected = true;
+            Selection2.sel2Selected = false;
+            backerPMVisible = false;
+        }
+    }
     public void changeSelection()
     {
         if(backerPMVisible)
@@ -80,7 +94,7 @@ public class BackerPM extends PauseMenu
     {
         if((Selection1.sel1Selected == true) && (Greenfoot.isKeyDown("enter")))
         {
-
+            BackerGS.storeVisible = true;
         }
         if((Selection2.sel2Selected == true) && (Greenfoot.isKeyDown("enter")))
         {

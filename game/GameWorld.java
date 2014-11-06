@@ -148,6 +148,8 @@ public class GameWorld extends World
         addObject(selection1, 418, 263);
         Selection2 selection2 = new Selection2();
         addObject(selection2, 417, 335);
+        BackerGS backergs = new BackerGS();
+        addObject(backergs, 399, 321);
         
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
