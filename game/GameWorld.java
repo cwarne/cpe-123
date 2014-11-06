@@ -42,7 +42,7 @@ public class GameWorld extends World
         
         music = new GreenfootSound("ElectroRock.mp3"); //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        music.playLoop();
+        //music.playLoop();
     }
 
     public void act()
@@ -123,7 +123,7 @@ public class GameWorld extends World
         prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(PauseMenu.class, GameStore.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
+        setPaintOrder(PauseMenu.class, GameStore.class, CurrencyIndicator.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -150,6 +150,10 @@ public class GameWorld extends World
         addObject(selection2, 417, 335);
         BackerGS backergs = new BackerGS();
         addObject(backergs, 399, 321);
+        CurrencyIndicator currencyindicator = new CurrencyIndicator();
+        addObject(currencyindicator, 619, 25);
+        CurrencyCounter currencycounter = new CurrencyCounter();
+        addObject(currencycounter, 714, 20);
         
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);

@@ -65,7 +65,7 @@ public class Professor extends Characters
             }
             animation();
             move();
-            remove();
+            getCurrency();
         }
     }
     public void jump()
@@ -130,7 +130,7 @@ public class Professor extends Characters
      * In other words, it is being removed from the screen as if he is actually collecting it.
      * -Stephanie Lascola
      */
-    public void remove()
+    public void getCurrency()
     {
         Actor Currency;
         Currency = getOneObjectAtOffset (0, 0, Currency.class);
@@ -139,7 +139,7 @@ public class Professor extends Characters
             World world;
             world = getWorld();
             world.removeObject(Currency);
-      
+            CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected + 10;
         }  
     }
     /**
