@@ -42,7 +42,7 @@ public class GameWorld extends World
         
         music = new GreenfootSound("ElectroRock.mp3"); //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        //music.playLoop();
+        music.playLoop();
     }
 
     public void act()
@@ -154,6 +154,14 @@ public class GameWorld extends World
         addObject(currencyindicator, 619, 25);
         CurrencyCounter currencycounter = new CurrencyCounter();
         addObject(currencycounter, 714, 20);
+        ItemPanel itempanel1 = new ItemPanel();
+        addObject(itempanel1, 154, 378);
+        ItemPanel itempanel2 = new ItemPanel();
+        addObject(itempanel2, 401,378);
+        ItemPanel itempanel3 = new ItemPanel();
+        addObject(itempanel3, 650,379);
+        ShowMoneyString showmoneystring = new ShowMoneyString();
+        addObject(showmoneystring, 412,103);
         
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
