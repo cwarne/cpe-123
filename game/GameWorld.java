@@ -230,7 +230,7 @@ public class GameWorld extends World
         if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
         {
             EnemyC enemyC = new EnemyC();
-            addObject(enemyC, getWidth() + Greenfoot.getRandomNumber(60), 40);
+            addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(160));
             spawnTimer = 20;
             airTimer = 30;
         }
