@@ -24,15 +24,17 @@ public class PowerUps2 extends PowerUps
         Professor professor;
         GameWorld world = (GameWorld) getWorld();
         professor = world.getProfessor();
+        if (Greenfoot.isKeyDown("1"))
+        {
+            key2 = true;
+        }
         
-        if(Greenfoot.isKeyDown("2"))
+        if ((Greenfoot.isKeyDown("2") ==false) && powerUp2 > 0 && key2)
         {
             key2 = true;
             professor.activateShield();
-        }
-        
-    }
-   
-        
-        
+            powerUp2--;
+            key2 = false;
+        }        
+    }       
 }
