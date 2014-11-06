@@ -66,6 +66,8 @@ public class BackerPM extends PauseMenu
         if(GameWorld.gamePaused == false)
         {
             getImage().setTransparency(0);
+            Selection1.sel1Selected = true;
+            Selection2.sel2Selected = false;
             backerPMVisible = false;
         }
         if(GameWorld.gamePaused == true)

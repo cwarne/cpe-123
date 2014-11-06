@@ -25,6 +25,8 @@ public class Selection1 extends PauseMenu
     {
         isVisible();
         isSelected();
+        mousedOver();
+        clicked();
     }    
     public void isSelected()
     {
@@ -35,6 +37,21 @@ public class Selection1 extends PauseMenu
         if(sel1Selected == false)
         {
             setImage(notSelected);
+        }
+    }
+    public void mousedOver()
+    {
+        if(Greenfoot.mouseMoved(this))
+        {
+            sel1Selected = true;
+            Selection2.sel2Selected = false;
+        }
+    }
+    public void clicked()
+    {
+        if((sel1Selected == true) && (Greenfoot.mouseClicked(this)))
+        {
+            
         }
     }
     public void isVisible()
