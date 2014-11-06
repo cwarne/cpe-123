@@ -22,6 +22,9 @@ public class GameWorld extends World
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
     
+    //Static boolean that can by changed by other classes to signify that the game has been requested to end
+    public static boolean gameAskedToEnd = false;
+    
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
@@ -57,6 +60,7 @@ public class GameWorld extends World
             shootLazer();
         }
         checkForPause();
+        checkForGameEndRequest();
     }
 
     /**
@@ -119,7 +123,7 @@ public class GameWorld extends World
         prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
+        setPaintOrder(PauseMenu.class, GameStore.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -135,6 +139,15 @@ public class GameWorld extends World
         cloud2.setLocation(684, 176);
         cloud5.setLocation(266, 97);
         cloud2.setLocation(508, 125);
+        
+        BackerPM backerpm = new BackerPM();
+        addObject(backerpm, 418, 296);
+        HeaderPM headerpm = new HeaderPM();
+        addObject(headerpm, 418, 176);
+        Selection1 selection1 = new Selection1();
+        addObject(selection1, 418, 263);
+        Selection2 selection2 = new Selection2();
+        addObject(selection2, 417, 335);
         
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
@@ -452,6 +465,18 @@ public class GameWorld extends World
     public int getTimer()
     {
         return platform1Timer;
+    }
+    /** Ends the game if requested from outside class ~ Michael Tornatta **/
+    public void checkForGameEndRequest()
+    {
+        if(gameAskedToEnd == true)
+        {
+            endGame();
+        }
+        else
+        {
+            
+        }
     }
      /**
      * @Nick Jones

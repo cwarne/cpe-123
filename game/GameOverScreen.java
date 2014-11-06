@@ -31,5 +31,9 @@ public class GameOverScreen extends World
             GameWorld g = new GameWorld();
             Greenfoot.setWorld(g);
         }
+        
+        /** Resets end game request and game paused flags ~ Michael Tornatta **/
+        GameWorld.gameAskedToEnd = false;
+        GameWorld.gamePaused = false;
     }
 }
