@@ -21,7 +21,7 @@ public class GameWorld extends World
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
-    
+    private int mSpawnRate = 5;//spawn rate for meteors
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
     
@@ -58,6 +58,7 @@ public class GameWorld extends World
             createPlatform2();//creates random platforms at the second height
             scoreboard.addScore(1);
             shootLazer();
+            spawnmeteors();//spawns meteors
         }
         checkForPause();
         checkForGameEndRequest();
@@ -245,6 +246,19 @@ public class GameWorld extends World
             addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(160));
             spawnTimer = 20;
             airTimer = 30;
+        }
+    }
+    /**
+     * spawns meteors
+     * @NickJones
+     */
+    public void spawnmeteors()
+    {
+       if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
+       {
+           Meteor meteor = new Meteor();
+           addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
+           
         }
     }
     /**
