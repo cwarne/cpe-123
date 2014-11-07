@@ -124,7 +124,7 @@ public class GameWorld extends World
         prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(PauseMenu.class, GameStore.class, CurrencyIndicator.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
+        setPaintOrder(PauseMenu.class, GameStore.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);

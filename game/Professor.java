@@ -25,7 +25,7 @@ public class Professor extends Characters
     //Sets the amount of time the professor's jump lasts.
     private int jumpTime = 10; //Change this if you want the jump to last longer
     //Adjusts the force at which the professor falls
-    private int fallStrength = 8; //Change this if you want the professor to fall faster/slower
+    private int fallStrength = 10; //Change this if you want the professor to fall faster/slower
     //Adjusts the force at wchich the professor jumps
     private int jumpStrength = 20; //Change this if you want the professor to jump faster/slower
     
