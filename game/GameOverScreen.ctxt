@@ -3,5 +3,5 @@ comment0.params=score
 comment0.target=GameOverScreen(int)
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ resets\ the\ game\ if\ the\ mouse\ is\ clicked\ on\ the\ game\ over\ screen\r\n\ @SarahStephens\r\n\ edited\ by\ @Nick\ Jones\r\n
+comment1.text=\n\ resets\ the\ game\ if\ the\ mouse\ is\ clicked\ on\ the\ game\ over\ screen\n\ @SarahStephens\n\ edited\ by\ @Nick\ Jones\n
 numComments=2

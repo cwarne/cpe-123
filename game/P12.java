@@ -14,6 +14,9 @@ public class P12 extends Platforms
      */
     public void act() 
     {
-        move();
+        if(GameWorld.gamePaused == false)
+        {
+            move(-5);
+        }
     }    
 }

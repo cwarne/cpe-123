@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Professor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ Professor\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ jump()
 comment10.params=
@@ -16,13 +16,13 @@ comment5.params=
 comment5.target=void\ animation()
 comment6.params=
 comment6.target=void\ getCurrency()
-comment6.text=\r\n\ This\ is\ being\ used\ so\ when\ the\ professor\ touches\ the\ currency,\ he\ collects\ it.\r\n\ In\ other\ words,\ it\ is\ being\ removed\ from\ the\ screen\ as\ if\ he\ is\ actually\ collecting\ it.\r\n\ -Stephanie\ Lascola\r\n
+comment6.text=\n\ This\ is\ being\ used\ so\ when\ the\ professor\ touches\ the\ currency,\ he\ collects\ it.\n\ In\ other\ words,\ it\ is\ being\ removed\ from\ the\ screen\ as\ if\ he\ is\ actually\ collecting\ it.\n\ -Stephanie\ Lascola\n
 comment7.params=
 comment7.target=void\ move()
-comment7.text=\r\n\ Allows\ the\ professor\ to\ move\ back\ and\ forth\r\n\ @Nick\ Jones\r\n\ Adjusted\ a\ bit\ ~\ Michael\ Tornatta\r\n
+comment7.text=\n\ Allows\ the\ professor\ to\ move\ back\ and\ forth\n\ @Nick\ Jones\n\ Adjusted\ a\ bit\ ~\ Michael\ Tornatta\n
 comment8.params=
 comment8.target=void\ activateShield()
-comment8.text=\r\n\ Temporary\ defense\ activated\ when\ potion2\ is\ used\r\n\ @Stephanie\ Lascola\ \r\n\ @Sarah\ Stephens\r\n
+comment8.text=\n\ Temporary\ defense\ activated\ when\ potion2\ is\ used\n\ @Stephanie\ Lascola\ \n\ @Sarah\ Stephens\n
 comment9.params=
 comment9.target=void\ deactivateShield()
 numComments=11

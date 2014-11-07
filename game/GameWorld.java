@@ -21,7 +21,7 @@ public class GameWorld extends World
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
-    private int mSpawnRate = 5;//spawn rate for meteors
+    private int mSpawnRate = 2;//spawn rate for meteors
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
     
@@ -251,6 +251,7 @@ public class GameWorld extends World
     /**
      * spawns meteors
      * @NickJones
+     * edited: @ChandlerWarne
      */
     public void spawnmeteors()
     {

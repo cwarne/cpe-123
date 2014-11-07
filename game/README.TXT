@@ -29,7 +29,7 @@ Backstory:
 FEATURES - PROTOTYPE IMPLEMENTATIONS
 -Random terrain generation
 -Power ups
--Game store
+-Game store (still under development)
 -Random enemy generation
 -Playable character
 -Game can be paused
