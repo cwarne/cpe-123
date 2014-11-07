@@ -14,9 +14,6 @@ public class P4 extends Platforms
      */
     public void act() 
     {
-        if(GameWorld.gamePaused == false)
-        {
-            move(-5);
-        }
+        move();
     }    
 }

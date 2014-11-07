@@ -40,8 +40,7 @@ public class Obstacles extends Actor
                 prof.deactivateShield();
             }
             else if (isShieldUp == false)
-            {
-               
+            {               
                 world.endGame();
             }
         }
