@@ -18,8 +18,9 @@ public class Meteor extends Obstacles
         // Add your action code here.
         setRotation(130);
         movement();
-        remove();
-        destroy();
+        //remove();
+        collide();
+        //destroy();
     }    
     public void movement()
     {
@@ -27,19 +28,19 @@ public class Meteor extends Obstacles
     }
     public void remove()
     {
-    if( getY() > 560)
-    {
-        getWorld().removeObject(this);
+        if( getY() > 560)
+        {
+            getWorld().removeObject(this);
+        }
     }
-}
-public void destroy()
-{
-    Actor professor;
-    professor = getOneIntersectingObject(Professor.class);
-    if (professor != null)
+    public void destroy()
     {
-       GameWorld world = (GameWorld) getWorld();
-       world.endGame();
+        Actor professor;
+        professor = getOneIntersectingObject(Professor.class);
+        if (professor != null)
+        {
+            GameWorld world = (GameWorld) getWorld();
+            world.endGame();
+        }
     }
-}
 }
