@@ -21,6 +21,7 @@ public class TitleScreen extends World
     public void act()
     {
         jumpToNextFrame();
+        CurrencyCounter.currencyCollected = 0;
     }
     public void jumpToNextFrame()
     {
