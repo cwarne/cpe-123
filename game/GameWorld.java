@@ -237,9 +237,12 @@ public class GameWorld extends World
     /**
      * spawns pterodactyls in the sky
      * @AlexCarpenter
+     * edited by @NickJones
      */
     public void spawnObstacles3()
     {
+        if(getScore() > 1500)
+        {
         if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
         {
             EnemyC enemyC = new EnemyC();
@@ -248,6 +251,7 @@ public class GameWorld extends World
             airTimer = 30;
         }
     }
+}
     /**
      * spawns meteors
      * @NickJones
@@ -255,6 +259,8 @@ public class GameWorld extends World
      */
     public void spawnmeteors()
     {
+      if(getScore() > 2000)
+       {
        if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
        {
            Meteor meteor = new Meteor();
@@ -262,7 +268,8 @@ public class GameWorld extends World
            
         }
     }
-    /**
+}
+   /**
      * Counts down the enemy & platform spawn timers once. Is used to 
      * set a cooldown for the spawn of obstacles and platforms so
      * that they will not overlap on the game screen.
