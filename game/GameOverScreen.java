@@ -24,7 +24,8 @@ public class GameOverScreen extends World
     public GameOverScreen(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(800, 640, 1);
+        prepare();
         showText("final score   "+score, 90, 30);
     }
     /**
@@ -54,5 +55,10 @@ public class GameOverScreen extends World
         /** Resets end game request and game paused flags ~ Michael Tornatta **/
         GameWorld.gameAskedToEnd = false;
         GameWorld.gamePaused = false;
+    }
+    private void prepare()
+    {
+        GameOverTitle gameovertitle = new GameOverTitle();
+        addObject(gameovertitle, 400, 0);
     }
 }

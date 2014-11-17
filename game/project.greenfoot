@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Nov 17 10:51:55 PST 2014
+#Mon Nov 17 10:59:29 PST 2014
 target24.type=ClassTarget
 class.BackerPM.superclass=PauseMenu
 target16.name=Meteor
@@ -244,6 +244,7 @@ dependency61.from=PowerUps2
 target22.height=50
 dependency37.type=UsesDependency
 class.Currency1.superclass=Currency
+class.GameOverTitle.image=GameOverTitle.png
 target6.editor.width=900
 target6.width=80
 target17.editor.height=700
@@ -566,6 +567,7 @@ target11.name=ShowMoneyString
 target12.typeParameters=
 target9.editor.width=900
 dependency51.to=GameWorld
+class.GameOverTitle.superclass=greenfoot.Actor
 class.PowerUps3.superclass=PowerUps
 dependency26.from=GameWorld
 dependency78.from=Selection2
