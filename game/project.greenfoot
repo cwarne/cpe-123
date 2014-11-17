@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Nov 14 02:34:01 PST 2014
+#Mon Nov 17 10:51:55 PST 2014
 target24.type=ClassTarget
 class.BackerPM.superclass=PauseMenu
 target16.name=Meteor
@@ -834,7 +834,7 @@ target47.type=ClassTarget
 dependency83.to=CurrencyIndicator
 target39.name=Selection2
 target22.type=ClassTarget
-class.GameOverScreen.image=DinoGameOver.png
+class.GameOverScreen.image=Game Over Screen.png
 target14.name=ItemPanel
 target41.naviview.expanded=true
 target31.naviview.expanded=true

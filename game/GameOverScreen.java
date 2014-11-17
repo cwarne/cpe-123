@@ -17,6 +17,7 @@ public class GameOverScreen extends World
     /** Little timer that keeps the player for immediately leaving the game over screen upon entering
      * ~ Michael Tornatta
      */
+    //Changed Game Over Screen @Stephanie Lascola
     public int coolDownTimer = 1;
     public int coolDownLimit = 50;
     
