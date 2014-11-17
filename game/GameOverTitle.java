@@ -15,7 +15,7 @@ public class GameOverTitle extends Actor
     public void act() 
     {
        moveDown();
-       disappear();// Add your action code here.
+      // Add your action code here.
     }    
     /**
      * Provides animation for the game over title
@@ -23,13 +23,11 @@ public class GameOverTitle extends Actor
      */
     public void moveDown()
     {
+        if (getY() < (320))
+        {
         setLocation (getX(), getY() + 2);
     }
-    public void disappear()
-    {
-        if (getY() > (320))
-        {
-            getImage().setTransparency(0);
-        }
     }
+  
+   
 }

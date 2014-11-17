@@ -23,10 +23,11 @@ public class GameOverScreen extends World
     
     public GameOverScreen(int score)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+  
         super(800, 640, 1);
         prepare();
         showText("final score   "+score, 90, 30);
+        
     }
     /**
      * resets the game if the mouse is clicked on the game over screen
@@ -61,6 +62,8 @@ public class GameOverScreen extends World
         GameOverTitle gameovertitle = new GameOverTitle();
         addObject(gameovertitle, 400, 0);
     }
+   
+ 
     
             
 }
