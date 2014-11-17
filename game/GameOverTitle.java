@@ -14,10 +14,22 @@ public class GameOverTitle extends Actor
      */
     public void act() 
     {
-       moveDown(); // Add your action code here.
+       moveDown();
+       disappear();// Add your action code here.
     }    
+    /**
+     * Provides animation for the game over title
+     * @Stephanie Lascola
+     */
     public void moveDown()
     {
-        setLocation (getX(), getY() + 3);
+        setLocation (getX(), getY() + 2);
+    }
+    public void disappear()
+    {
+        if (getY() > (320))
+        {
+            getImage().setTransparency(0);
+        }
     }
 }
