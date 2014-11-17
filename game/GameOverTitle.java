@@ -14,6 +14,10 @@ public class GameOverTitle extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+       moveDown(); // Add your action code here.
     }    
+    public void moveDown()
+    {
+        setLocation (getX(), getY() + 3);
+    }
 }
