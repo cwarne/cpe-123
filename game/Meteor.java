@@ -15,11 +15,14 @@ public class Meteor extends Obstacles
      */
     public void act() 
     {
-        // Add your action code here.
-        destroy();
-        setRotation(130);
-        movement();
-        remove();
+        if(GameWorld.gamePaused == false)
+        {
+            // Add your action code here.
+            destroy();
+            setRotation(130);
+            movement();
+            remove();
+        }
     }    
     public void movement()
     {

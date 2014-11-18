@@ -12,6 +12,9 @@ public class ItemPanel extends GameStore
      * Act - do whatever the ItemPanel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    /** Game Store Code ~ Michael Tornatta **/
+    
     public void act() 
     {
         setVisibility();

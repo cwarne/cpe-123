@@ -13,7 +13,7 @@ public class BackerGS extends GameStore
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    /** Menu Code ~ Michael Tornatta **/
+    /** Game Store Code ~ Michael Tornatta **/
     
     public static boolean storeVisible = false;
     
