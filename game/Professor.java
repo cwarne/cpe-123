@@ -122,23 +122,7 @@ public class Professor extends Characters
      */
     public void animation()
     {
-        if (isShieldUp = true)
-        {
-            if(frame == 1)
-            {
-                setImage(shield1);
-            }
-            //Changed so that last frame change when frame > 2. Fixed a glitch where the frame
-            //would not progress to the next one (Michael Tornatta)
-            else if(frame > 2)
-            {
-                setImage(shield2);
-                frame = 1;
-                return;
-            }
-            frame ++;
-        }
-        else if (isShieldUp = false)
+        if (isShieldUp == false)
         {
             if(frame == 1)
             {
@@ -149,6 +133,22 @@ public class Professor extends Characters
             else if(frame > 2)
             {
                 setImage(profframe2);
+                frame = 1;
+                return;
+            }
+            frame ++;
+        }
+        else if (isShieldUp == true)
+        {
+            if(frame == 1)
+            {
+                setImage(shield1);
+            }
+            //Changed so that last frame change when frame > 2. Fixed a glitch where the frame
+            //would not progress to the next one (Michael Tornatta)
+            else if(frame > 2)
+            {
+                setImage(shield2);
                 frame = 1;
                 return;
             }
@@ -182,7 +182,6 @@ public class Professor extends Characters
      */
     public void move()
     {
-
         if (Greenfoot.isKeyDown("right") && getX() < 700)
         {
             move(3);
@@ -199,14 +198,12 @@ public class Professor extends Characters
      * @Sarah Stephens
      */
     public void activateShield()
-    {
-        
+    {        
         isShieldUp = true;
     }
 
     public void deactivateShield()
-    {
-      
+    {      
         isShieldUp = false;
     }
 
