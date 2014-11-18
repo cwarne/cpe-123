@@ -5,6 +5,4 @@ comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ GameOverTitle\ wants\ to\ do.\ Th
 comment1.params=
 comment1.target=void\ moveDown()
 comment1.text=\r\n\ Provides\ animation\ for\ the\ game\ over\ title\r\n\ @Stephanie\ Lascola\r\n
-comment2.params=
-comment2.target=void\ disappear()
-numComments=3
+numComments=2

@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ PowerUps1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ PowerUps1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=
 comment1.target=void\ usePotion1()
-comment1.text=\n\ This\ is\ made\ so\ when\ the\ key\ is\ pressed\ it\ stops\ running\ after\ released.\ This\ way\ all\ the\ potions\ aren't\ \n\ used\ up\ at\ once.\ When\ potion\ 1\ is\ used,\ all\ obstacles\ disappear\ off\ screen.\n
+comment1.text=\r\n\ This\ is\ made\ so\ when\ the\ key\ is\ pressed\ it\ stops\ running\ after\ released.\ This\ way\ all\ the\ potions\ aren't\ \r\n\ used\ up\ at\ once.\ When\ potion\ 1\ is\ used,\ all\ obstacles\ disappear\ off\ screen.\r\n
 numComments=2
