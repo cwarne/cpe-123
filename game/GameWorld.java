@@ -157,7 +157,7 @@ public class GameWorld extends World
         addObject(currencycounter, 714, 20);
         GreenPotion itempanel1 = new GreenPotion();
         addObject(itempanel1, 154, 378);
-        ItemPanel itempanel2 = new ItemPanel();
+        OrangePotion itempanel2 = new OrangePotion();
         addObject(itempanel2, 401,378);
         ItemPanel itempanel3 = new ItemPanel();
         addObject(itempanel3, 650,379);
