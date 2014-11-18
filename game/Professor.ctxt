@@ -14,6 +14,7 @@ comment4.params=
 comment4.target=void\ fall()
 comment5.params=
 comment5.target=void\ animation()
+comment5.text=\r\n\ Power\ up\ shield\ added\ for\ images,\ switches\ in\ between\ professor\ normal\ and\ shield\r\n\ @Sarah\ stephens\r\n\ @Stephanie\ Lascola\r\n
 comment6.params=
 comment6.target=void\ getCurrency()
 comment6.text=\r\n\ This\ is\ being\ used\ so\ when\ the\ professor\ touches\ the\ currency,\ he\ collects\ it.\r\n\ In\ other\ words,\ it\ is\ being\ removed\ from\ the\ screen\ as\ if\ he\ is\ actually\ collecting\ it.\r\n\ -Stephanie\ Lascola\r\n
