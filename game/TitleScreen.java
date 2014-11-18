@@ -17,12 +17,16 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 640, 1); 
+
+        prepare();
     }
+
     public void act()
     {
         jumpToNextFrame();
         CurrencyCounter.currencyCollected = 0;
     }
+
     public void jumpToNextFrame()
     {
         if((Greenfoot.mouseClicked(this)) || (Greenfoot.isKeyDown("space")))
@@ -30,5 +34,13 @@ public class TitleScreen extends World
             GameWorld gameworld = new GameWorld();
             Greenfoot.setWorld(gameworld);
         }
+    }
+
+    /**
+     * Prepare the world for the start of the program. That is: create the initial
+     * objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }

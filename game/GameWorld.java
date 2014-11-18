@@ -124,7 +124,7 @@ public class GameWorld extends World
         prof = new Professor();
         addObject(prof, 268, 480);
 
-        setPaintOrder(PauseMenu.class, GameStore.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
+        setPaintOrder(PauseMenu.class, GameStore.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -168,13 +168,14 @@ public class GameWorld extends World
         addObject(scoreboard, 80, 20);
         
         PowerUps powerups = new PowerUps();
-        addObject(powerups, 1, 640);
+        
         PowerUps1 powerups1 = new PowerUps1();
-        addObject(powerups1, 1, 640);
+        addObject(powerups1, 35, 608);
+        
         PowerUps2 powerups2 = new PowerUps2();
-        addObject(powerups2, 1, 640);
+        addObject(powerups2, 95, 608);
         PowerUps3 powerups3 = new PowerUps3();
-        addObject(powerups3, 1, 640);
+        addObject(powerups3, 155, 608);
     }
     /**
      * Spawns random obstacles
