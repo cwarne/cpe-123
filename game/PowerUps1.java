@@ -36,9 +36,30 @@ public class PowerUps1 extends PowerUps
             getWorld().removeObjects(getWorld().getObjects(Obstacles.class));
             powerUp1--;
             
-            //Chandler Warne
-            //Sets images on usage of power ups
-            if(powerUp1 == 0)
+            updateImage();
+            
+            key1 = false;
+        }
+        
+    }
+    
+    /*
+     * Takes potion update from game store
+     * @Chandler Warne
+     */
+    public void updateAmount(int x)
+    {
+        powerUp1 = x;
+        updateImage();
+    }
+    
+    /**
+     * Updates image on screen to reflect how much powerup is available.
+     * @Chandler Warne
+     */
+    private void updateImage()
+    {
+        if(powerUp1 == 0)
             {
                  setImage("vialEmpty_small.png");
             }
@@ -46,12 +67,13 @@ public class PowerUps1 extends PowerUps
             {
                  setImage("vialPurple1_small.png");
             }
-            else
+            else if(powerUp1 == 2)
             {
                  setImage("vialPurple2_small.png");
             }
-            
-            key1 = false;
-        }
-}
+            else
+            {
+                setImage("vialPurple3_small.png");
+            }
+    }
 }
