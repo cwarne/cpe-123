@@ -17,6 +17,7 @@ public class Obstacles extends Actor
     {
         collide();
         collideLazer();
+        getShieldStatus();
     }
        /**
      * check for collision with the professor and set to game over screen 
@@ -38,6 +39,7 @@ public class Obstacles extends Actor
             if (isShieldUp == true)
             {
                 prof.deactivateShield();
+                getWorld().removeObject(this);
             }
             else if (isShieldUp == false)
             {
