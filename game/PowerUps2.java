@@ -35,10 +35,29 @@ public class PowerUps2 extends PowerUps
             professor.activateShield();
             powerUp2--;
             
-            
-            //Chandler Warne
-            //Sets images on usage of power ups
-            if(powerUp2 == 0)
+            updateImage();
+         
+            key2 = false;
+        }        
+    }   
+    
+    /*
+     * Takes potion update from game store
+     * @Chandler Warne
+     */
+    public void updateAmount(int x)
+    {
+        powerUp2 = x;
+        updateImage();
+    }
+    
+    /**
+     * Updates image on screen to reflect how much powerup is available.
+     * @Chandler Warne
+     */
+    private void updateImage()
+    {
+        if(powerUp2 == 0)
             {
                  setImage("vialEmpty_small.png");
             }
@@ -46,12 +65,13 @@ public class PowerUps2 extends PowerUps
             {
                  setImage("vialGreen1_small.png");
             }
-            else
+            else if(powerUp2 == 2)
             {
                  setImage("vialGreen2_small.png");
             }
-            
-            key2 = false;
-        }        
-    }       
+            else
+            {
+                setImage("vialGreen3_small.png");
+            }
+    }
 }

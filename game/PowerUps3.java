@@ -34,9 +34,29 @@ public class PowerUps3 extends PowerUps
         {
             powerUp3--;
             
-            //Chandler Warne
-            //Sets images on usage of power ups
-            if(powerUp3 == 0)
+            updateImage();
+            
+            key3 = false;
+        }
+    }
+
+    /*
+     * Takes potion update from game store
+     * @Chandler Warne
+     */
+    public void updateAmount(int x)
+    {
+        powerUp3 = x;
+        updateImage();
+    }
+    
+    /**
+     * Updates image on screen to reflect how much powerup is available.
+     * @Chandler Warne
+     */
+    private void updateImage()
+    {
+        if(powerUp3 == 0)
             {
                  setImage("vialEmpty_small.png");
             }
@@ -44,12 +64,13 @@ public class PowerUps3 extends PowerUps
             {
                  setImage("vialOrange1_small.png");
             }
-            else
+            else if(powerUp3 == 2)
             {
                  setImage("vialOrange2_small.png");
             }
-            
-            key3 = false;
-        }
-}
+            else
+            {
+                setImage("vialOrange3_small.png");
+            }
+    }
 }
