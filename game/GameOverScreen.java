@@ -17,14 +17,17 @@ public class GameOverScreen extends World
     /** Little timer that keeps the player for immediately leaving the game over screen upon entering
      * ~ Michael Tornatta
      */
+    //Changed Game Over Screen @Stephanie Lascola
     public int coolDownTimer = 1;
     public int coolDownLimit = 50;
     
     public GameOverScreen(int score)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+  
+        super(800, 640, 1);
+        prepare();
         showText("final score   "+score, 90, 30);
+        
     }
     /**
      * resets the game if the mouse is clicked on the game over screen
@@ -54,4 +57,13 @@ public class GameOverScreen extends World
         GameWorld.gameAskedToEnd = false;
         GameWorld.gamePaused = false;
     }
+    private void prepare()
+    {
+        GameOverTitle gameovertitle = new GameOverTitle();
+        addObject(gameovertitle, 400, 0);
+    }
+   
+ 
+    
+            
 }
