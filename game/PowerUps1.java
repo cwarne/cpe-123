@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PowerUps1 extends PowerUps
 {
-    private int powerUp1 = 1;
+    private int powerUp1 = 3;
     private boolean key1 = false;
     /**
      * Act - do whatever the PowerUps1 wants to do. This method is called whenever
@@ -35,6 +35,22 @@ public class PowerUps1 extends PowerUps
             world = getWorld();
             getWorld().removeObjects(getWorld().getObjects(Obstacles.class));
             powerUp1--;
+            
+            //Chandler Warne
+            //Sets images on usage of power ups
+            if(powerUp1 == 0)
+            {
+                 setImage("vialEmpty_small.png");
+            }
+            else if(powerUp1 == 1)
+            {
+                 setImage("vialPurple1_small.png");
+            }
+            else
+            {
+                 setImage("vialPurple2_small.png");
+            }
+            
             key1 = false;
         }
 }
