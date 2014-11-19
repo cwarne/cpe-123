@@ -2,4 +2,7 @@
 comment0.params=
 comment0.target=void\ act()
 comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ SolidGround\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=1
+comment1.params=
+comment1.target=void\ move()
+comment1.text=\r\n\ Used\ to\ move\ all\ of\ the\ platforms\ pieces\ across\ the\ screen\ at\ the\ same\ speed\r\n\ @Sarah\ Stephens\r\n
+numComments=2

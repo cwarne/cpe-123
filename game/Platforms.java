@@ -14,6 +14,17 @@ public class Platforms extends Actor
      */
     public void act() 
     {
-        
+        move();
     }    
+    /**
+     * Used to move all of the platforms pieces across the screen at the same speed
+     * @Sarah Stephens
+     */
+    public void move()
+    {
+        if(GameWorld.gamePaused == false)
+        {
+            move(-5);
+        }
+    }
 }

@@ -16,7 +16,9 @@ public class GameWorld extends World
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
-    private int platformNumber;
+    //private int platformNumber; Sarah delete me!!
+    private int platformLength;
+    private int widthMultiplier = 0; //holds the number of platform pieces already generated in order to place the next piece the proper distance out
     private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
@@ -115,13 +117,13 @@ public class GameWorld extends World
         addObject(s, 900, 0);
         s.setLocation(900, 0);
 
-        Platforms p = new Platforms();
+        Platforms p = new Platforms(); //!!delete
         addObject(p, 0, 590);
         
-        Platforms p2 = new Platforms();
+        Platforms p2 = new Platforms();//!!delete
         addObject(p2, 400, 590);
 
-        prof = new Professor();
+        prof = new Professor(); 
         addObject(prof, 268, 480);
 
         setPaintOrder(PauseMenu.class, GameStore.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
@@ -321,12 +323,41 @@ public class GameWorld extends World
             spawnTimer = 60;
         }
     }
+    /**
+     * Spawns different length platforms at the first height level. 
+     * @Sarah Stephens
+     */
+    public void createPlatform1()
+    {
+        PlatformStart pS = new PlatformStart();
+        PlatformMid pM = new PlatformMid();
+        PlatformEnd pE = new PlatformEnd();
+        if (platform1Timer == 0) //spawn a new platform when timer is at zero
+        {
+            platformLength = Greenfoot.getRandomNumber (2); //gets a random length for the platform
+            addObject(pS, getWidth(), 450); //add platform start piece
+            while (platformLength > 0)
+            {
+                addObject(pM, getWidth() + 138 + (138 * widthMultiplier), 450);
+                platformLength = platformLength - 1;
+                widthMultiplier = widthMultiplier + 1;
+                platform1Timer = platform1Timer + 20;
+            }
+            addObject(pE, getWidth() + 138 + (80 * widthMultiplier), 450);//add platform end piece 
+            platform1Timer = platform1Timer + 80;
+            widthMultiplier = 0; //reset platform counter to zero 
+        }
+    }
+    public void createPlatform2()
+    {
+        
+    }
     
     /**
      * Spawn random platforms at the first height level of different lengths. Also calls the method to spawn random obstacles at that height
      * @SarahStephens
      */
-    public void createPlatform1()
+    /**public void createPlatform1()
     {
         if(platform1Timer == 0) //prevents platforms from spawning on top of each other
         {
@@ -397,7 +428,7 @@ public class GameWorld extends World
     /**
      * Spawn random platforms at the second height level of different lengths
      * @SarahStephens
-     */
+     
     public void createPlatform2()
     {
         if(platform2Timer == 0)
@@ -466,6 +497,7 @@ public class GameWorld extends World
             }
         }
     }
+    **/
     /** Check for a user requested pause in the game 
        All pause related code added ~ Michael Tornatta **/
     public void checkForPause()
