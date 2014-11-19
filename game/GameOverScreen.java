@@ -31,7 +31,7 @@ public class GameOverScreen extends World
     }
     /**
      * resets the game if the mouse is clicked on the game over screen
-     * @SarahStephens
+     * @Sarah Stephens
      * edited by @Nick Jones
      */
     public void act()

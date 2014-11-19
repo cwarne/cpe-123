@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Placeholder for an obstacle in the game, most likely a stump.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class EnemyA extends Obstacles
 {
     private int currentImage = 1;
@@ -27,7 +21,7 @@ public class EnemyA extends Obstacles
     /**
      * Moves the obstacle across the game screen. If the enemy is on the ground then
      * it will run forward slightly faster than the ground is moving. 
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void move()
     {

@@ -117,7 +117,7 @@ public class Professor extends Characters
     }
     /**
      * Power up shield added for images, switches in between professor normal and shield
-     * @Sarah stephens
+     * @Sarah Stephens
      * @Stephanie Lascola
      */
     public void animation()

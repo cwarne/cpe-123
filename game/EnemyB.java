@@ -23,7 +23,7 @@ public class EnemyB extends Obstacles
     }    
     /**
      * Moves the obstacle across the game screen. 
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void move()
     {

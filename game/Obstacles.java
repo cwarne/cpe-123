@@ -22,7 +22,7 @@ public class Obstacles extends Actor
        /**
      * check for collision with the professor and set to game over screen 
      * same code in enemyB
-     * @SarahStephens
+     * @Sarah Stephens
      * edited by @NickJones
      *@Stephanie Lascola 
      *

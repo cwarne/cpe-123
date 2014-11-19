@@ -16,9 +16,9 @@ public class GameWorld extends World
     public GreenfootSound music;
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
-    //private int platformNumber; Sarah delete me!!
-    private int platformLength;
-    private int widthMultiplier = 0; //holds the number of platform pieces already generated in order to place the next piece the proper distance out
+    private int platformLength; 
+    private int totalLength;
+    private int stagger; //holds how far the platform piece is displaced in the x-direction
     private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
@@ -26,7 +26,7 @@ public class GameWorld extends World
     private int mSpawnRate = 2;//spawn rate for meteors
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
-    
+
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
@@ -41,10 +41,10 @@ public class GameWorld extends World
         super(800, 640, 1, false); 
 
         prepare();
-        
+
         music = new GreenfootSound("ElectroRock.mp3"); //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        music.playLoop();
+        //music.playLoop(); //uncomment to play music
     }
 
     public void act()
@@ -119,7 +119,7 @@ public class GameWorld extends World
 
         Platforms p = new Platforms(); //!!delete
         addObject(p, 0, 590);
-        
+
         Platforms p2 = new Platforms();//!!delete
         addObject(p2, 400, 590);
 
@@ -142,7 +142,7 @@ public class GameWorld extends World
         cloud2.setLocation(684, 176);
         cloud5.setLocation(266, 97);
         cloud2.setLocation(508, 125);
-        
+
         BackerPM backerpm = new BackerPM();
         addObject(backerpm, 418, 296);
         HeaderPM headerpm = new HeaderPM();
@@ -165,24 +165,25 @@ public class GameWorld extends World
         addObject(itempanel3, 650,379);
         ShowMoneyString showmoneystring = new ShowMoneyString();
         addObject(showmoneystring, 412,103);
-        
+
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
-        
+
         PowerUps powerups = new PowerUps();
-        
+
         PowerUps1 powerups1 = new PowerUps1();
         addObject(powerups1, 35, 608);
-        
+
         PowerUps2 powerups2 = new PowerUps2();
         addObject(powerups2, 95, 608);
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
     }
+
     /**
      * Spawns random obstacles
      * Sets timer to ensure that spawned objects won't overlap
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void spawnObstacles()
     {
@@ -199,13 +200,14 @@ public class GameWorld extends World
             spawnTimer = 70;
         }    
     }
+
     /**
      * spawn random enemies on the first platform level
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void spawnObstacles1()
     {
-         if ((Greenfoot.getRandomNumber(100) < aSpawnRate) && (spawnTimer == 0))
+        if ((Greenfoot.getRandomNumber(100) < aSpawnRate) && (spawnTimer == 0))
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
@@ -218,13 +220,14 @@ public class GameWorld extends World
             spawnTimer = 40;
         }    
     }
-     /**
+
+    /**
      * spawn random enemies on the second platform level
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void spawnObstacles2()
     {
-         if (Greenfoot.getRandomNumber(100) < aSpawnRate) 
+        if (Greenfoot.getRandomNumber(100) < aSpawnRate) 
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
@@ -237,6 +240,7 @@ public class GameWorld extends World
             spawnTimer = 70;
         }    
     }
+
     /**
      * spawns pterodactyls in the sky
      * @AlexCarpenter
@@ -246,15 +250,16 @@ public class GameWorld extends World
     {
         if(getScore() > 1500)
         {
-        if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
-        {
-            EnemyC enemyC = new EnemyC();
-            addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(160));
-            spawnTimer = 20;
-            airTimer = 30;
+            if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
+            {
+                EnemyC enemyC = new EnemyC();
+                addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(160));
+                spawnTimer = 20;
+                airTimer = 30;
+            }
         }
     }
-}
+
     /**
      * spawns meteors
      * @NickJones
@@ -262,21 +267,22 @@ public class GameWorld extends World
      */
     public void spawnmeteors()
     {
-      if(getScore() > 2000)
-       {
-       if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
-       {
-           Meteor meteor = new Meteor();
-           addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
-           
+        if(getScore() > 2000)
+        {
+            if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
+            {
+                Meteor meteor = new Meteor();
+                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
+
+            }
         }
     }
-}
-   /**
+
+    /**
      * Counts down the enemy & platform spawn timers once. Is used to 
      * set a cooldown for the spawn of obstacles and platforms so
      * that they will not overlap on the game screen.
-     * @SarahStephens
+     * @Sarah Stephens
      */
     public void changeTimers()
     {
@@ -301,13 +307,13 @@ public class GameWorld extends World
             lazerTimer = lazerTimer -1;
         }
     }
-    
-     /**
-    * Using the timer that Sarah made, the currency appears every ten out of 2000 and the timer is there so the objects do not overlap
-    * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
-    * values depending on what kind of currency is picked up (rare vs not rare).
-    * -Stephanie Lascola
-    */
+
+    /**
+     * Using the timer that Sarah made, the currency appears every ten out of 2000 and the timer is there so the objects do not overlap
+     * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
+     * values depending on what kind of currency is picked up (rare vs not rare).
+     * -Stephanie Lascola
+     */
     public void spawnCurrency()
     {
         if ((Greenfoot.getRandomNumber (2000) < 7) && (spawnTimer == 0))
@@ -323,6 +329,7 @@ public class GameWorld extends World
             spawnTimer = 60;
         }
     }
+
     /**
      * Spawns different length platforms at the first height level. 
      * @Sarah Stephens
@@ -332,174 +339,67 @@ public class GameWorld extends World
         PlatformStart pS = new PlatformStart();
         PlatformMid pM = new PlatformMid();
         PlatformEnd pE = new PlatformEnd();
+        stagger = 180; //good
         if (platform1Timer == 0) //spawn a new platform when timer is at zero
         {
-            platformLength = Greenfoot.getRandomNumber (2); //gets a random length for the platform
+            totalLength = Greenfoot.getRandomNumber (4); //gets a random length for the platform
+            //totalLength = 4; //test
+            platformLength = totalLength;
             addObject(pS, getWidth(), 450); //add platform start piece
             while (platformLength > 0)
             {
-                addObject(pM, getWidth() + 138 + (138 * widthMultiplier), 450);
-                platformLength = platformLength - 1;
-                widthMultiplier = widthMultiplier + 1;
+                addObject(pM, getWidth() + stagger, 450);                           
+                platformLength = platformLength - 1;       
+                if (totalLength == 3)
+                {
+                    stagger = stagger + 50;
+                }
+                /**else if (totalLength == 4)
+                {
+                    stagger = stagger + 30;
+                }**/
+                else 
+                {
+                    stagger = stagger + 45;
+                }
                 platform1Timer = platform1Timer + 20;
             }
-            addObject(pE, getWidth() + 138 + (80 * widthMultiplier), 450);//add platform end piece 
-            platform1Timer = platform1Timer + 80;
-            widthMultiplier = 0; //reset platform counter to zero 
-        }
-    }
-    public void createPlatform2()
-    {
-        
-    }
-    
-    /**
-     * Spawn random platforms at the first height level of different lengths. Also calls the method to spawn random obstacles at that height
-     * @SarahStephens
-     */
-    /**public void createPlatform1()
-    {
-        if(platform1Timer == 0) //prevents platforms from spawning on top of each other
-        {
-            platformNumber = Greenfoot.getRandomNumber(6);
-            
-            if (platformNumber == 0)
+            //stagger = stagger + 100;
+            if (totalLength == 0)
             {
-               P10 p = new P10();
-               addObject(p, getWidth() + 150 , 450); // X is world width + some to make sure the whole platform starts off screen
-               platform1Timer = 150; // platform timer = P# * 15
-               if (Greenfoot.getRandomNumber(2)== 1)
-               {
-                   spawnObstacles1();
-               }
+                addObject(pE, getWidth() + 100, 450);
+                platform1Timer = platform1Timer + 70;
             }
-            else if (platformNumber == 1)
+            else if (totalLength == 1)
             {
-                P2 p = new P2();
-                addObject(p, getWidth() + 20, 450);
-                platform1Timer = 60;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles1();
-                }
+                addObject(pE, getWidth() + stagger, 450);
+                platform1Timer = platform1Timer + 75;
             }
-            else if (platformNumber == 2)
+            else if (totalLength == 2)
             {
-                P3 p = new P3();
-                addObject(p, getWidth() + 40, 450);
-                platform1Timer = 45;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles1();
-                }
+                addObject(pE, getWidth() + stagger + 20, 450);
+                platform1Timer = platform1Timer + 70;
             }
-            else if (platformNumber == 3)
+             else if (totalLength == 3)
             {
-                P4 p = new P4();
-                addObject(p, getWidth() + 50, 450);
-                platform1Timer = 60;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles1();
-                }
+                addObject(pE, getWidth() + stagger + 20, 450);
+                platform1Timer = platform1Timer + 70;
             }
-            else if (platformNumber == 4)
+             else if (totalLength == 4)
             {
-                P8 p = new P8();
-                addObject(p, getWidth() + 100, 450);
-                platform1Timer = 120;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles1();
-                }
-            }
-            else if (platformNumber == 5)
-            {
-                P12 p = new P12();
-                addObject(p, getWidth() + 170, 450);
-                platform1Timer = 180;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles1();
-                }
-            }
-        }        
-    }
-    /**
-     * Spawn random platforms at the second height level of different lengths
-     * @SarahStephens
-     
-    public void createPlatform2()
-    {
-        if(platform2Timer == 0)
-        {
-            platformNumber = Greenfoot.getRandomNumber(6);
-            
-            if (platformNumber == 0)
-            {
-               P10 p = new P10();
-               addObject(p, getWidth() + 150, 250);
-               platform2Timer = 150;
-               if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
-            }
-            else if (platformNumber == 1)
-            {
-                P2 p = new P2();
-                addObject(p, getWidth() + 20, 250);
-                platform2Timer = 60;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
-            }
-            else if (platformNumber == 2)
-            {
-                P3 p = new P3();
-                addObject(p, getWidth() + 40, 250);
-                platform2Timer = 45;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
-            }
-            else if (platformNumber == 3)
-            {
-                P8 p = new P8();
-                addObject(p, getWidth() + 100, 250);
-                platform2Timer = 120;        
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
-            }
-            else if (platformNumber == 4)
-            {
-                P4 p = new P4();
-                addObject(p, getWidth() + 50, 250);
-                platform2Timer = 60;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
-            }
-            else if (platformNumber == 5)
-            {
-                P12 p = new P12();
-                addObject(p, getWidth() + 170, 250);
-                platform2Timer = 150;
-                if (Greenfoot.getRandomNumber(2)== 1)
-                {
-                    spawnObstacles2();
-                }
+                addObject(pE, getWidth() + stagger + 20, 450);
+                platform1Timer = platform1Timer + 50;
             }
         }
     }
-    **/
+
+    public void createPlatform2()
+    {
+        //code will be similar to createPlatform1 function
+    }
+
     /** Check for a user requested pause in the game 
-       All pause related code added ~ Michael Tornatta **/
+    All pause related code added ~ Michael Tornatta **/
     public void checkForPause()
     {
         if((Greenfoot.isKeyDown("p")) && (gamePaused == false) && (pauseTimer == 0))
@@ -521,20 +421,24 @@ public class GameWorld extends World
             pauseTimer = 0;
         }
     }
+
     public void pauseTheGame()
     {
         gamePaused = true;
         //System.out.println("Paused");
     }
+
     public void unpauseTheGame()
     {
         gamePaused = false;
         //System.out.println("UnPaused");
     }
+
     public int getTimer()
     {
         return platform1Timer;
     }
+
     /** Ends the game if requested from outside class ~ Michael Tornatta **/
     public void checkForGameEndRequest()
     {
@@ -544,10 +448,11 @@ public class GameWorld extends World
         }
         else
         {
-            
+
         }
     }
-     /**
+
+    /**
      * @Nick Jones
      * method for the end of the game
      */
@@ -557,24 +462,26 @@ public class GameWorld extends World
         Greenfoot.setWorld(go);
         music.stop();
     }
-        public int getScore()
+
+    public int getScore()
     {
-         return scoreboard.getScore();
+        return scoreboard.getScore();
     }
-    
-   /**
-    * @Sarah Stephens
-    * @Stephanie Lascola
-    */
+
+    /**
+     * @Sarah Stephens
+     * @Stephanie Lascola
+     */
     public Professor getProfessor()
     {
         return prof;
     }
-   /**
-    * Shoots lazers with ammo, currently there is no way to get ammo, but will be fixed soon! :)
-    * @Sarah Stephens
-    * @Stephanie Lascola
-    */
+
+    /**
+     * Shoots lazers with ammo, currently there is no way to get ammo, but will be fixed soon! :)
+     * @Sarah Stephens
+     * @Stephanie Lascola
+     */
     public void shootLazer()
     {
         if ((Greenfoot.isKeyDown("f")) && lazerTimer == 0 && ammoCount > 0)
@@ -587,6 +494,4 @@ public class GameWorld extends World
     }
 }
 
-    
 
-   

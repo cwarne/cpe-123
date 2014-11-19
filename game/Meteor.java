@@ -21,25 +21,28 @@ public class Meteor extends Obstacles
         movement();
         remove();
     }    
+
     public void movement()
     {
         setLocation(getX() - 7, getY() + 8);
     }
+
     public void remove()
     {
-    if( getY() > 560)
-    {
-        getWorld().removeObject(this);
+        if( getY() > 560)
+        {
+            getWorld().removeObject(this);
+        }
     }
-}
-public void destroy()
-{
-    Actor professor;
-    professor = getOneIntersectingObject(Professor.class);
-    if (professor != null)
+
+    public void destroy()
     {
-       GameWorld world = (GameWorld) getWorld();
-       world.endGame();
+        Actor professor;
+        professor = getOneIntersectingObject(Professor.class);
+        if (professor != null)
+        {
+            GameWorld world = (GameWorld) getWorld();
+            world.endGame();
+        }
     }
-}
 }
