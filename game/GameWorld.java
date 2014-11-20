@@ -361,6 +361,7 @@ public class GameWorld extends World
         }
     }
 
+    
     /**
      * Spawns different length platforms at the first height level. 
      * @Sarah Stephens
@@ -370,59 +371,39 @@ public class GameWorld extends World
         PlatformStart pS = new PlatformStart();
         PlatformMid pM = new PlatformMid();
         PlatformEnd pE = new PlatformEnd();
-        stagger = 180; 
+        stagger = 69; //(138/2) 
         if (platform1Timer == 0) //spawn a new platform when timer is at zero
         {
-            totalLength = Greenfoot.getRandomNumber (4); //gets a random length for the platform
+            totalLength = Greenfoot.getRandomNumber (2); //gets a random length for the platform
+            //totalLength = 0;
             platformLength = totalLength;
-            addObject(pS, getWidth(), 450); //add platform start piece
-            while (platformLength > 0)
-            {
-                addObject(pM, getWidth() + stagger, 450);                           
-                platformLength = platformLength - 1;       
-                if (totalLength == 3)
+            addObject(pS, getWidth() + stagger, 450); //add platform start piece
+            //add call for enemy spawn method here
+            //midPiece = 1;
+            stagger = stagger + 69;
+            while (platformLength > 0) 
+            {   
+                /**if (midPiece == 1)
                 {
-                    stagger = stagger + 50;
+                    stagger = stagger + 111;
+                    //addObject(pM, getWidth() + stagger, 400);
                 }
-                else if (totalLength == 1)
+                else if (midPiece > 1)
                 {
-                    stagger = stagger + 50;
-                }
-                else if (totalLength == 4)
-                {
-                    stagger = stagger + 30;
-                }
-                else 
-                {
-                    stagger = stagger + 45;
-                }
-                platform1Timer = platform1Timer + 20;
+                    //stagger = stagger + 222;
+                    //addObject(pM, getWidth(), 450);
+                }*/
+                stagger = stagger + 111;            
+                addObject(pM, getWidth() + stagger, 450); 
+                //add call for enemy spawn method here
+                //midPiece = midPiece + 1;
+                platformLength = platformLength - 1;  
+                stagger = stagger + 111;
             }
-            if (totalLength == 0)
-            {
-                addObject(pE, getWidth() + 100, 450);
-                platform1Timer = platform1Timer + 70;
-            }
-            else if (totalLength == 1)
-            {
-                addObject(pE, getWidth() + stagger + 30, 450);
-                platform1Timer = platform1Timer + 75;
-            }
-            else if (totalLength == 2)
-            {
-                addObject(pE, getWidth() + stagger + 20, 450);
-                platform1Timer = platform1Timer + 70;
-            }
-            else if (totalLength == 3)
-            {
-                addObject(pE, getWidth() + stagger + 20, 450);
-                platform1Timer = platform1Timer + 70;
-            }
-            else if (totalLength == 4)
-            {
-                addObject(pE, getWidth() + stagger + 20, 450);
-                platform1Timer = platform1Timer + 50;
-            }
+            stagger = stagger + 69;
+            addObject(pE, getWidth() + stagger, 450);
+            //add call for enemy spawn method here
+            platform1Timer = 80 + totalLength*40;
         }
     }
 
