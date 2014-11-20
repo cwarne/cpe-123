@@ -184,6 +184,7 @@ public class GameWorld extends World
      * Spawns random obstacles
      * Sets timer to ensure that spawned objects won't overlap
      * @Sarah Stephens
+     * edited: @NickJones
      */
     public void spawnObstacles()
     {
@@ -204,6 +205,7 @@ public class GameWorld extends World
     /**
      * spawn random enemies on the first platform level
      * @Sarah Stephens
+     * edited: @NickJones
      */
     public void spawnObstacles1()
     {
@@ -224,6 +226,7 @@ public class GameWorld extends World
     /**
      * spawn random enemies on the second platform level
      * @Sarah Stephens
+     * edited: @NickJones
      */
     public void spawnObstacles2()
     {
@@ -267,7 +270,7 @@ public class GameWorld extends World
      */
     public void spawnmeteors()
     {
-        if(getScore() > 2500)
+        if(getScore() > 2500 && getScore() < 3250)
         {
             if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
             {
@@ -276,7 +279,17 @@ public class GameWorld extends World
 
             }
         }
+     if(getScore() > 3250)
+        {
+            if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
+            {
+                Meteor meteor = new Meteor();
+                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
+
+            }
+        }
     }
+    
 
     /**
      * Counts down the enemy & platform spawn timers once. Is used to 
@@ -313,6 +326,7 @@ public class GameWorld extends World
      * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
      * values depending on what kind of currency is picked up (rare vs not rare).
      * -Stephanie Lascola
+     * edited: NickJones
      */
     public void spawnCurrency()
     {
@@ -329,13 +343,13 @@ public class GameWorld extends World
             addObject(c2, getWidth(), getHeight()-100);
             spawnTimer = 60;
         }
-        if ((Greenfoot.getRandomNumber (2000) < 25) && (spawnTimer == 0) && getScore() > 3000)
+        if ((Greenfoot.getRandomNumber (2000) < 13) && (spawnTimer == 0) && getScore() > 3000)
         {
             Currency1 c1 = new Currency1();
             addObject(c1, getWidth(), getHeight()-100);
             spawnTimer = 60;
         }
-         else if ((Greenfoot.getRandomNumber (2000) < 20) && (spawnTimer == 0) && getScore() > 3000)
+         else if ((Greenfoot.getRandomNumber (2000) < 10) && (spawnTimer == 0) && getScore() > 3000)
         {
             Currency2 c2 = new Currency2();
             addObject(c2, getWidth(), getHeight()-100);
