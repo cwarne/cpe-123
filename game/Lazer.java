@@ -22,6 +22,6 @@ public class Lazer extends Actor
     */
     public void move()
     {
-        move(8);
+        move(9);
     }
 }

@@ -27,6 +27,8 @@ public class GameWorld extends World
     private int cSpawnRate = 30; //spawn rate for enemyC
     private ScoreBoard scoreboard;
     private int mSpawnRate = 2;//spawn rate for meteors
+    private int x; //holds the professors x coord
+    private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
 
@@ -572,10 +574,12 @@ public class GameWorld extends World
     {
         PowerUps3 p = new PowerUps3();
         getAmmoCount();
+        x = prof.findX();
+        y = prof.findY();
         if ((Greenfoot.isKeyDown("3")) && lazerTimer == 0 && ammoCount > 0)
         {
             Lazer l = new Lazer();
-            addObject(l, 100, 230);
+            addObject(l, x, y);
             lazerTimer = 30;
             p.usePowerup();
         }

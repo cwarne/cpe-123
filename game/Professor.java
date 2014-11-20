@@ -211,4 +211,14 @@ public class Professor extends Characters
     {
         return isShieldUp;
     }
+    
+    public int findX()
+    {
+        return getX();
+    }
+    
+    public int findY()
+    {
+        return getY();
+    }
 }
