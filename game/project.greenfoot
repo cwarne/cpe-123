@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Nov 20 08:51:42 PST 2014
+#Thu Nov 20 08:59:23 PST 2014
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
 class.BackerPM.superclass=PauseMenu
@@ -489,6 +489,7 @@ dependency73.to=CurrencyCounter
 target8.naviview.expanded=true
 target46.editor.x=40
 dependency53.type=UsesDependency
+class.OrangePotion.image=OrangePotion.png
 target17.editor.width=900
 target16.type=ClassTarget
 dependency9.to=GameWorld
@@ -933,6 +934,7 @@ target47.y=670
 target47.x=10
 dependency8.from=GrassSmall
 target42.width=90
+class.GreenPotion.image=GreenPotion.png
 target10.editor.y=23
 target10.editor.x=0
 target28.height=50
