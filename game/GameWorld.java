@@ -193,11 +193,11 @@ public class GameWorld extends World
             addObject(enemyA, getWidth(), getHeight()-95);
             spawnTimer = 50;
         }        
-        else if ((Greenfoot.getRandomNumber(2000) < 6) && (spawnTimer == 0))
+        else if ((Greenfoot.getRandomNumber(2000) < 6) && (spawnTimer == 0) && getScore() > 500)
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth(), getHeight()-85);
-            spawnTimer = 70;
+            spawnTimer = 60;
         }    
     }
 
@@ -213,7 +213,7 @@ public class GameWorld extends World
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60), 430);
             spawnTimer = 30;
         }        
-        else if (spawnTimer == 0)
+        else if (spawnTimer == 0 && getScore() > 500)
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 415);  
@@ -233,7 +233,7 @@ public class GameWorld extends World
             addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(60) , 230);
             spawnTimer = 50;
         }        
-        else 
+        else if(getScore() > 500) 
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth() + Greenfoot.getRandomNumber(60), 215); 
@@ -267,7 +267,7 @@ public class GameWorld extends World
      */
     public void spawnmeteors()
     {
-        if(getScore() > 2000)
+        if(getScore() > 2500)
         {
             if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
             {
@@ -316,13 +316,26 @@ public class GameWorld extends World
      */
     public void spawnCurrency()
     {
-        if ((Greenfoot.getRandomNumber (2000) < 7) && (spawnTimer == 0))
+        if ((Greenfoot.getRandomNumber (2000) < 7) && (spawnTimer == 0) && getScore() < 3000)
         {
             Currency1 c1 = new Currency1();
             addObject(c1, getWidth(), getHeight()-100);
             spawnTimer = 60;
         }
-        else if ((Greenfoot.getRandomNumber (2000) < 5) && (spawnTimer == 0))
+        
+        else if ((Greenfoot.getRandomNumber (2000) < 5) && (spawnTimer == 0) && getScore() < 3000)
+        {
+            Currency2 c2 = new Currency2();
+            addObject(c2, getWidth(), getHeight()-100);
+            spawnTimer = 60;
+        }
+        if ((Greenfoot.getRandomNumber (2000) < 25) && (spawnTimer == 0) && getScore() > 3000)
+        {
+            Currency1 c1 = new Currency1();
+            addObject(c1, getWidth(), getHeight()-100);
+            spawnTimer = 60;
+        }
+         else if ((Greenfoot.getRandomNumber (2000) < 20) && (spawnTimer == 0) && getScore() > 3000)
         {
             Currency2 c2 = new Currency2();
             addObject(c2, getWidth(), getHeight()-100);
