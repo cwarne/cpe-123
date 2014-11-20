@@ -282,7 +282,7 @@ public class GameWorld extends World
 
             }
         }
-     if(getScore() > 3250)
+        if(getScore() > 3250)
         {
             if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
             {
@@ -292,7 +292,6 @@ public class GameWorld extends World
             }
         }
     }
-    
 
     /**
      * Counts down the enemy & platform spawn timers once. Is used to 
@@ -339,7 +338,7 @@ public class GameWorld extends World
             addObject(c1, getWidth(), getHeight()-100);
             spawnTimer = 60;
         }
-        
+
         else if ((Greenfoot.getRandomNumber (2000) < 5) && (spawnTimer == 0) && getScore() < 3000)
         {
             Currency2 c2 = new Currency2();
@@ -352,7 +351,7 @@ public class GameWorld extends World
             addObject(c1, getWidth(), getHeight()-100);
             spawnTimer = 60;
         }
-         else if ((Greenfoot.getRandomNumber (2000) < 10) && (spawnTimer == 0) && getScore() > 3000)
+        else if ((Greenfoot.getRandomNumber (2000) < 10) && (spawnTimer == 0) && getScore() > 3000)
         {
             Currency2 c2 = new Currency2();
             addObject(c2, getWidth(), getHeight()-100);
@@ -412,12 +411,12 @@ public class GameWorld extends World
                 addObject(pE, getWidth() + stagger + 20, 450);
                 platform1Timer = platform1Timer + 70;
             }
-             else if (totalLength == 3)
+            else if (totalLength == 3)
             {
                 addObject(pE, getWidth() + stagger + 20, 450);
                 platform1Timer = platform1Timer + 70;
             }
-             else if (totalLength == 4)
+            else if (totalLength == 4)
             {
                 addObject(pE, getWidth() + stagger + 20, 450);
                 platform1Timer = platform1Timer + 50;
@@ -473,12 +472,12 @@ public class GameWorld extends World
                 addObject(pE, getWidth() + stagger + 20, 250);
                 platform2Timer = platform2Timer + 70;
             }
-             else if (totalLength == 3)
+            else if (totalLength == 3)
             {
                 addObject(pE, getWidth() + stagger + 20, 250);
                 platform2Timer = platform2Timer + 70;
             }
-             else if (totalLength == 4)
+            else if (totalLength == 4)
             {
                 addObject(pE, getWidth() + stagger + 20, 250);
                 platform2Timer = platform2Timer + 50;
@@ -566,20 +565,25 @@ public class GameWorld extends World
     }
 
     /**
-     * Shoots lazers with ammo, currently there is no way to get ammo, but will be fixed soon! :)
      * @Sarah Stephens
      * @Stephanie Lascola
      */
     public void shootLazer()
     {
-        if ((Greenfoot.isKeyDown("f")) && lazerTimer == 0 && ammoCount > 0)
+        PowerUps3 p = new PowerUps3();
+        getAmmoCount();
+        if ((Greenfoot.isKeyDown("3")) && lazerTimer == 0 && ammoCount > 0)
         {
             Lazer l = new Lazer();
             addObject(l, 100, 230);
             lazerTimer = 30;
-            ammoCount = ammoCount - 1;
+            p.usePowerup();
         }
     }
+    public void getAmmoCount()    
+    {
+        PowerUps3 p = new PowerUps3();
+        ammoCount = p.getP3Amount();
+    }
 }
-
 

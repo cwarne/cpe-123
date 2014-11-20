@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PowerUps3 extends PowerUps
 {
-    private int powerUp3 = 3;
+    private int powerUp3 = 5;
     private boolean key3 = false;
     /**
      * Act - do whatever the PowerUps1 wants to do. This method is called whenever
@@ -18,7 +18,15 @@ public class PowerUps3 extends PowerUps
     public void act() 
     {
         usePotion3();
+        cheat();
     }    
+    public void cheat()
+    {
+        if(Greenfoot.isKeyDown("i"))
+        {
+            powerUp3 = powerUp3 + 1;
+        }
+    }
     /**
      * This is made so when the key is pressed it stops running after released. This way all the potions aren't 
      * used up at once. When potion 1 is used, all obstacles disappear off screen.
@@ -72,5 +80,13 @@ public class PowerUps3 extends PowerUps
             {
                 setImage("vialOrange3_small.png");
             }
+    }
+    public int getP3Amount()
+    {
+        return powerUp3;
+    }
+    public void usePowerup()
+    {
+        powerUp3 = powerUp3 - 1;
     }
 }

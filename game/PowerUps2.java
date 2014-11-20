@@ -20,6 +20,7 @@ public class PowerUps2 extends PowerUps
     {
         usePotion2();
     } 
+   
     public void usePotion2()
     {
         Professor professor;
