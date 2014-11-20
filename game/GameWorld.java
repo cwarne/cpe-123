@@ -56,7 +56,7 @@ public class GameWorld extends World
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
             spawnCurrency();//adds the currency
-            createPlatform1();//creates random platforms at the first height
+            //createPlatform1();//creates random platforms at the first height
             createPlatform2();//creates random platforms at the second height
             scoreboard.addScore(1);
             shootLazer();
@@ -422,7 +422,64 @@ public class GameWorld extends World
 
     public void createPlatform2()
     {
-        //code will be similar to createPlatform1 function
+        PlatformStart pS = new PlatformStart();
+        PlatformMid pM = new PlatformMid();
+        PlatformEnd pE = new PlatformEnd();
+        stagger = 180; 
+        if (platform1Timer == 0) //spawn a new platform when timer is at zero
+        {
+            totalLength = Greenfoot.getRandomNumber (4); //gets a random length for the platform
+            platformLength = totalLength;
+            addObject(pS, getWidth(), 250); //add platform start piece
+            while (platformLength > 0)
+            {
+                addObject(pM, getWidth() + stagger, 250);                           
+                platformLength = platformLength - 1;       
+                if (totalLength == 3)
+                {
+                    stagger = stagger + 50;
+                }
+                else if (totalLength == 1)
+                {
+                    stagger = stagger + 50;
+                }
+                else if (totalLength == 4)
+                {
+                    stagger = stagger + 30;
+                }
+                else 
+                {
+                    stagger = stagger + 45;
+                }
+                platform1Timer = platform1Timer + 20;
+            }
+            //stagger = stagger + 100;
+            if (totalLength == 0)
+            {
+                addObject(pE, getWidth() + 100, 250);
+                platform1Timer = platform1Timer + 70;
+            }
+            else if (totalLength == 1)
+            {
+                addObject(pE, getWidth() + stagger + 30, 250);
+                platform1Timer = platform1Timer + 85;
+            }
+            else if (totalLength == 2)
+            {
+                addObject(pE, getWidth() + stagger + 20, 250);
+                platform1Timer = platform1Timer + 70;
+            }
+             else if (totalLength == 3)
+            {
+                addObject(pE, getWidth() + stagger + 20, 250);
+                platform1Timer = platform1Timer + 70;
+            }
+             else if (totalLength == 4)
+            {
+                addObject(pE, getWidth() + stagger + 20, 250);
+                platform1Timer = platform1Timer + 50;
+            }
+        }
     }
 
     /** Check for a user requested pause in the game 
