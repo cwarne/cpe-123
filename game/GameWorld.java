@@ -17,8 +17,11 @@ public class GameWorld extends World
     private int platform1Timer = 0; //prevents platforms from spawning on top of each other
     private int platform2Timer = 0;
     private int platformLength; 
+    private int platformLength2;
     private int totalLength;
+    private int totalLength2;
     private int stagger; //holds how far the platform piece is displaced in the x-direction
+    private int stagger2;
     private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
     private int bSpawnRate = 40; //spawn rate for enemyB
     private int cSpawnRate = 30; //spawn rate for enemyC
@@ -56,7 +59,7 @@ public class GameWorld extends World
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
             spawnCurrency();//adds the currency
-            //createPlatform1();//creates random platforms at the first height
+            createPlatform1();//creates random platforms at the first height
             createPlatform2();//creates random platforms at the second height
             scoreboard.addScore(1);
             shootLazer();
@@ -366,11 +369,10 @@ public class GameWorld extends World
         PlatformStart pS = new PlatformStart();
         PlatformMid pM = new PlatformMid();
         PlatformEnd pE = new PlatformEnd();
-        stagger = 180; //good
+        stagger = 180; 
         if (platform1Timer == 0) //spawn a new platform when timer is at zero
         {
             totalLength = Greenfoot.getRandomNumber (4); //gets a random length for the platform
-            //totalLength = 4; //test
             platformLength = totalLength;
             addObject(pS, getWidth(), 450); //add platform start piece
             while (platformLength > 0)
@@ -381,17 +383,20 @@ public class GameWorld extends World
                 {
                     stagger = stagger + 50;
                 }
-                /**else if (totalLength == 4)
+                else if (totalLength == 1)
+                {
+                    stagger = stagger + 50;
+                }
+                else if (totalLength == 4)
                 {
                     stagger = stagger + 30;
-                }**/
+                }
                 else 
                 {
                     stagger = stagger + 45;
                 }
                 platform1Timer = platform1Timer + 20;
             }
-            //stagger = stagger + 100;
             if (totalLength == 0)
             {
                 addObject(pE, getWidth() + 100, 450);
@@ -399,7 +404,7 @@ public class GameWorld extends World
             }
             else if (totalLength == 1)
             {
-                addObject(pE, getWidth() + stagger, 450);
+                addObject(pE, getWidth() + stagger + 30, 450);
                 platform1Timer = platform1Timer + 75;
             }
             else if (totalLength == 2)
@@ -426,7 +431,7 @@ public class GameWorld extends World
         PlatformMid pM = new PlatformMid();
         PlatformEnd pE = new PlatformEnd();
         stagger = 180; 
-        if (platform1Timer == 0) //spawn a new platform when timer is at zero
+        if (platform2Timer == 0) //spawn a new platform when timer is at zero
         {
             totalLength = Greenfoot.getRandomNumber (4); //gets a random length for the platform
             platformLength = totalLength;
@@ -451,33 +456,32 @@ public class GameWorld extends World
                 {
                     stagger = stagger + 45;
                 }
-                platform1Timer = platform1Timer + 20;
+                platform2Timer = platform2Timer + 20;
             }
-            //stagger = stagger + 100;
             if (totalLength == 0)
             {
                 addObject(pE, getWidth() + 100, 250);
-                platform1Timer = platform1Timer + 70;
+                platform2Timer = platform2Timer + 70;
             }
             else if (totalLength == 1)
             {
                 addObject(pE, getWidth() + stagger + 30, 250);
-                platform1Timer = platform1Timer + 85;
+                platform2Timer = platform2Timer + 85;
             }
             else if (totalLength == 2)
             {
                 addObject(pE, getWidth() + stagger + 20, 250);
-                platform1Timer = platform1Timer + 70;
+                platform2Timer = platform2Timer + 70;
             }
              else if (totalLength == 3)
             {
                 addObject(pE, getWidth() + stagger + 20, 250);
-                platform1Timer = platform1Timer + 70;
+                platform2Timer = platform2Timer + 70;
             }
              else if (totalLength == 4)
             {
                 addObject(pE, getWidth() + stagger + 20, 250);
-                platform1Timer = platform1Timer + 50;
+                platform2Timer = platform2Timer + 50;
             }
         }
     }
