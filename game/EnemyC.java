@@ -17,9 +17,10 @@ public class EnemyC extends Obstacles
     {
         if(GameWorld.gamePaused == false)
         {
+            
+            collideLazer();
             move();
             collide();
-            collideLazer();
             angle();
             despawn();
         }

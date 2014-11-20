@@ -37,19 +37,7 @@ comment20.target=Professor\ getProfessor()
 comment20.text=\n\ @Sarah\ Stephens\n\ @Stephanie\ Lascola\n
 comment21.params=
 comment21.target=void\ shootLazer()
-<<<<<<< Updated upstream
-comment21.text=\r\n\ @Sarah\ Stephens\r\n\ @Stephanie\ Lascola\r\n
-comment22.params=
-comment22.target=void\ getAmmoCount()
-=======
-<<<<<<< HEAD
 comment21.text=\n\ Shoots\ lazers\ with\ ammo,\ currently\ there\ is\ no\ way\ to\ get\ ammo,\ but\ will\ be\ fixed\ soon\!\ \:)\n\ @Sarah\ Stephens\n\ @Stephanie\ Lascola\n
-=======
-comment21.text=\r\n\ @Sarah\ Stephens\r\n\ @Stephanie\ Lascola\r\n
-comment22.params=
-comment22.target=void\ getAmmoCount()
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
 comment3.params=
 comment3.target=void\ prepare()
 comment3.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\n\ objects\ and\ add\ them\ to\ the\ world.\n
@@ -70,15 +58,5 @@ comment8.target=void\ spawnmeteors()
 comment8.text=\n\ spawns\ meteors\n\ @NickJones\n\ edited\:\ @ChandlerWarne\n
 comment9.params=
 comment9.target=void\ changeTimers()
-<<<<<<< Updated upstream
-comment9.text=\r\n\ Counts\ down\ the\ enemy\ &\ platform\ spawn\ timers\ once.\ Is\ used\ to\ \r\n\ set\ a\ cooldown\ for\ the\ spawn\ of\ obstacles\ and\ platforms\ so\r\n\ that\ they\ will\ not\ overlap\ on\ the\ game\ screen.\r\n\ @Sarah\ Stephens\r\n
-numComments=23
-=======
-<<<<<<< HEAD
 comment9.text=\n\ Counts\ down\ the\ enemy\ &\ platform\ spawn\ timers\ once.\ Is\ used\ to\ \n\ set\ a\ cooldown\ for\ the\ spawn\ of\ obstacles\ and\ platforms\ so\n\ that\ they\ will\ not\ overlap\ on\ the\ game\ screen.\n\ @Sarah\ Stephens\n
 numComments=22
-=======
-comment9.text=\r\n\ Counts\ down\ the\ enemy\ &\ platform\ spawn\ timers\ once.\ Is\ used\ to\ \r\n\ set\ a\ cooldown\ for\ the\ spawn\ of\ obstacles\ and\ platforms\ so\r\n\ that\ they\ will\ not\ overlap\ on\ the\ game\ screen.\r\n\ @Sarah\ Stephens\r\n
-numComments=23
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
