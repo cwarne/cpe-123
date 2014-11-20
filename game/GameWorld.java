@@ -166,7 +166,7 @@ public class GameWorld extends World
         addObject(itempanel1, 154, 378);
         OrangePotion itempanel2 = new OrangePotion();
         addObject(itempanel2, 401,378);
-        ItemPanel itempanel3 = new ItemPanel();
+        PurplePotion itempanel3 = new PurplePotion();
         addObject(itempanel3, 650,379);
         ShowMoneyString showmoneystring = new ShowMoneyString();
         addObject(showmoneystring, 412,103);
