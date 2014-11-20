@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyB extends Obstacles
 {
+    int currentImage = 3;
     /**
      * Act - do whatever the EnemyB wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,6 +18,7 @@ public class EnemyB extends Obstacles
         if(GameWorld.gamePaused == false)
         {
             move();
+            changeImage();
             collide();
             collideLazer();
         }
@@ -28,6 +30,32 @@ public class EnemyB extends Obstacles
     public void move()
     {
         setLocation(getX() - 5, getY());
+    }
+    /**
+     * animates the dinosour
+     * @Chandler Warne
+     */
+    public void changeImage()
+    {
+        GameWorld world = (GameWorld) getWorld();
+        if(world.getCount() % 6 == 0)
+        {
+            if(currentImage == 3)
+            {
+                setImage("dino2a.png");
+                currentImage = 1;
+            } 
+            else if(currentImage == 1)
+            {
+                setImage("dino2b.png");
+                currentImage = 2;
+            }
+            else
+            {
+                setImage("dino2c.png");
+                currentImage = 3;
+            }
+        }
     }
    
 }

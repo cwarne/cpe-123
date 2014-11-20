@@ -1,8 +1,22 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ PowerUps1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ PowerUps1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+comment1.target=void\ usePotion3()
+comment1.text=\n\ This\ is\ made\ so\ when\ the\ key\ is\ pressed\ it\ stops\ running\ after\ released.\ This\ way\ all\ the\ potions\ aren't\ \n\ used\ up\ at\ once.\ When\ potion\ 1\ is\ used,\ all\ obstacles\ disappear\ off\ screen.\n
+comment2.params=x
+comment2.target=void\ updateAmount(int)
+comment2.text=\n\ Takes\ potion\ update\ from\ game\ store\n\ @Chandler\ Warne\n
+comment3.params=
+comment3.target=void\ updateImage()
+comment3.text=\n\ Updates\ image\ on\ screen\ to\ reflect\ how\ much\ powerup\ is\ available.\n\ @Chandler\ Warne\n
+numComments=4
+=======
+>>>>>>> Stashed changes
 comment1.target=void\ cheat()
 comment2.params=
 comment2.target=void\ usePotion3()
@@ -18,3 +32,7 @@ comment5.target=int\ getP3Amount()
 comment6.params=
 comment6.target=void\ usePowerup()
 numComments=7
+<<<<<<< Updated upstream
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> Stashed changes

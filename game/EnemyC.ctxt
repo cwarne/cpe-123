@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ EnemyC\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ EnemyC\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ move()
-comment1.text=\r\n\ Moves\ the\ enemy\ acorss\ the\ top\ of\ the\ screen\ and\ swoops\ it\ down.\r\n\ @AlexCarpenter\r\n
+comment1.text=\n\ Moves\ the\ enemy\ acorss\ the\ top\ of\ the\ screen\ and\ swoops\ it\ down.\n\ @AlexCarpenter\n
 comment2.params=
 comment2.target=void\ angle()
-comment2.text=\r\n\ Sets\ the\ enemies\ spawn\ rotation\ to\ 160\r\n
+comment2.text=\n\ Sets\ the\ enemies\ spawn\ rotation\ to\ 160\n
 comment3.params=
 comment3.target=void\ despawn()
-comment3.text=\r\n\ Despawns\ the\ object\ when\ it\ gets\ to\ the\ left\ edge\ of\ the\ screen.\r\n
+comment3.text=\n\ Despawns\ the\ object\ when\ it\ gets\ to\ the\ left\ edge\ of\ the\ screen.\n
 numComments=4
