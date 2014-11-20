@@ -12,9 +12,10 @@ public class EnemyA extends Obstacles
         if(GameWorld.gamePaused == false)
         {
             move();
-            collide(); //check for collision with professor and go to game over screen
+            //collide(); //check for collision with professor and go to game over screen
             changeImage();
-            collideLazer();
+            //collideLazer();
+            super.act();
         }
     }
     

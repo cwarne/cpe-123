@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\n\ Act\ -\ do\ whatever\ the\ PowerUps2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ PowerUps2\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=
 comment1.target=void\ usePotion2()
 comment2.params=x
 comment2.target=void\ updateAmount(int)
-comment2.text=\n\ Takes\ potion\ update\ from\ game\ store\n\ @Chandler\ Warne\n
+comment2.text=\r\n\ Takes\ potion\ update\ from\ game\ store\r\n\ @Chandler\ Warne\r\n
 comment3.params=
 comment3.target=void\ updateImage()
-comment3.text=\n\ Updates\ image\ on\ screen\ to\ reflect\ how\ much\ powerup\ is\ available.\n\ @Chandler\ Warne\n
+comment3.text=\r\n\ Updates\ image\ on\ screen\ to\ reflect\ how\ much\ powerup\ is\ available.\r\n\ @Chandler\ Warne\r\n
 numComments=4

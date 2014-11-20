@@ -19,8 +19,7 @@ public class EnemyB extends Obstacles
         {
             move();
             changeImage();
-            collide();
-            collideLazer();
+            super.act();
         }
     }    
     /**

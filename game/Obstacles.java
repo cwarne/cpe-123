@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Obstacles extends Actor
 {
     private boolean isShieldUp = false;
+    private boolean ifStillAlive = true;
     /**
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,8 +17,7 @@ public class Obstacles extends Actor
     public void act() 
     {
         collide();
-        collideLazer();
-        //getShieldStatus();
+        if( ifStillAlive) collideLazer();
     }
        /**
      * check for collision with the professor and set to game over screen 
@@ -29,18 +29,19 @@ public class Obstacles extends Actor
      */
     public void collide()
     {
-        Actor professor;
-        professor = getOneIntersectingObject(Professor.class);
-        Professor prof;
+        Professor professor;
+        professor = (Professor) getOneIntersectingObject(Professor.class);
+        //Professor prof;
         GameWorld world = (GameWorld) getWorld();
-        prof = world.getProfessor();
+        //prof = world.getProfessor();
         getShieldStatus();
         if (professor != null)
         {
             if (isShieldUp == true)
             {
-                prof.deactivateShield();
+                professor.deactivateShield();
                 getWorld().removeObject(this);
+                ifStillAlive = false;
             }
             else if (isShieldUp == false)
             {
