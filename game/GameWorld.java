@@ -286,23 +286,41 @@ public class GameWorld extends World
      */
     public void spawnmeteors()
     {
-        if(getScore() > 2500 && getScore() < 3250)
-        {
-            if (Greenfoot.getRandomNumber(1000) < mSpawnRate)
-            {
-                Meteor meteor = new Meteor();
-                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
-
-            }
-        }
-        if(getScore() > 3250)
+        if(getScore() > 2500 && getScore() < 4000)
         {
             if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
             {
                 Meteor meteor = new Meteor();
-                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(50));
+                addObject(meteor, getWidth() - Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
 
             }
+        }
+        else if(getScore() > 2500 && getScore() < 4000)
+        {
+           if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
+            {
+                Meteor meteor = new Meteor();
+                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
+
+            } 
+        }
+        if(getScore() > 4000)
+        {
+            if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 3)
+            {
+                Meteor meteor = new Meteor();
+                addObject(meteor, getWidth() - Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
+
+            }
+        }
+         else if(getScore() > 4000)
+        {
+           if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
+            {
+                Meteor meteor = new Meteor();
+                addObject(meteor, getWidth() + Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
+
+            } 
         }
     }
 
