@@ -227,7 +227,18 @@ public class GameWorld extends World
             spawnTimer = 40;
         }    
     }
-
+    /** spawns random enemies on the first platform level
+     * @NickJones
+     */
+    public void platformEnemy()
+    {
+       if ((Greenfoot.getRandomNumber(100) < 90) && (spawnTimer == 0))
+       {
+           EnemyA enemyA = new EnemyA();
+           addObject(enemyA, getWidth() + Greenfoot.getRandomNumber(400), 420);
+           spawnTimer = 1;
+        }
+    }
     /**
      * spawn random enemies on the second platform level
      * @Sarah Stephens
@@ -378,7 +389,7 @@ public class GameWorld extends World
             //totalLength = 0;
             platformLength = totalLength;
             addObject(pS, getWidth() + stagger, 450); //add platform start piece
-            //add call for enemy spawn method here
+            platformEnemy();//add call for enemy spawn method here
             //midPiece = 1;
             stagger = stagger + 69;
             while (platformLength > 0) 
@@ -395,14 +406,14 @@ public class GameWorld extends World
                 }*/
                 stagger = stagger + 111;            
                 addObject(pM, getWidth() + stagger, 450); 
-                //add call for enemy spawn method here
+                platformEnemy();//add call for enemy spawn method here
                 //midPiece = midPiece + 1;
                 platformLength = platformLength - 1;  
                 stagger = stagger + 111;
             }
             stagger = stagger + 69;
             addObject(pE, getWidth() + stagger, 450);
-            //add call for enemy spawn method here
+            platformEnemy();//add call for enemy spawn method here
             platform1Timer = 80 + totalLength*40;
         }
     }
