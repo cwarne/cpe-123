@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyC extends Obstacles
 {
-    public boolean ran;
-    /**
+     /**
      * Act - do whatever the EnemyC wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -22,13 +21,22 @@ public class EnemyC extends Obstacles
             despawn();
         }
     }    
+    
     /**
      * Moves the enemy acorss the top of the screen and swoops it down.
      * @AlexCarpenter
+     * edited by @Sarah Stephens
      */
     public void move()
     {
-        setLocation(getX() - 9, getY());
+        if (getX() > 350)
+        {
+            setLocation(getX() - 9, getY() + 1);
+        }
+        else
+        {
+            setLocation(getX() - 9, getY() - 1);
+        }        
     }
    
     /**

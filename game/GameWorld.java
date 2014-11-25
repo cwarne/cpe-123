@@ -49,7 +49,7 @@ public class GameWorld extends World
 
         music = new GreenfootSound("ElectroRock.mp3"); //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        //music.playLoop(); //uncomment to play music
+        music.playLoop();
     }
 
     public void act()
@@ -272,7 +272,7 @@ public class GameWorld extends World
             if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
             {
                 EnemyC enemyC = new EnemyC();
-                addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(160));
+                addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(110));
                 spawnTimer = 20;
                 airTimer = 30;
             }

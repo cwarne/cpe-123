@@ -31,9 +31,7 @@ public class Obstacles extends Actor
     {
         Professor professor;
         professor = (Professor) getOneIntersectingObject(Professor.class);
-        //Professor prof;
         GameWorld world = (GameWorld) getWorld();
-        //prof = world.getProfessor();
         getShieldStatus();
         if (professor != null)
         {
