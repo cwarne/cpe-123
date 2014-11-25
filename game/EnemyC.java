@@ -19,7 +19,6 @@ public class EnemyC extends Obstacles
         {
             super.act();
             move();
-            angle();
             despawn();
         }
     }    
@@ -29,27 +28,9 @@ public class EnemyC extends Obstacles
      */
     public void move()
     {
-        move(9);
-        if (getY() <= 40)
-        {
-            setRotation(160);
-        }
-        if (getY() >= 200)
-        {
-            setRotation(200);
-        }
+        setLocation(getX() - 9, getY());
     }
-    /**
-     * Sets the enemies spawn rotation to 160
-     */
-    public void angle()
-    {
-        if (ran == false)
-        {
-            setRotation(160 + Greenfoot.getRandomNumber(40));
-            ran = true;
-        }
-    }
+   
     /**
      * Despawns the object when it gets to the left edge of the screen.
      */
