@@ -43,7 +43,7 @@ public class Obstacles extends Actor
             }
             else if (isShieldUp == false)
             {
-               //world.endGame();
+               world.endGame();
             }
         }
        
