@@ -18,7 +18,11 @@ public class Reference extends Actor
         intersect();
     }    
     
-    public void intersect() //checks if a platform is currently at the edge of the world
+    /**
+     * Checks if a platform is currently at the edge of the world
+     * @Sarah Stephens
+     */
+    public void intersect() 
     {
         Actor p;
         p = getOneIntersectingObject(Platforms.class);
@@ -31,7 +35,11 @@ public class Reference extends Actor
             isPlatform = false;
         }
     }
-    
+    /**
+     * returns if there is a platform currently at the edge of the world
+     * is used for spawning enemies in the game world
+     * @Sarah Stephens
+     */
     public boolean isPlatform() 
     {
         return isPlatform;

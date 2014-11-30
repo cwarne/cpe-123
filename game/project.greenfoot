@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sat Nov 29 23:51:16 PST 2014
+#Sun Nov 30 13:41:30 PST 2014
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
 class.BackerPM.superclass=PauseMenu
@@ -309,9 +309,9 @@ target19.showInterface=false
 target14.type=ClassTarget
 class.ShowMoneyString.superclass=GameStore
 target41.type=ClassTarget
-target30.editor.y=34
+target30.editor.y=80
 target37.y=1030
-target30.editor.x=403
+target30.editor.x=154
 target37.x=100
 target33.name=OrangePotion
 class.Currency.superclass=greenfoot.Actor
@@ -811,13 +811,13 @@ target4.editor.height=482
 dependency67.from=GameWorld
 dependency100.from=GameWorld
 target47.naviview.expanded=true
-target4.editor.y=0
+target4.editor.y=34
 target37.naviview.expanded=true
 target27.naviview.expanded=true
 dependency42.from=Professor
 target17.naviview.expanded=true
 class.CurrencyIndicator.superclass=Currency
-target4.editor.x=567
+target4.editor.x=364
 target33.editor.y=43
 class.CurrencyCounter.superclass=Currency
 target33.editor.x=40
@@ -930,8 +930,8 @@ class.Professor.superclass=Characters
 target28.name=EnemyB
 target38.editor.width=900
 dependency66.to=GameWorld
-target27.editor.y=36
-target27.editor.x=424
+target27.editor.y=38
+target27.editor.x=429
 target47.y=70
 mainWindow.height=744
 target47.x=70

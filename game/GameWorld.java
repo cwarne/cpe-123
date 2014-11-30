@@ -193,12 +193,16 @@ public class GameWorld extends World
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
     }
-        
+    
+    /**
+     * Spawns enemies randomly on the ground level
+     * @Sarah Stephens
+     */    
     public void spawnObstacles()
     {
         if (Greenfoot.getRandomNumber(2000) < 100 && spawnTimer == 0)
         {
-             EnemyA enemyA = new EnemyA();
+            EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth(), getHeight()-95);
             spawnTimer = 50;
         }        
@@ -210,6 +214,10 @@ public class GameWorld extends World
         }
         
     }
+    /**
+     * This is supposed to spawn enemies at both height levels but I don't think it is working correctly
+     * will look at later @Sarah Stephens
+     */
     public void spawn()
     {
         if (Greenfoot.getRandomNumber(2) == 1)
@@ -261,7 +269,7 @@ public class GameWorld extends World
     /**
      * spawns pterodactyls in the sky
      * @AlexCarpenter
-     * edited by @NickJones
+     * edited by @NickJones @Sarah Stephens
      */    
     public void spawnObstacles3()
     {
