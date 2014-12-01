@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Dec 01 12:26:34 PST 2014
+#Mon Dec 01 12:37:43 PST 2014
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
 class.BackerPM.superclass=PauseMenu
@@ -379,7 +379,7 @@ dependency95.to=GameWorld
 class.GameWorld.superclass=greenfoot.World
 target34.height=50
 target15.y=310
-class.PlatformStart.image=platform_left.png
+class.PlatformStart.image=platform_left2.png
 target15.x=190
 target37.editor.height=482
 dependency2.from=GameWorld
@@ -530,7 +530,7 @@ target10.x=100
 class.GameWorld.image=Background2.png
 dependency40.type=UsesDependency
 dependency92.type=UsesDependency
-class.PlatformEnd.image=platform_right.png
+class.PlatformEnd.image=platform_right2.png
 dependency15.to=Cloud
 target30.type=ClassTarget
 dependency4.to=GameWorld
@@ -634,7 +634,7 @@ dependency92.from=GameWorld
 target34.editor.y=317
 target34.editor.x=484
 target20.height=50
-class.PlatformMid.image=platform_middle.png
+class.PlatformMid.image=platform_middle2.png
 target1.name=PlatformEnd
 class.Cloud.superclass=Sky
 dependency6.type=UsesDependency
