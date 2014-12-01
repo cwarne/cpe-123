@@ -201,17 +201,27 @@ public class Professor extends Characters
     {        
         isShieldUp = true;
     }
-
+    /**
+     * checking if shield is up
+     * @Stephanie Lascola
+     */
     public void deactivateShield()
     {      
         isShieldUp = false;
     }
-
+    /**
+     * Checking is shield is up 
+     * @Sarah Stephens
+     */
     public boolean getShieldStatus()
     {
         return isShieldUp;
     }
-    
+    /**
+     * Position of the shield
+     * @StephanieLascola
+     * @SarahStephens
+     */
     public int findX()
     {
         return getX();

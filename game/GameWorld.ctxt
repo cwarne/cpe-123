@@ -40,6 +40,7 @@ comment21.target=void\ shootLazer()
 comment21.text=\r\n\ @Sarah\ Stephens\r\n\ @Stephanie\ Lascola\r\n
 comment22.params=
 comment22.target=void\ getAmmoCount()
+comment22.text=\r\n\ Ammo\ count\ for\ the\ power\ up\ 3\ \r\n\ @StephanieLascola\r\n
 comment3.params=
 comment3.target=void\ prepare()
 comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n

@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Nov 30 19:50:51 PST 2014
+#Mon Dec 01 12:26:34 PST 2014
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
 class.BackerPM.superclass=PauseMenu
@@ -189,9 +189,9 @@ target36.width=90
 target8.height=50
 class.GrassSmall.image=GrassSmall.png
 target31.typeParameters=
-class.YesOption.image=YesNotSelected.png
 dependency48.type=UsesDependency
-class.LightGroundTwo.image=LightGroundTwo.png
+class.YesOption.image=YesNotSelected.png
+class.LightGroundTwo.image=LightGroundTwo3.png
 dependency23.type=UsesDependency
 class.LightGroundOne.superclass=Ground
 dependency75.type=UsesDependency
@@ -202,7 +202,7 @@ target38.type=ClassTarget
 target14.editor.x=40
 dependency50.type=UsesDependency
 target13.type=ClassTarget
-class.LightGroundOne.image=LightGroundOne.png
+class.LightGroundOne.image=LightGroundOne3.png
 class.PauseMenu.superclass=Menus
 dependency41.to=Lazer
 target27.typeParameters=

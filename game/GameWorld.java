@@ -591,6 +591,10 @@ public class GameWorld extends World
             p.usePowerup();
         }
     }
+   /**
+    * Ammo count for the power up 3 
+    * @StephanieLascola
+    */
     public void getAmmoCount()    
     {
         PowerUps3 p = new PowerUps3();
