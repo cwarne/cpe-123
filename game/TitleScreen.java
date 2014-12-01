@@ -26,13 +26,15 @@ public class TitleScreen extends World
         jumpToNextFrame();
         CurrencyCounter.currencyCollected = 0;
     }
-
+    /**
+     * Edited by @StephanieLascola
+     */
     public void jumpToNextFrame()
     {
         if((Greenfoot.mouseClicked(this)) || (Greenfoot.isKeyDown("space")))
         {
-            GameWorld gameworld = new GameWorld();
-            Greenfoot.setWorld(gameworld);
+            Instructions instructions = new Instructions();
+            Greenfoot.setWorld(instructions);
         }
     }
 

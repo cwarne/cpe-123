@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Dec 01 12:37:43 PST 2014
+#Mon Dec 01 13:13:19 PST 2014
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
 class.BackerPM.superclass=PauseMenu
@@ -520,6 +520,7 @@ dependency100.to=Reference
 target18.y=1090
 target18.x=10
 target12.height=50
+class.Instructions.image=Instructions.png
 dependency13.type=UsesDependency
 dependency21.to=Professor
 target30.showInterface=false
@@ -748,6 +749,7 @@ target11.editor.x=40
 target30.editor.height=700
 dependency29.type=UsesDependency
 target5.height=50
+class.Instructions.superclass=greenfoot.World
 target36.editor.width=900
 target35.showInterface=false
 dependency12.to=GrassSmall
