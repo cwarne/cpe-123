@@ -26,7 +26,7 @@ public class GameOverScreen extends World
   
         super(800, 640, 1);
         prepare();
-        showText("final score   "+score, 90, 30);
+        showText("final score   "+score, 1200, 30);
         
     }
     /**

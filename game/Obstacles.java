@@ -41,7 +41,7 @@ public class Obstacles extends Actor
                 getWorld().removeObject(this);
                 ifStillAlive = false;
             }
-            else if (isShieldUp == false)
+            else if (isShieldUp == false && world.getHaungs() == false)
             {
                world.endGame();
             }

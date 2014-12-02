@@ -32,7 +32,7 @@ public class GameWorld extends World
     private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
-
+    private boolean haungsMode = false; //if true professor is invincible and is in haungs mode
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
@@ -58,6 +58,7 @@ public class GameWorld extends World
         if(gamePaused == false)
         {
             count++; //Increase counter for global synchronization
+            haungsMode(); //check to see if in haungs mode or not
             spawnObstacles();//spawns ground dinos
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
@@ -198,6 +199,34 @@ public class GameWorld extends World
         addObject(powerups2, 95, 608);
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
+    }
+    
+    /**
+     * Enable/Disable Haungs mode with "h" key
+     * Chandler Warne
+     */
+    public void haungsMode()
+    {
+        if(Greenfoot.isKeyDown("h") == true)
+        {
+            if(haungsMode == false)
+            {
+                haungsMode = true;
+            }
+            else
+            {
+                haungsMode = false;
+            }
+        }
+    }
+    
+    /**
+     * Get Haungs mode value
+     * Chandler Warne
+     */
+    public boolean getHaungs()
+    {
+        return haungsMode;
     }
 
     /**
