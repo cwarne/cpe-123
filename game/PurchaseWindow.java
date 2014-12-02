@@ -20,11 +20,12 @@ public class PurchaseWindow extends ItemPanel
     }   
     private void makeVisible()
     {
-        if(pwVisible == false)
+        if((pwVisible == false) || (BackerGS.storeVisible == false))
         {
             getImage().setTransparency(0);
+            pwVisible = false;
         }
-        if(pwVisible == true)
+        if((pwVisible == true) && (BackerGS.storeVisible == true))
         {
             getImage().setTransparency(255);
         }

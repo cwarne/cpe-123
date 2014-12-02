@@ -30,7 +30,7 @@ public class GreenPotion extends ItemPanel
     }
     public void checkIfClicked()
     {
-        if(Greenfoot.mouseClicked(this) && CurrencyCounter.currencyCollected > 150)
+        if(Greenfoot.mouseClicked(this) && CurrencyCounter.currencyCollected >= 150)
         {
             PurchaseWindow.pwVisible = true;
         }
