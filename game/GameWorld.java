@@ -149,7 +149,7 @@ public class GameWorld extends World
         ref2 = new Reference();
         addObject(ref2, 810, 450);
 
-        setPaintOrder(PauseMenu.class, YesOption.class, NoOption.class, PurchaseWindow.class, GameStore.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
+        setPaintOrder(PauseMenu.class, YesOption.class, NoOption.class, PurchaseWindow.class, GameStore.class, ScoreBoard.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class, Cloud.class, MeteorInSky.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -207,6 +207,9 @@ public class GameWorld extends World
         addObject(powerups2, 95, 608);
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
+        
+        MeteorInSky mis = new MeteorInSky();
+        addObject(mis, 60, 28);
     }
     
     /**
