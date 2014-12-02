@@ -32,12 +32,8 @@ public class GameWorld extends World
     private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
-<<<<<<< HEAD
     private boolean haungsMode = false; //if true professor is invincible and is in haungs mode
-=======
     private int enemySpawnRateGround = 100;
-
->>>>>>> FETCH_HEAD
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
