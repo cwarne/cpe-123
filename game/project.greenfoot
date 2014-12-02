@@ -1,5 +1,9 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Tue Dec 02 10:13:33 PST 2014
+=======
+#Tue Dec 02 10:11:02 PST 2014
+>>>>>>> FETCH_HEAD
 target49.type=ClassTarget
 target24.type=ClassTarget
 class.PowerUps2.image=vialEmpty_small.png
@@ -7,7 +11,12 @@ class.BackerPM.superclass=PauseMenu
 target16.name=Cloud
 target13.editor.width=900
 target51.type=ClassTarget
+<<<<<<< HEAD
 target43.name=ShowMoneyString
+=======
+target43.name=Selection1
+dependency116.from=GreenPotion
+>>>>>>> FETCH_HEAD
 dependency85.to=Meteor
 target51.width=130
 target11.typeParameters=
@@ -36,6 +45,7 @@ target36.type=ClassTarget
 target17.showInterface=false
 target15.editor.y=23
 target15.editor.x=40
+dependency112.to=PurchaseWindow
 target11.type=ClassTarget
 dependency33.to=GameWorld
 dependency18.from=GameWorld
@@ -73,8 +83,13 @@ target32.width=130
 class.Placeholder.image=apple1.png
 target3.editor.height=700
 class.P2.superclass=Platforms
+<<<<<<< HEAD
 mainWindow.width=1341
 target38.editor.height=744
+=======
+mainWindow.width=1616
+target38.editor.height=482
+>>>>>>> FETCH_HEAD
 target8.showInterface=false
 class.Obstacles.superclass=greenfoot.Actor
 target1.typeParameters=
@@ -96,7 +111,12 @@ target20.x=10
 target37.editor.x=40
 target44.name=LightGroundTwo
 class.P3.superclass=Platforms
+<<<<<<< HEAD
 target20.editor.y=43
+=======
+dependency117.from=GreenPotion
+target20.editor.y=0
+>>>>>>> FETCH_HEAD
 class.Selection1.image=GameStore.png
 dependency16.to=Cloud
 target49.height=50
@@ -132,11 +152,19 @@ target48.editor.y=0
 target48.editor.x=40
 class.LightGroundTwo.superclass=Ground
 dependency19.from=Professor
+<<<<<<< HEAD
 target31.name=Instructions
 target31.editor.y=23
 target44.editor.width=900
 target31.editor.x=0
 dependency104.from=YesOption
+=======
+target31.name=PowerUps2
+target31.editor.y=0
+target44.editor.width=1616
+target31.editor.x=40
+dependency104.from=GameWorld
+>>>>>>> FETCH_HEAD
 dependency46.from=Obstacles
 class.P10.image=Platform10.png
 dependency98.from=GameWorld
@@ -223,9 +251,16 @@ world.lastInstantiated=GameWorld
 target40.type=ClassTarget
 target23.y=970
 class.P8.superclass=Platforms
+<<<<<<< HEAD
 target23.x=100
 target32.name=CurrencyIndicator
 dependency105.from=YesOption
+=======
+target23.x=150
+target32.name=Lazer
+dependency105.from=TitleScreen
+dependency114.to=CurrencyCounter
+>>>>>>> FETCH_HEAD
 dependency47.from=Obstacles
 target46.editor.height=700
 dependency99.from=Reference
@@ -249,8 +284,13 @@ dependency29.to=Professor
 dependency87.type=UsesDependency
 dependency82.to=GameWorld
 dependency10.type=UsesDependency
+<<<<<<< HEAD
 target25.editor.y=0
 target25.editor.x=40
+=======
+target25.editor.y=-2
+target25.editor.x=-8
+>>>>>>> FETCH_HEAD
 class.GreenPotion.superclass=ItemPanel
 dependency62.type=UsesDependency
 target46.naviview.expanded=true
@@ -448,6 +488,7 @@ target26.height=50
 target34.editor.height=700
 dependency51.from=PowerUps2
 target4.showInterface=false
+dependency116.to=CurrencyCounter
 target17.width=80
 target5.width=90
 target39.showInterface=false
@@ -618,8 +659,14 @@ target12.editor.x=40
 target25.editor.height=482
 dependency97.to=PurplePotion
 dependency79.type=UsesDependency
+<<<<<<< HEAD
 target35.y=310
 target35.x=190
+=======
+target35.y=1030
+dependency112.type=UsesDependency
+target35.x=10
+>>>>>>> FETCH_HEAD
 dependency54.type=UsesDependency
 target17.type=ClassTarget
 target22.editor.width=900
@@ -693,6 +740,7 @@ target25.name=Selection2
 target13.x=10
 target18.editor.width=900
 target20.typeParameters=
+dependency113.to=CurrencyCounter
 dependency34.to=Professor
 target46.height=50
 target34.width=90
@@ -705,7 +753,12 @@ target16.typeParameters=
 target45.editor.y=0
 target1.editor.width=900
 dependency28.to=EnemyC
+<<<<<<< HEAD
 target45.editor.x=40
+=======
+target45.editor.x=154
+dependency113.type=UsesDependency
+>>>>>>> FETCH_HEAD
 dependency81.to=BackerGS
 target49.y=910
 target30.typeParameters=
@@ -730,6 +783,7 @@ dependency27.from=GameWorld
 target30.width=80
 dependency79.from=ShowMoneyString
 target38.height=50
+dependency112.from=PurplePotion
 dependency54.from=GameWorld
 dependency69.to=GameWorld
 target36.editor.height=482
@@ -795,13 +849,20 @@ target28.editor.x=40
 target29.height=50
 dependency6.from=GameWorld
 target11.width=80
+<<<<<<< HEAD
 target47.width=130
 target11.editor.y=0
 target11.editor.x=40
+=======
+target47.width=120
+target11.editor.y=-2
+target11.editor.x=-8
+>>>>>>> FETCH_HEAD
 target30.editor.height=482
 dependency29.type=UsesDependency
 target5.height=50
 class.Instructions.superclass=greenfoot.World
+dependency114.type=UsesDependency
 target36.editor.width=900
 target35.showInterface=false
 dependency12.to=GrassSmall
@@ -820,19 +881,33 @@ target18.showInterface=false
 target38.name=GameWorld
 target21.type=ClassTarget
 class.P12.superclass=Platforms
+<<<<<<< HEAD
 mainWindow.y=23
 target13.name=Currency
 mainWindow.x=0
 target16.y=130
 target16.x=110
+=======
+mainWindow.y=-8
+target13.name=TitleScreen
+mainWindow.x=-8
+target16.y=1090
+target16.x=10
+>>>>>>> FETCH_HEAD
 dependency28.from=EnemyB
 target49.editor.width=900
 target40.name=PlatformStart
 target39.editor.y=0
 target39.editor.x=40
 class.EnemyB.image=dino2a.png
+<<<<<<< HEAD
 target7.editor.height=744
 target43.width=130
+=======
+dependency113.from=PurplePotion
+target7.editor.height=482
+target43.width=80
+>>>>>>> FETCH_HEAD
 dependency55.from=BackerPM
 class.NoOption.image=NoNotSelected.png
 class.Reference.superclass=greenfoot.Actor
@@ -873,8 +948,8 @@ target47.naviview.expanded=true
 target4.editor.y=23
 target37.naviview.expanded=true
 target27.naviview.expanded=true
-dependency42.from=Professor
 target17.naviview.expanded=true
+dependency42.from=Professor
 class.CurrencyIndicator.superclass=Currency
 target4.editor.x=0
 target33.editor.y=80
@@ -900,13 +975,19 @@ target33.x=110
 target45.height=50
 dependency7.from=Ground
 target40.typeParameters=
+<<<<<<< HEAD
 target1.editor.height=482
+=======
+target1.editor.height=744
+dependency115.to=PurchaseWindow
+>>>>>>> FETCH_HEAD
 target24.width=90
-target44.editor.y=0
-target44.editor.x=40
+target44.editor.y=-8
+target44.editor.x=-8
 dependency36.to=GameWorld
 target6.showInterface=false
 target27.editor.height=700
+dependency115.type=UsesDependency
 class.GameOverScreen.superclass=greenfoot.World
 dependency57.type=UsesDependency
 target41.editor.width=900
@@ -928,7 +1009,12 @@ target41.naviview.expanded=true
 target31.naviview.expanded=true
 target21.naviview.expanded=true
 dependency29.from=EnemyB
+<<<<<<< HEAD
 target41.name=ScoreBoard
+=======
+target41.name=LightGroundTwo
+dependency114.from=OrangePotion
+>>>>>>> FETCH_HEAD
 dependency77.to=BackerGS
 target41.editor.height=482
 target20.width=100
@@ -960,8 +1046,13 @@ dependency96.type=UsesDependency
 target6.x=100
 target12.editor.width=900
 dependency31.to=Professor
+<<<<<<< HEAD
 package.numDependencies=109
 target50.editor.y=23
+=======
+package.numDependencies=117
+target50.editor.y=0
+>>>>>>> FETCH_HEAD
 dependency71.type=UsesDependency
 target50.editor.x=40
 target34.type=ClassTarget
@@ -999,12 +1090,21 @@ class.Professor.superclass=Characters
 target28.name=PowerUps2
 target38.editor.width=1378
 dependency66.to=GameWorld
+<<<<<<< HEAD
 target27.editor.y=23
 target27.editor.x=40
 target47.y=70
 mainWindow.height=880
 target47.x=70
 target42.width=90
+=======
+target27.editor.y=111
+target27.editor.x=102
+target47.y=130
+mainWindow.height=876
+target47.x=10
+target42.width=80
+>>>>>>> FETCH_HEAD
 dependency8.from=GrassSmall
 class.GreenPotion.image=GreenPotion.png
 target10.editor.y=0
@@ -1012,6 +1112,7 @@ target28.height=50
 target10.editor.x=40
 target40.showInterface=false
 dependency20.to=Platforms
+dependency116.type=UsesDependency
 target4.height=50
 dependency58.type=UsesDependency
 dependency33.type=UsesDependency
@@ -1026,9 +1127,16 @@ dependency3.to=GameWorld
 target9.editor.y=0
 target9.editor.x=40
 target50.type=ClassTarget
+<<<<<<< HEAD
 target38.editor.y=-8
 target38.editor.x=-8
 target42.name=Characters
+=======
+target38.editor.y=0
+target38.editor.x=316
+target42.name=Selection2
+dependency115.from=OrangePotion
+>>>>>>> FETCH_HEAD
 dependency57.from=HeaderPM
 class.BackerGS.image=StoreMenu Master.png
 target47.editor.height=482
@@ -1066,8 +1174,13 @@ target48.typeParameters=
 dependency69.from=BackerGS
 target3.editor.y=42
 dependency102.from=GameWorld
+<<<<<<< HEAD
 target3.editor.x=40
 target44.editor.height=482
+=======
+target3.editor.x=364
+target44.editor.height=876
+>>>>>>> FETCH_HEAD
 target32.editor.y=23
 target32.editor.x=40
 dependency44.from=Currency2
@@ -1103,11 +1216,13 @@ target43.editor.y=0
 target43.editor.x=40
 dependency44.to=GameWorld
 target32.editor.height=700
+dependency117.type=UsesDependency
 target46.showInterface=false
 class.PurchaseWindow.superclass=ItemPanel
 target3.width=100
 dependency59.type=UsesDependency
 target5.naviview.expanded=true
+dependency117.to=PurchaseWindow
 dependency34.type=UsesDependency
 target14.y=1210
 target10.height=50
