@@ -24,17 +24,15 @@ public class GameWorld extends World
     private int totalLength2;
     private int stagger; //holds how far the platform piece is displaced in the x-direction
     private int stagger2;
-    private int aSpawnRate = 60; //spawn rate for enemyA (currently a % out of 100)
-    private int bSpawnRate = 40; //spawn rate for enemyB
-    private int cSpawnRate = 30; //spawn rate for enemyC
     private boolean isPlatformThere;
+    private int currencyTimer = 0; //holds time since last currency spawned
     private ScoreBoard scoreboard;
     private int mSpawnRate = 2;//spawn rate for meteors
     private int x; //holds the professors x coord
     private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
-    
+
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
@@ -50,7 +48,7 @@ public class GameWorld extends World
 
         prepare();
         titleScreen();
-       // GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");  //start music
+        // GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");  //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
         bgSound.play(); //edited by Stephanie Lascola
     }
@@ -63,7 +61,9 @@ public class GameWorld extends World
             spawnObstacles();//spawns ground dinos
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
-            spawnCurrency();//adds the currency
+            spawnCurrency(540);//adds the currency
+            spawnCurrency(425);
+            spawnCurrency(225);
             createPlatform1();//creates random platforms at the first height
             createPlatform2();//creates random platforms at the second height
             scoreboard.addScore(1);
@@ -74,7 +74,7 @@ public class GameWorld extends World
         checkForPause();
         checkForGameEndRequest();
     }
-    
+
     /**
      * Returns world synchronization count for actors to refer too.
      */
@@ -134,7 +134,7 @@ public class GameWorld extends World
 
         prof = new Professor(); 
         addObject(prof, 268, 480);
-        
+
         ref = new Reference();
         addObject(ref, 810, 250);
         ref2 = new Reference();
@@ -185,7 +185,6 @@ public class GameWorld extends World
         addObject(yesoption, 356, 290);
         NoOption nooption = new NoOption();
         addObject(nooption, 478, 291);
-     
 
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
@@ -200,7 +199,7 @@ public class GameWorld extends World
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
     }
-    
+
     /**
      * Spawns enemies randomly on the ground level
      * @Sarah Stephens
@@ -219,8 +218,9 @@ public class GameWorld extends World
             addObject(enemyB, getWidth(), getHeight()-85);
             spawnTimer = 60;
         }
-        
+
     }
+
     /**
      * This is supposed to spawn enemies at both height levels but I don't think it is working correctly
      * will look at later @Sarah Stephens
@@ -236,7 +236,7 @@ public class GameWorld extends World
             spawnPlatformEnemies(215);
         }
     }
-    
+
     /**
      * Spawns Enemy A & B on the platforms randomly
      * int height is the height at which the enemies will spawn (on level 1 or 2)
@@ -252,7 +252,7 @@ public class GameWorld extends World
         {
             isPlatformThere = ref2.isPlatform();
         }
-        
+
         if ((spawnTimer == 0) && isPlatformThere == true)
         {
             if (Greenfoot.getRandomNumber(100) < 50) //chance to spawn enemy
@@ -272,7 +272,7 @@ public class GameWorld extends World
             }
         }
     }
-    
+
     /**
      * spawns pterodactyls in the sky
      * @AlexCarpenter
@@ -310,7 +310,7 @@ public class GameWorld extends World
         }
         else if(getScore() > 2500 && getScore() < 4000)
         {
-           if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
+            if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
             {
                 Meteor meteor = new Meteor();
                 addObject(meteor, getWidth() + Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
@@ -326,9 +326,9 @@ public class GameWorld extends World
 
             }
         }
-         else if(getScore() > 4000)
+        else if(getScore() > 4000)
         {
-           if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
+            if (Greenfoot.getRandomNumber(1000) < mSpawnRate + 1)
             {
                 Meteor meteor = new Meteor();
                 addObject(meteor, getWidth() + Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber(4));
@@ -363,47 +363,59 @@ public class GameWorld extends World
         }        
         if (lazerTimer > 0) //for shooting lazers
         {
-            lazerTimer = lazerTimer -1;
+            lazerTimer = lazerTimer - 1;
+        }
+        if(currencyTimer > 0)
+        {
+            currencyTimer = currencyTimer - 1;
         }
     }
 
     /**
-     * Using the timer that Sarah made, the currency appears every ten out of 2000 and the timer is there so the objects do not overlap
-     * The elephants appear more than the Hedgehogs. This can be used if the point system for the currency wants to have different
-     * values depending on what kind of currency is picked up (rare vs not rare).
      * -Stephanie Lascola
-     * edited: NickJones
+     * edited: NickJones @Sarah Stephens
      */
-    public void spawnCurrency()
+    public void spawnCurrency(int height)
     {
-        if ((Greenfoot.getRandomNumber (2000) < 7) && (spawnTimer == 0) && getScore() < 3000)
+        if (height < 300)
         {
-            Currency1 c1 = new Currency1();
-            addObject(c1, getWidth(), getHeight()-100);
-            spawnTimer = 60;
+            isPlatformThere = ref.isPlatform();
+        }
+        else if (height < 500)
+        {
+            isPlatformThere = ref2.isPlatform();
+        }
+        if (isPlatformThere == true)
+        {
+            if ((Greenfoot.getRandomNumber (2000) < 10) && getScore() < 3000 && currencyTimer == 0)
+            {
+                Currency1 c1 = new Currency1();
+                addObject(c1, getWidth(), height);
+                currencyTimer = 30;
+            }
+
+            else if ((Greenfoot.getRandomNumber (2000) < 5) && getScore() < 3000 && currencyTimer == 0)
+            {
+                Currency2 c2 = new Currency2();
+                addObject(c2, getWidth(), height);
+                currencyTimer = 30;
+            }
+            if ((Greenfoot.getRandomNumber (2000) < 25) && getScore() > 3000 && currencyTimer == 0)
+            {
+                Currency1 c1 = new Currency1();
+                addObject(c1, getWidth(), height);
+                currencyTimer = 30;
+            }
+            else if ((Greenfoot.getRandomNumber (2000) < 17) && getScore() > 3000 && currencyTimer == 0)
+            {
+                Currency2 c2 = new Currency2();
+                addObject(c2, getWidth(), height);
+                currencyTimer = 30;
+            }
         }
 
-        else if ((Greenfoot.getRandomNumber (2000) < 5) && (spawnTimer == 0) && getScore() < 3000)
-        {
-            Currency2 c2 = new Currency2();
-            addObject(c2, getWidth(), getHeight()-100);
-            spawnTimer = 60;
-        }
-        if ((Greenfoot.getRandomNumber (2000) < 13) && (spawnTimer == 0) && getScore() > 3000)
-        {
-            Currency1 c1 = new Currency1();
-            addObject(c1, getWidth(), getHeight()-100);
-            spawnTimer = 60;
-        }
-        else if ((Greenfoot.getRandomNumber (2000) < 10) && (spawnTimer == 0) && getScore() > 3000)
-        {
-            Currency2 c2 = new Currency2();
-            addObject(c2, getWidth(), getHeight()-100);
-            spawnTimer = 60;
-        }
     }
 
-    
     /**
      * Spawns different length platforms at the first height level. 
      * @Sarah Stephens
@@ -588,24 +600,26 @@ public class GameWorld extends World
         if ((Greenfoot.isKeyDown("3")) && lazerTimer == 0 && ammoCount > 0)
         {
             Lazer l = new Lazer();
-            addObject(l, x, y);
+            addObject(l, x, y + 10);
             lazerTimer = 30;
             p.usePowerup();
         }
     }
-   /**
-    * Ammo count for the power up 3 
-    * @StephanieLascola
-    */
+
+    /**
+     * Ammo count for the power up 3 
+     * @StephanieLascola
+     */
     public void getAmmoCount()    
     {
         PowerUps3 p = new PowerUps3();
         ammoCount = p.getP3Amount();
     }
-   /**
-    * Fixed start at intro screen
-    * @StephanieLascola
-    */
+
+    /**
+     * Fixed start at intro screen
+     * @StephanieLascola
+     */
     public void titleScreen()
     {
         TitleScreen go = new TitleScreen();

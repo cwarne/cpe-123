@@ -165,7 +165,7 @@ public class Professor extends Characters
     public void getCurrency()
     {
         Actor Currency;
-        Currency = getOneObjectAtOffset (0, 0, Currency.class);
+        Currency = getOneIntersectingObject(Currency.class);
         if (Currency!=null)
         {
             World world;
