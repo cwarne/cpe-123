@@ -32,6 +32,7 @@ public class GameWorld extends World
     private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
+    private int enemySpawnRateGround = 100;
 
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
@@ -59,6 +60,7 @@ public class GameWorld extends World
         {
             count++; //Increase counter for global synchronization
             spawnObstacles();//spawns ground dinos
+            increaseGround(); //increases difficulty of game on ground
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
             spawnCurrency(540);//adds the currency
@@ -206,13 +208,13 @@ public class GameWorld extends World
      */    
     public void spawnObstacles()
     {
-        if (Greenfoot.getRandomNumber(2000) < 100 && spawnTimer == 0)
+        if (Greenfoot.getRandomNumber(2000) < enemySpawnRateGround && spawnTimer == 0)
         {
             EnemyA enemyA = new EnemyA();
             addObject(enemyA, getWidth(), getHeight()-95);
             spawnTimer = 50;
         }        
-        else if ((Greenfoot.getRandomNumber(2000) < 60) && (spawnTimer == 0) && getScore() > 500)
+        else if ((Greenfoot.getRandomNumber(2000) < enemySpawnRateGround - 40) && (spawnTimer == 0) && getScore() > 500)
         {
             EnemyB enemyB = new EnemyB();
             addObject(enemyB, getWidth(), getHeight()-85);
@@ -263,13 +265,41 @@ public class GameWorld extends World
                     addObject(enemyA, getWidth(), height);
                     spawnTimer = 70;
                 }
-                else
+                else if(getScore() > 500)
                 {
                     EnemyB b = new EnemyB();
                     addObject(b, getWidth(), height);
                     spawnTimer = 70;
                 }
             }
+        }
+    }
+    /**
+     * changes spawn rate of enemys on ground
+     * @Nick Jones
+     */
+    private void increaseGround()
+    {
+        int score = getScore();
+        if( score > 750 && score < 1500)
+        {
+            enemySpawnRateGround = 115;
+        }
+        else if( score > 1500 && score < 2000)
+        {
+            enemySpawnRateGround = 125;
+        }
+        else if( score > 2000 && score < 2750)
+        {
+            enemySpawnRateGround = 175;
+        }
+        else if( score > 2750 && score < 4000)
+        {
+            enemySpawnRateGround = 250;
+        }
+        else if( score > 4000)
+        {
+            enemySpawnRateGround = 300;
         }
     }
 
@@ -373,7 +403,7 @@ public class GameWorld extends World
 
     /**
      * -Stephanie Lascola
-     * edited: NickJones @Sarah Stephens
+     * edited: @NickJones @Sarah Stephens
      */
     public void spawnCurrency(int height)
     {
@@ -572,7 +602,10 @@ public class GameWorld extends World
         Greenfoot.setWorld(go);
         bgSound.stop();
     }
-
+    /**
+     * @Nick Jones
+     * adds score
+     */
     public int getScore()
     {
         return scoreboard.getScore();
