@@ -15,6 +15,7 @@ public class GreenPotion extends ItemPanel
     public void act() 
     {
         setVisibility();
+        checkIfClicked();
     } 
     public void setVisibility()
     {
@@ -25,6 +26,13 @@ public class GreenPotion extends ItemPanel
         if(BackerGS.storeVisible == true)
         {
             getImage().setTransparency(255);
+        }
+    }
+    public void checkIfClicked()
+    {
+        if(Greenfoot.mouseClicked(this) && CurrencyCounter.currencyCollected > 150)
+        {
+            PurchaseWindow.pwVisible = true;
         }
     }
 }

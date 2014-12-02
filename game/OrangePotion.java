@@ -15,6 +15,7 @@ public class OrangePotion extends ItemPanel
     public void act() 
     {
         setVisibility();
+        checkIfClicked();
     } 
     public void setVisibility()
     {
@@ -27,4 +28,11 @@ public class OrangePotion extends ItemPanel
             getImage().setTransparency(255);
         }
     }  
+    public void checkIfClicked()
+    {
+        if(Greenfoot.mouseClicked(this) && CurrencyCounter.currencyCollected > 100)
+        {
+            PurchaseWindow.pwVisible = true;
+        }
+    }
 }
