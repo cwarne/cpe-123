@@ -51,7 +51,7 @@ public class GameWorld extends World
         titleScreen();
         // GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");  //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        bgSound.play(); //edited by Stephanie Lascola
+        //bgSound.play(); //edited by Stephanie Lascola
     }
 
     public void act()
@@ -73,8 +73,14 @@ public class GameWorld extends World
             spawnmeteors();//spawns meteors
             spawn(); //spawns dinosaurs on platforms
         }
+        if(gamePaused == true)
+        {
+            bgSound.stop();
+        }
+      
         checkForPause();
         checkForGameEndRequest();
+        bgSound.play();
     }
 
     /**
@@ -544,13 +550,13 @@ public class GameWorld extends World
         {
             pauseTheGame();
             pauseTimer++;
-            bgSound.pause(); //StephanieLascola
+            
         }
         if((Greenfoot.isKeyDown("p")) && (gamePaused == true) && (pauseTimer == 0))
         {
             unpauseTheGame();
             pauseTimer++;
-            bgSound.play(); //StephanieLascola
+            
         }
         if((pauseTimer > 0) && (pauseTimer <= 10))
         {
@@ -659,5 +665,6 @@ public class GameWorld extends World
         Greenfoot.setWorld(go);
         bgSound.stop();
     }
+    
 }
 
