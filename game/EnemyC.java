@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyC extends Obstacles
 {
-     /**
+    private boolean go = true;
+    /**
      * Act - do whatever the EnemyC wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -16,12 +17,15 @@ public class EnemyC extends Obstacles
     {
         if(GameWorld.gamePaused == false)
         {
-            super.act();
             move();
             despawn();
+            if (go == true)
+            {
+                super.act();
+            }
         }
     }    
-    
+
     /**
      * Moves the enemy acorss the top of the screen and swoops it down.
      * @AlexCarpenter
@@ -38,7 +42,7 @@ public class EnemyC extends Obstacles
             setLocation(getX() - 9, getY() - 1);
         }        
     }
-   
+
     /**
      * Despawns the object when it gets to the left edge of the screen.
      */
@@ -47,6 +51,7 @@ public class EnemyC extends Obstacles
         if (getX() <= 0)
         {
             getWorld().removeObject(this);
+            go = false;
         }
     }
 }
