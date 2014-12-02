@@ -49,7 +49,7 @@ public class GameWorld extends World
         super(800, 640, 1, false); 
 
         prepare();
-
+        titleScreen();
        // GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");  //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
         bgSound.play(); //edited by Stephanie Lascola
@@ -601,6 +601,16 @@ public class GameWorld extends World
     {
         PowerUps3 p = new PowerUps3();
         ammoCount = p.getP3Amount();
+    }
+   /**
+    * Fixed start at intro screen
+    * @StephanieLascola
+    */
+    public void titleScreen()
+    {
+        TitleScreen go = new TitleScreen();
+        Greenfoot.setWorld(go);
+        bgSound.stop();
     }
 }
 
