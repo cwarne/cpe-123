@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Meteor extends Obstacles
 {
+    private boolean go = true;
     /**
      * Act - do whatever the meteor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,11 +17,14 @@ public class Meteor extends Obstacles
     public void act() 
     {
         if(GameWorld.gamePaused == false)
-        {        
-            remove();
+        {                
+            setRotation(130);  
             movement();
-            collide();
-            setRotation(130);            
+            remove();
+            if (go == true)
+            {
+                super.act();
+            }                      
         }        
     }    
 
@@ -34,6 +38,7 @@ public class Meteor extends Obstacles
         if( getY() > 560)
         {
             getWorld().removeObject(this);
+            go = false;
         }
     }
 
