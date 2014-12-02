@@ -34,11 +34,11 @@ public class GameWorld extends World
     private int y;//holds the professors y coord
     //Static boolean that can by changed by other classes to signify that the game has been requested to end
     public static boolean gameAskedToEnd = false;
-
+    
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
-
+    public  GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");//edited by StephanieLascola different way to add sound
     /**
      * Constructor for objects of class GameWorld.
      * 
@@ -50,9 +50,9 @@ public class GameWorld extends World
 
         prepare();
 
-        music = new GreenfootSound("ElectroRock.mp3"); //start music
+       // GreenfootSound bgSound = new GreenfootSound("ElectroRock.mp3");  //start music
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
-        //music.playLoop();
+        bgSound.play(); //edited by Stephanie Lascola
     }
 
     public void act()
@@ -502,11 +502,13 @@ public class GameWorld extends World
         {
             pauseTheGame();
             pauseTimer++;
+            bgSound.pause(); //StephanieLascola
         }
         if((Greenfoot.isKeyDown("p")) && (gamePaused == true) && (pauseTimer == 0))
         {
             unpauseTheGame();
             pauseTimer++;
+            bgSound.play(); //StephanieLascola
         }
         if((pauseTimer > 0) && (pauseTimer <= 10))
         {
@@ -556,7 +558,7 @@ public class GameWorld extends World
     {
         GameOverScreen go = new GameOverScreen(getScore());
         Greenfoot.setWorld(go);
-        music.stop();
+        bgSound.stop();
     }
 
     public int getScore()

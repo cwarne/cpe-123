@@ -12,7 +12,7 @@ public class PurchaseWindow extends ItemPanel
      * Act - do whatever the PurchaseWindow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static boolean pwVisible = false;
+    public static boolean pwVisible = false;
     
     public void act() 
     {
