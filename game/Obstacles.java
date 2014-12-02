@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Obstacles extends Actor
 {
     private boolean isShieldUp = false;
-    private boolean ifStillAlive = true;
+    private boolean ifStillAlive = true;    
     /**
      * Act - do whatever the Obstacles wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

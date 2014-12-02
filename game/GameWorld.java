@@ -136,9 +136,9 @@ public class GameWorld extends World
         addObject(prof, 268, 480);
         
         ref = new Reference();
-        addObject(ref, 800, 250);
+        addObject(ref, 810, 250);
         ref2 = new Reference();
-        addObject(ref2, 800, 450);
+        addObject(ref2, 810, 450);
 
         setPaintOrder(PauseMenu.class, YesOption.class, NoOption.class, PurchaseWindow.class, GameStore.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class);
 
