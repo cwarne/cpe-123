@@ -282,12 +282,12 @@ public class GameWorld extends World
     {
         if(getScore() > 1500)
         {
-            if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer == 0) && (airTimer == 0))
+            if ((Greenfoot.getRandomNumber(1000) < 20) && (spawnTimer < 10) && (airTimer == 0))
             {
                 EnemyC enemyC = new EnemyC();
                 addObject(enemyC, getWidth() + 60, 40 + Greenfoot.getRandomNumber(110));
-                spawnTimer = 20;
-                airTimer = 30;
+                //spawnTimer = 20;
+                airTimer = 40;
             }
         }
     }

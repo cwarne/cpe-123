@@ -16,7 +16,7 @@ public class Meteor extends Obstacles
     public void act() 
     {
         if(GameWorld.gamePaused == false)
-        {
+        {        
             remove();
             movement();
             collide();
