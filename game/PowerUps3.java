@@ -19,6 +19,7 @@ public class PowerUps3 extends PowerUps
     {
         usePotion3();
         cheat();
+        updateImage();
         visibility();
     }    
     public void cheat()

@@ -19,6 +19,7 @@ public class PowerUps2 extends PowerUps
     public void act() 
     {
         usePotion2();
+        updateImage();
         visibility();
     } 
    

@@ -43,6 +43,9 @@ public class GameOverScreen extends World
                 GameWorld g = new GameWorld();
                 Greenfoot.setWorld(g);
                 CurrencyCounter.currencyCollected = 0;
+                PowerUps1.powerUp1 = 0;
+                PowerUps2.powerUp2 = 0;
+                PowerUps3.powerUp3 = 0;
             }
         }
         if((coolDownTimer < coolDownLimit) && (coolDownTimer >0))

@@ -17,6 +17,7 @@ public class PowerUps1 extends PowerUps
     public void act() 
     {
         usePotion1();
+        updateImage();
         visibility();
     }    
     /**
@@ -83,6 +84,10 @@ public class PowerUps1 extends PowerUps
         if(powerUp1 == 0)
         {
             getImage().setTransparency(0);
+        }
+        else
+        {
+            getImage().setTransparency(200);
         }
     }
 }

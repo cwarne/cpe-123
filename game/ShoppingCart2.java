@@ -12,6 +12,8 @@ public class ShoppingCart2 extends OrangePotion
      * Act - do whatever the ShoppingCart2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public  GreenfootSound chaChing = new GreenfootSound("Cash register sound effect.wav");
+    
     public void act() 
     {
         setVisibility();
@@ -32,12 +34,21 @@ public class ShoppingCart2 extends OrangePotion
     {
         if(BackerGS.storeVisible)
         {
-            if(CurrencyCounter.currencyCollected <= 100)
+            if(CurrencyCounter.currencyCollected < 100)
             {
                 if(Greenfoot.mouseClicked(this))
                 {
                     NotEnoughMoney.fade = 200;
                 }   
+            }
+        }
+        if(CurrencyCounter.currencyCollected >= 100)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                chaChing.play();
+                CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 100;
+                PowerUps3.powerUp3 = 5;
             }
         }
     }
