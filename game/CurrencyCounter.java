@@ -6,7 +6,7 @@ import java.awt.Color;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CurrencyCounter extends Currency
+public class CurrencyCounter extends CurrencyTracking
 {
     /** Added ~ Michael Tornatta **/
     private GreenfootImage board;

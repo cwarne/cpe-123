@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CurrencyIndicator here.
+ * Write a description of class CurrencyTracking here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CurrencyIndicator extends CurrencyTracking
+public class CurrencyTracking extends Actor
 {
     /**
-     * Act - do whatever the CurrencyIndicator wants to do. This method is called whenever
+     * Act - do whatever the CurrencyTracking wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
