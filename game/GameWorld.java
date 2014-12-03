@@ -34,6 +34,7 @@ public class GameWorld extends World
     public static boolean gameAskedToEnd = false;
     private boolean haungsMode = false; //if true professor is invincible and is in haungs mode
     private int enemySpawnRateGround = 100;
+    private int enemySpawnRateUp = 35;
     private int ammoCount = 0; 
     public static boolean gamePaused = false; //Flag that keeps track of whether the game is paused or not
     private int pauseTimer = 0; //Keeps the game from pausing then unpausing rapidly
@@ -61,6 +62,7 @@ public class GameWorld extends World
             haungsMode(); //check to see if in haungs mode or not
             spawnObstacles();//spawns ground dinos
             increaseGround(); //increases difficulty of game on ground
+            increasePlatform(); //more enemies spawn later on platforms
             spawnObstacles3();//spawns pterodactyls
             changeTimers();//counts down timer for spawning obstacles & platforms
             spawnCurrency(540);//adds the currency
@@ -296,7 +298,7 @@ public class GameWorld extends World
 
         if ((spawnTimer == 0) && isPlatformThere == true)
         {
-            if (Greenfoot.getRandomNumber(100) < 50) //chance to spawn enemy
+            if (Greenfoot.getRandomNumber(100) < enemySpawnRateUp) //chance to spawn enemy
             {
                 if(Greenfoot.getRandomNumber(100) < 60)
                 {
@@ -313,6 +315,35 @@ public class GameWorld extends World
             }
         }
     }
+    /**
+     * increases spawn rate of enemys on platforms
+     * @NickJones
+     */
+    private void increasePlatform()
+    {
+         int score = getScore();
+        if( score > 750 && score < 1500)
+        {
+            enemySpawnRateUp = 40;
+        }
+        else if( score > 1500 && score < 2000)
+        {
+            enemySpawnRateUp = 45;
+        }
+        else if( score > 2000 && score < 2750)
+        {
+            enemySpawnRateUp = 50;
+        }
+        else if( score > 2750 && score < 4000)
+        {
+            enemySpawnRateUp = 55;
+        }
+        else if( score > 4000)
+        {
+            enemySpawnRateUp = 65;
+        }
+    }
+        
     /**
      * changes spawn rate of enemys on ground
      * @Nick Jones
