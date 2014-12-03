@@ -12,6 +12,7 @@ public class ShowMoneyString extends GameStore
      * Act - do whatever the ShowMoneyString wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+        /** Menu Code By Michael Tornatta **/
     public void act() 
     {
         setVisibility();

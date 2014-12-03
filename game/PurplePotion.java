@@ -12,6 +12,7 @@ public class PurplePotion extends ItemPanel
      * Act - do whatever the PurplePotion wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+        /** Menu Code By Michael Tornatta **/
     public void act() 
     {
         setVisibility();

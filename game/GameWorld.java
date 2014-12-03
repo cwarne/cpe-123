@@ -197,6 +197,8 @@ public class GameWorld extends World
         addObject(sc3, 718, 559);
         NotEnoughMoney nem = new NotEnoughMoney();
         addObject(nem, 402, 132);
+        YouAlreadyHaveThisPotion yahtp = new YouAlreadyHaveThisPotion();
+        addObject(yahtp, 411, 134);
 
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);
