@@ -149,7 +149,7 @@ public class GameWorld extends World
         ref2 = new Reference();
         addObject(ref2, 810, 450);
 
-        setPaintOrder(PauseMenu.class, YesOption.class, NoOption.class, PurchaseWindow.class, GameStore.class, ScoreBoard.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class, Cloud.class, MeteorInSky.class);
+        setPaintOrder(PauseMenu.class, GameStore.class, ScoreBoard.class, PowerUps1.class, PowerUps2.class, PowerUps3.class, CurrencyIndicator.class, Meteor.class, GrassLarge.class, GrassSmall.class, Professor.class, EnemyA.class, EnemyB.class, LightGroundOne.class, LightGroundTwo.class, EnemyC.class, Cloud.class, MeteorInSky.class);
 
         Cloud cloud = new Cloud();
         addObject(cloud, 121, 130);
@@ -188,12 +188,12 @@ public class GameWorld extends World
         addObject(itempanel3, 650,379);
         ShowMoneyString showmoneystring = new ShowMoneyString();
         addObject(showmoneystring, 412,103);
-        PurchaseWindow purchasewindow = new PurchaseWindow();
-        addObject(purchasewindow, 419, 273);
-        YesOption yesoption = new YesOption();
-        addObject(yesoption, 356, 290);
-        NoOption nooption = new NoOption();
-        addObject(nooption, 478, 291);
+        ShoppingCart1 sc1 = new ShoppingCart1();
+        addObject(sc1, 222, 559);
+        ShoppingCart2 sc2 = new ShoppingCart2();
+        addObject(sc2, 469, 559);
+        ShoppingCart3 sc3 = new ShoppingCart3();
+        addObject(sc3, 718, 559);
 
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);

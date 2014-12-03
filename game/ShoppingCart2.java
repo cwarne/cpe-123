@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GreenPotion here.
+ * Write a description of class ShoppingCart2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GreenPotion extends ItemPanel
+public class ShoppingCart2 extends OrangePotion
 {
     /**
-     * Act - do whatever the GreenPotion wants to do. This method is called whenever
+     * Act - do whatever the ShoppingCart2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -26,5 +26,5 @@ public class GreenPotion extends ItemPanel
         {
             getImage().setTransparency(255);
         }
-    }
+    }    
 }

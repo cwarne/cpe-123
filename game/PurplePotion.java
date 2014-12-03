@@ -15,7 +15,6 @@ public class PurplePotion extends ItemPanel
     public void act() 
     {
         setVisibility();
-        checkIfClicked();
     } 
     public void setVisibility()
     {
@@ -28,11 +27,4 @@ public class PurplePotion extends ItemPanel
             getImage().setTransparency(255);
         }
     }  
-    public void checkIfClicked()
-    {
-        if(Greenfoot.mouseClicked(this) && CurrencyCounter.currencyCollected >= 350)
-        {
-            PurchaseWindow.pwVisible = true;
-        }
-    }
 }
