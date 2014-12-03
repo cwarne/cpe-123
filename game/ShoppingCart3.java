@@ -30,12 +30,15 @@ public class ShoppingCart3 extends PurplePotion
     }  
     public void checkPurchase()
     {
-        if(CurrencyCounter.currencyCollected <= 350)
+        if(BackerGS.storeVisible)
         {
-            if(Greenfoot.mouseClicked(this))
+            if(CurrencyCounter.currencyCollected <= 350)
             {
-                NotEnoughMoney.fade = 200;
-            }   
+                if(Greenfoot.mouseClicked(this))
+                {
+                    NotEnoughMoney.fade = 200;
+                }   
+            }
         }
     }
 }

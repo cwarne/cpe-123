@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PowerUps3 extends PowerUps
 {
-    private int powerUp3 = 5;
+    static int powerUp3 = 0;
     private boolean key3 = false;
     /**
      * Act - do whatever the PowerUps1 wants to do. This method is called whenever
@@ -19,6 +19,7 @@ public class PowerUps3 extends PowerUps
     {
         usePotion3();
         cheat();
+        visibility();
     }    
     public void cheat()
     {
@@ -88,5 +89,13 @@ public class PowerUps3 extends PowerUps
     public void usePowerup()
     {
         powerUp3 = powerUp3 - 1;
+    }
+    //Visibility Michael Tornatta
+    public void visibility()
+    {
+        if(powerUp3 == 0)
+        {
+            getImage().setTransparency(0);
+        }
     }
 }

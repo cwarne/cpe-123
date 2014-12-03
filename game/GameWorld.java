@@ -82,7 +82,7 @@ public class GameWorld extends World
       
         checkForPause();
         checkForGameEndRequest();
-        bgSound.play();
+        //bgSound.play();
     }
 
     /**

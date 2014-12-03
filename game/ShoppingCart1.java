@@ -30,12 +30,15 @@ public class ShoppingCart1 extends GreenPotion
     }    
     public void checkPurchase()
     {
-        if(CurrencyCounter.currencyCollected <= 150)
+        if(BackerGS.storeVisible)
         {
-            if(Greenfoot.mouseClicked(this))
+            if(CurrencyCounter.currencyCollected <= 150)
             {
-                NotEnoughMoney.fade = 200;
-            }   
+                if(Greenfoot.mouseClicked(this))
+                {
+                    NotEnoughMoney.fade = 200;
+                }   
+            }
         }
     }
 }

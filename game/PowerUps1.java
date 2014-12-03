@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PowerUps1 extends PowerUps
 {
-    private int powerUp1 = 3;
+    static int powerUp1 = 0;
     private boolean key1 = false;
     /**
      * Act - do whatever the PowerUps1 wants to do. This method is called whenever
@@ -17,6 +17,7 @@ public class PowerUps1 extends PowerUps
     public void act() 
     {
         usePotion1();
+        visibility();
     }    
     /**
      * This is made so when the key is pressed it stops running after released. This way all the potions aren't 
@@ -75,5 +76,13 @@ public class PowerUps1 extends PowerUps
             {
                 setImage("vialPurple3_small.png");
             }
+    }
+    //Visibility Michael Tornatta
+    public void visibility()
+    {
+        if(powerUp1 == 0)
+        {
+            getImage().setTransparency(0);
+        }
     }
 }

@@ -11,4 +11,6 @@ comment2.text=\r\n\ Takes\ potion\ update\ from\ game\ store\r\n\ @Chandler\ War
 comment3.params=
 comment3.target=void\ updateImage()
 comment3.text=\r\n\ Updates\ image\ on\ screen\ to\ reflect\ how\ much\ powerup\ is\ available.\r\n\ @Chandler\ Warne\r\n
-numComments=4
+comment4.params=
+comment4.target=void\ visibility()
+numComments=5

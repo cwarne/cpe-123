@@ -20,6 +20,7 @@ public class NotEnoughMoney extends GameStore
     public void act() 
     {
         visible();
+        visibility();
         fade();
     } 
     public void visible()
@@ -31,6 +32,14 @@ public class NotEnoughMoney extends GameStore
         if(fade > 0)
         {
             fade = fade - 2;
+        }
+    }
+    public void visibility()
+    {
+        if(BackerGS.storeVisible == false)
+        {
+            getImage().setTransparency(0);
+            fade = 0;
         }
     }
 }
