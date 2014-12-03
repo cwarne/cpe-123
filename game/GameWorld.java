@@ -211,8 +211,7 @@ public class GameWorld extends World
         PowerUps3 powerups3 = new PowerUps3();
         addObject(powerups3, 155, 608);
         
-        MeteorInSky mis = new MeteorInSky();
-        addObject(mis, 60, 28);
+
     }
     
     /**
