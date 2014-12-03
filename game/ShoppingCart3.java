@@ -15,6 +15,7 @@ public class ShoppingCart3 extends PurplePotion
     public void act() 
     {
         setVisibility();
+        checkPurchase();
     } 
     public void setVisibility()
     {
@@ -27,4 +28,14 @@ public class ShoppingCart3 extends PurplePotion
             getImage().setTransparency(255);
         }
     }  
+    public void checkPurchase()
+    {
+        if(CurrencyCounter.currencyCollected <= 350)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                NotEnoughMoney.fade = 200;
+            }   
+        }
+    }
 }

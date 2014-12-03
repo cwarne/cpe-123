@@ -15,6 +15,7 @@ public class ShoppingCart1 extends GreenPotion
     public void act() 
     {
         setVisibility();
+        checkPurchase();
     } 
     public void setVisibility()
     {
@@ -27,4 +28,14 @@ public class ShoppingCart1 extends GreenPotion
             getImage().setTransparency(255);
         }
     }    
+    public void checkPurchase()
+    {
+        if(CurrencyCounter.currencyCollected <= 150)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                NotEnoughMoney.fade = 200;
+            }   
+        }
+    }
 }

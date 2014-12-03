@@ -53,7 +53,6 @@ public class GameWorld extends World
         //music credit: ElectroRock by Deceseased Superior Technician (feel free to change the music)
         //bgSound.play(); //edited by Stephanie Lascola
     }
-
     public void act()
     {
         if(gamePaused == false)
@@ -194,6 +193,8 @@ public class GameWorld extends World
         addObject(sc2, 469, 559);
         ShoppingCart3 sc3 = new ShoppingCart3();
         addObject(sc3, 718, 559);
+        NotEnoughMoney nem = new NotEnoughMoney();
+        addObject(nem, 402, 132);
 
         scoreboard = new ScoreBoard();
         addObject(scoreboard, 80, 20);

@@ -15,6 +15,7 @@ public class ShoppingCart2 extends OrangePotion
     public void act() 
     {
         setVisibility();
+        checkPurchase();
     } 
     public void setVisibility()
     {
@@ -26,5 +27,15 @@ public class ShoppingCart2 extends OrangePotion
         {
             getImage().setTransparency(255);
         }
-    }    
+    }   
+    public void checkPurchase()
+    {
+        if(CurrencyCounter.currencyCollected <= 100)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                NotEnoughMoney.fade = 200;
+            }   
+        }
+    }
 }
