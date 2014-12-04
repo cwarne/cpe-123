@@ -36,7 +36,7 @@ public class ShoppingCart2 extends OrangePotion
     {
         if(BackerGS.storeVisible)
         {
-            if(CurrencyCounter.currencyCollected < 100)
+            if(CurrencyCounter.currencyCollected < 80)
             {
                 if(Greenfoot.mouseClicked(this))
                 {
@@ -45,7 +45,7 @@ public class ShoppingCart2 extends OrangePotion
                 }   
             }
         }
-        if(CurrencyCounter.currencyCollected >= 100)
+        if(CurrencyCounter.currencyCollected >= 80)
         {
             if(PowerUps3.powerUp3 != 0)
             {
@@ -60,7 +60,7 @@ public class ShoppingCart2 extends OrangePotion
                 if(Greenfoot.mouseClicked(this))
                 {
                     chaChing.play();
-                    CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 100;
+                    CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 80;
                     PowerUps3.powerUp3 = 5;
                 }
             }

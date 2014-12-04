@@ -36,7 +36,7 @@ public class ShoppingCart3 extends PurplePotion
     {
         if(BackerGS.storeVisible)
         {
-            if(CurrencyCounter.currencyCollected < 350)
+            if(CurrencyCounter.currencyCollected < 150)
             {
                 if(Greenfoot.mouseClicked(this))
                 {
@@ -45,7 +45,7 @@ public class ShoppingCart3 extends PurplePotion
                 }   
             }
         }
-        if(CurrencyCounter.currencyCollected >= 350)
+        if(CurrencyCounter.currencyCollected >= 150)
         {
             if(PowerUps1.powerUp1 != 0)
             {
@@ -60,7 +60,7 @@ public class ShoppingCart3 extends PurplePotion
                 if(Greenfoot.mouseClicked(this))
                 {
                     chaChing.play();
-                    CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 350;
+                    CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 150;
                     PowerUps1.powerUp1 = 3;
                 }
             }
