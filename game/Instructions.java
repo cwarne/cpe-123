@@ -34,16 +34,17 @@ public class Instructions extends World
     {
         if(coolDownTimer == 0)
         {
-        if((Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")))
-        {
-            GameWorld gameworld = new GameWorld();
-            Greenfoot.setWorld(gameworld);
-        }
+            if((Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")))
+            {
+                GameWorld gameworld = new GameWorld();
+                Greenfoot.setWorld(gameworld);
+            }
+        
     }
-     if((coolDownTimer < coolDownLimit) && (coolDownTimer >0))
-        {
-            coolDownTimer++;
-        }
+    if((coolDownTimer < coolDownLimit) && (coolDownTimer >0))
+    {
+        coolDownTimer++;
+    }
     if( coolDownLimit <= coolDownTimer)
     {
         coolDownTimer = 0;

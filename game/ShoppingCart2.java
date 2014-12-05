@@ -61,7 +61,7 @@ public class ShoppingCart2 extends OrangePotion
                 {
                     chaChing.play();
                     CurrencyCounter.currencyCollected = CurrencyCounter.currencyCollected - 80;
-                    PowerUps3.powerUp3 = 5;
+                    PowerUps3.powerUp3 = 3;
                 }
             }
         }

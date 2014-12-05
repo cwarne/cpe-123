@@ -32,8 +32,7 @@ public class PowerUps2 extends PowerUps
         {
             key2 = true;
         }
-        
-        if ((Greenfoot.isKeyDown("2") ==false) && powerUp2 > 0 && key2)
+        if ((Greenfoot.isKeyDown("2") == false) && powerUp2 > 0 && key2)
         {
             professor.activateShield();
             powerUp2--;
