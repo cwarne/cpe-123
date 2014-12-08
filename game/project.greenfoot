@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Dec 07 17:48:48 PST 2014
+#Sun Dec 07 17:50:42 PST 2014
 target15.width=80
 target5.height=50
 dependency103.to=BackerGS
@@ -773,7 +773,7 @@ dependency56.to=HeaderPM
 dependency62.type=UsesDependency
 dependency95.type=UsesDependency
 target38.naviview.expanded=true
-class.Instructions.image=Instructions.png
+class.Instructions.image=Instructions2.png
 target38.typeParameters=
 dependency99.to=ShoppingCart1
 target13.editor.width=900
